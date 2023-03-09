@@ -1,0 +1,13 @@
+// woven-grid
+.woven-grid {
+  &__row {
+    align-items: center;
+    margin-top: toRem(40);
+    justify-content: space-between;
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    .figure {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+// header scss
+
+.header {
+  padding-left: 0;
+  padding-right: 0;
+  &__heading {
+    position: absolute;
+    z-index: 9;
+    top: 143px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__picture {
+    height: calc(100vh + 50px);
+  }
+  &__img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@include media-bp(xs) {
+  .header {
+    &__heading {
+      .col-md-10 {
+        padding-left: 0;
+        padding-right: 0;
+        .d-flex {
+          align-items: center !important;
+        }
+      }
+    }
+    &__img-flat {
+      width: 26px;
+      height: 98px;
+      object-position: right;
+    }
+  }
+}
+@include media-bp(tablet) {
+  .header {
+    &__heading {
+      .col-md-10 {
+        padding-left: 0;
+        padding-right: 0;
+        .d-flex {
+          align-items: center !important;
+        }
+      }
+    }
+    &__img-flat {
+      width: 26px;
+      height: 98px;
+      object-position: right;
+    }
+  }
+}

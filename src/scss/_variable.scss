@@ -1,0 +1,14 @@
+// variables
+$font_size_base: 16px;
+$black_1: #000;
+$black_2: #252425;
+$white: #FFFFFF;
+$gray: #707070;
+$orange1: #E35125;
+$orange2: #DF8263;
+
+// sass function px to rem
+@function toRem($val) {
+    $remVal: calc($val / 16) + rem;
+    @return $remVal;
+}

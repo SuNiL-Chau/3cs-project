@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boilerplate Title</title>
+    <!-- <link rel="shortcut icon" href="assets/faivcon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://unpkg.com/">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" /> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <link rel="stylesheet" href="./dist/css/pages/home.css" />
+  </head>
+
+  <body class="home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" data-aos="slide-down">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logos/logo.png" width="94px" height="40px" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> Platfoms </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">SCAI</a></li>
+              <li><a class="dropdown-item" href="#">ITMS</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <button class="btn" type="button">REQUEST A DEMO</button>
+      </div>
+    </nav>
+
+    <div class="homebanner">
+      <div class="container">
+        <div class="homebanner__content">
+          <h1 class="homebanner__title" data-aos="fade-up">Re-define supply <br />chain future</h1>
+          <p class="homebanner__subtitle" data-aos="fade-up">By Transforming</p>
+          <div class="d-flex" data-aos="fade-up">
+            <p class="homebanner__subtitle">Data</p>
+            <p class="homebanner__arrow">&nbsp;→&nbsp;</p>
+            <p class="homebanner__subtitle">Intelligence</p>
+            <p class="homebanner__arrow">&nbsp;→&nbsp;</p>
+            <p class="homebanner__subtitle">Business Insights</p>
+          </div>
+        </div>
+        <canvas id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></canvas>
+        <button type="button" class="homebanner__scroll" data-aos="fade-in">
+          <p class="homebanner__scrollText">SCROLL DOWN</p>
+          <svg class="homebanner__scrollImg" width="17px" height="17px" xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 50 50">
+            <path d="M4 8.8c0 .4 4.7 5.4 10.5 11.2L25 30.5l10.7-10.7c5.9-5.9 10.4-11.1 10-11.5-.4-.4-5.3 3.8-10.7 9.2l-10 10-9.8-9.8C6 8.6 4 6.9 4 8.8z" fill="#E35125" />
+            <path d="M4 21.8c0 .4 4.7 5.4 10.5 11.2L25 43.5l10.7-10.7c5.9-5.9 10.4-11.1 10-11.5-.4-.4-5.3 3.8-10.7 9.2l-10 10-9.8-9.8C6 21.6 4 19.9 4 21.8z" fill="#E35125" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="homestats" data-aos="fade-in">
+      <div class="container-fluid homestats__container">
+        <div class="homestats__grid">
+          <div class="homestats__stat" data-aos="fade-up">
+            <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">10-18%</p>
+            <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">Improved <br />Planner Efficiency</p>
+          </div>
+          <div class="homestats__stat" data-aos="fade-up">
+            <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">90%</p>
+            <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">E2E <br />Visibility</p>
+          </div>
+          <div class="homestats__stat" data-aos="fade-up">
+            <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">11%</p>
+            <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">Improved <br />Forecast Accuracy</p>
+          </div>
+          <div class="homestats__stat" data-aos="fade-up">
+            <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">5%</p>
+            <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">Improved <br />Inventory Optimization</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="platforms" data-aos="fade-in">
+      <div class="container">
+        <canvas id="platforms__canvas" class="platforms__canvas"></canvas>
+        <h3 class="platforms__title" data-aos="fade-up">PLATFORMS</h3>
+        <div class="platform">
+          <div class="platform__pre" data-aos="fade-up">
+            <img src="assets/svgs/icons8-cubes-64.svg" class="platform__preImg" />
+            <p class="platform__preText">SCAI</p>
+            <div class="platform__preBottom"></div>
+          </div>
+          <p class="platform__para" data-aos="fade-up"><span class="text-primary">A smart all-in-one platform</span> which facilitates you to build and track strong ultra-modern platforms that drive <span class="text-primary">profitability, improve efficiency</span> and operate on <span class="text-primary">sustainability.</span></p>
+          <div class="platform__content">
+            <div class="platform__contentBrain" data-aos="fade-in"></div>
+            <div class="platform__contentBtns">
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="brainBtnClick(this);brainAnim.playSegments([0, 42], true);">
+                <p class="platform__contentBtnTxt">Integrated Business <br />Planning Platform</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="brainBtnClick(this);brainAnim.playSegments([42, 84], true);">
+                <p class="platform__contentBtnTxt">CarbonX <br />Sustainability Platform</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="brainBtnClick(this);brainAnim.playSegments([84, 126], true);">
+                <p class="platform__contentBtnTxt">Supply Chain <br />Digital Twin Platform</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="brainBtnClick(this);brainAnim.playSegments([126, 168], true);">
+                <p class="platform__contentBtnTxt">EDM - Enterprise Data <br />Management Platform</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="platform">
+          <div class="platform__pre" data-aos="fade-up">
+            <img src="assets/svgs/icons8-cubes-64.svg" class="platform__preImg" />
+            <p class="platform__preText">iTMS</p>
+            <div class="platform__preBottom"></div>
+          </div>
+          <p class="platform__para" data-aos="fade-up">An <span class="text-primary">intelligent transportation platform</span> that enables the management of the E2E shipment lifecycle of transportation and distribution.</p>
+          <div class="platform__content">
+            <div class="platform__contentGlobe"></div>
+            <div class="platform__contentBtns">
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([0, 75], true);">
+                <p class="platform__contentBtnTxt">Order AI</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([75, 150], true);">
+                <p class="platform__contentBtnTxt">Dispatch AI</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([150, 225], true);">
+                <p class="platform__contentBtnTxt">Orchestration AI</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([225, 300], true);">
+                <p class="platform__contentBtnTxt">Track AI</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([300, 375], true);">
+                <p class="platform__contentBtnTxt">Contract AI</p>
+              </button>
+              <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([375, 450], true);">
+                <p class="platform__contentBtnTxt">Insight AI</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="products">
+      <div class="products__bg" data-aos="fade-in"></div>
+      <h3 class="products__title" data-aos="fade-in">PRODUCTS</h3>
+      <div class="container products__content">
+        <div class="products__lhs">
+          <div class="products__pre" data-aos="fade-up">
+            <div class="d-flex align-items-center">
+              <img src="assets/svgs/icons8-cubes-64-white.svg" class="products__preImg" />
+              <p class="products__preText ml-3">Planning Products</p>
+            </div>
+            <div class="products__preBottom"></div>
+            <p class="products__prePara">AI-Powered Supply Chain Management <span class="text-primary">Optimize Your Business with Ease.</span></p>
+          </div>
+        </div>
+        <div class="products__rhs">
+          <div class="products__listing">
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Demand AI</p>
+              <p class="products__productPara">3SC’s Demand AI provides statistical, operational, and consensus forecasts to improve production planning. This helps companies navigate through market uncertainties and tackle economic challenges.</p>
+            </div>
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Supply Al</p>
+              <p class="products__productPara">A comprehensive and intelligent solution that uses advanced optimization methodologies to enable your Supply team to fulfill the forecasted demand.</p>
+            </div>
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Risk AI</p>
+              <p class="products__productPara">Al-based risk management platform enabling businesses proactively plan risk assessment and mitigation.</p>
+            </div>
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">IBP</p>
+              <p class="products__productPara">Designed to improve the efficiency of your business, IBP enables the integration of S&OP and provides advanced insights leading to enhanced productivity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container products__content">
+        <div class="products__lhs">
+          <div class="products__pre" data-aos="fade-up">
+            <div class="d-flex align-items-center">
+              <img src="assets/svgs/icons8-cubes-64-white.svg" class="products__preImg" />
+              <p class="products__preText ml-3">Execution Products</p>
+            </div>
+            <div class="products__preBottom"></div>
+            <p class="products__prePara">Automating the Supply Chain <span class="text-primary">Intelligent Solutions for Smarter Decisions.</span></p>
+          </div>
+        </div>
+        <div class="products__rhs">
+          <div class="products__listing">
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Order AI</p>
+              <p class="products__productPara">3SC’s Order AI module is designed to provide complete, end-to-end, actionable visibility alongside automation and intelligent business rules to capture, track, fulfill and manage customer orders.</p>
+            </div>
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Insights Al</p>
+              <p class="products__productPara">3SC’s Insights Al offers comprehensive logistics analysis of critical performance indicators and ground data in the last-mile delivery</p>
+            </div>
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Dispatch Al</p>
+              <p class="products__productPara">Dispatch Al is an intelligent dispatch planning tool offered by 3SC solution that enables enterprises to automate route optimization and scheduling process.</p>
+            </div>
+            <div class="products__product" data-aos="fade-in">
+              <p class="products__productTitle">Orchestration Al</p>
+              <p class="products__productPara">3SC’s Orchestration Al, aided by the power of advanced analytics, helps you with different simulations to evaluate logistical changes that you might bring into the supply chain process.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="container">
+        <h3 class="services__title">SERVICES</h3>
+        <div class="services__listing">
+          <div class="services__service">
+            <div class="service__pre" data-aos="fade-up">
+              <div class="d-flex align-items-center">
+                <img src="assets/svgs/icons8-cubes-64-orange.svg" class="service__preImg" />
+                <p class="service__preText ml-3">Analytics</p>
+              </div>
+              <div class="service__preBottom"></div>
+            </div>
+            <p class="service__para" data-aos="fade-up">Tap into the true potential <span class="text-primary">of your supply chain by turning your data into actionable insights</span> with 3SC’s Analytics.</p>
+          </div>
+          <div class="services__service">
+            <div class="service__pre" data-aos="fade-up">
+              <div class="d-flex align-items-center">
+                <img src="assets/svgs/icons8-cubes-64-orange.svg" class="service__preImg" />
+                <p class="service__preText ml-3">4PL</p>
+              </div>
+              <div class="service__preBottom"></div>
+            </div>
+            <p class="service__para" data-aos="fade-up">3SC’s <span class="text-primary">4PL services</span> provide you with complete <span class="text-primary">end-to-end visibility</span> for your supply chain operations, no matter the scale of your business.</p>
+          </div>
+          <div class="services__service">
+            <div class="service__pre" data-aos="fade-up">
+              <div class="d-flex align-items-center">
+                <img src="assets/svgs/icons8-cubes-64-orange.svg" class="service__preImg" />
+                <p class="service__preText ml-3">Control Tower</p>
+              </div>
+              <div class="service__preBottom"></div>
+            </div>
+            <p class="service__para" data-aos="fade-up">Be ready to <span class="text-primary">tackle supply chain disruption</span> by aligning stakeholders with your response action plan with 3SC’s Supply Chain Control Tower.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jquery & Bootstrap Bundle js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r118/three.min.js" integrity="sha512-ZoEQdcOJ16M20VnLaQxmZlthvLdTbF9CSAAyvZyzru+Em8NEY+7Xy0jdWdUjdOlo7hbPVmaobVBpUF9aqmXENA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./dist/js/libs/jquery-3.5.1.slim.min.js"></script>
+    <script src="./dist/js/libs/bootstrap.bundle.min.js"></script>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js" integrity="sha512-fTTVSuY9tLP+l/6c6vWz7uAQqd1rq3Q/GyKBN2jOZvJSLC5RjggSdboIFL1ox09/Ezx/AKwcv/xnDeYN9+iDDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- GSAP -->
+    <!-- <script src="js/libs/gsap.min.js"></script> -->
+    <!-- <script src="js/libs/ScrollTrigger.min.js"></script> -->
+    <!-- splitting js -->
+    <!-- <script src="js/libs/splitting.min.js"></script> -->
+    <!-- Swiper -->
+    <!-- <script src="js/timeline.js" type="module"></script> -->
+    <!-- lazysizes -->
+    <!-- <script src="js/libs/lazysizes.min.js"></script> -->
+    <!-- Custom main js -->
+    <script src="./dist/js/main.js"></script>
+    <!-- <script src="./js/animations.js"></script> -->
+    <script>
+      AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: "aos-init", // class applied after initialization
+        animatedClassName: "aos-animate", // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 200, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: "ease", // default easing for AOS animations
+        once: true, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+      });
+    </script>
+  </body>
+</html>

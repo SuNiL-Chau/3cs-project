@@ -1,0 +1,101 @@
+// Imports of libs & files
+@import "./variable";
+@import "./mixin";
+@import "./rfs";
+
+// !made bootstrap changes here
+@import "./bootstrap-customized";
+
+// body style
+body {
+  font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: $black_1;
+  font-size: $font_size_base;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  -moz-osx-font-smoothing: grayscale;
+  &.modal-open {
+    padding: 0 !important;
+  }
+}
+
+* {
+  transition: all 0.25s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  word-wrap: break-word;
+  word-break: normal;
+  text-overflow: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address {
+  margin-bottom: 0;
+}
+
+// img style
+img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+picture {
+  position: relative;
+  display: block;
+  // width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*:focus, *:focus-visible, *:focus-within {
+  outline: 0;
+}
+
+// components styles
+@import "./components/navbar";
+@import "./components/banner";
+@import "./components/header";
+@import "./components/content-section";
+@import "./components/figure";
+@import "./components/timeline";
+@import "./components/project-modal";
+@import "./components/pagination";
+@import "./components/woven-grid";
+@import "./components/footer";
+
+.animate-text {
+  display: inline-block;
+}
+
+.dd-f {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.text-primary {
+  color: $orange1 !important;
+}

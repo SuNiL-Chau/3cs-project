@@ -1,0 +1,61 @@
+// Font face goes here
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova extrabold'), local('proximanovaextrabold'),
+        url('../assets/fonts/proxima-nova/proximanovaextrabold.woff2') format('woff2'),
+        url('../assets/fonts/proxima-nova/proximanovaextrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova Semibold'), local('proximanovaSemibold'),
+        url('../assets/fonts/proxima-nova/proximanovaSemibold.woff2') format('woff2'),
+        url('../assets/fonts/proxima-nova/proximanovaSemibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova Medium'), local('proximanovaMedium'),
+        url('../assets/fonts/proxima-nova/proximanovaMedium.woff2') format('woff2'),
+        url('../assets/fonts/proxima-nova/proximanovaMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova regular'), local('proximanovaregular'),
+        url('../assets/fonts/proxima-nova/proximanovaregular.woff2') format('woff2'),
+        url('../assets/fonts/proxima-nova/proximanovaregular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova Bold'), local('proximanovaBold'),
+        url('../assets/fonts/proxima-nova/proximanovaBold.woff2') format('woff2'),
+        url('../assets/fonts/proxima-nova/proximanovaBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova Black'), local('proximanovaBlack'),
+        url('../assets/fonts/proxima-nova/proximanovaBlack.woff2') format('woff2'),
+        url('../assets/fonts/proxima-nova/proximanovaBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
