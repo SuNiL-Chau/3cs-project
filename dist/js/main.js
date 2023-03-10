@@ -220,4 +220,54 @@ function globeBtnClick(ele) {
   });
   ele.classList.add("-active");
 }
+// testimonials swiper
+var swiper = new Swiper(".testimonials__swiper", {
+  direction: "horizontal",
+  slidesPerView: 2,
+  spaceBetween: 60,
+  grabCursor: true,
+  autoplay: true
+});
+// testimonials swiper
+var swiper2 = new Swiper(".industries__swiper", {
+  direction: "horizontal",
+  slidesPerView: 5,
+  spaceBetween: 30,
+  grabCursor: true,
+  autoplay: true
+});
+
+// counter animation
+// Get all the counter elements
+var counterElements = document.querySelectorAll(".countings__stat");
+
+// Define the updateCount function
+function updateCount(countElement, count) {
+  countElement.textContent = count;
+}
+
+// Define the animateCount function
+function animateCount(countElement, startCount, targetCount, duration, interval) {
+  var count = startCount;
+  var increment = Math.ceil((targetCount - startCount) / (duration / interval));
+  var timer = setInterval(function () {
+    count += increment;
+    updateCount(countElement, count);
+    if (count >= targetCount) {
+      clearInterval(timer);
+      count = targetCount;
+      updateCount(countElement, count);
+    }
+  }, interval);
+}
+
+// Loop through each counter element and animate the count
+counterElements.forEach(function (counterElement) {
+  var startCount = 0;
+  var targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+  var duration = 3000;
+  var interval = Math.floor(duration / targetCount);
+  var countElement = counterElement.querySelector(".statCount");
+  animateCount(countElement, startCount, targetCount, duration, interval);
+});
 //# sourceMappingURL=main.js.map

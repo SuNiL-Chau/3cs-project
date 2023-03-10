@@ -210,7 +210,7 @@ var brainAnim = lottie.loadAnimation({
 function brainBtnClick(ele) {
   document.querySelectorAll(".platform__contentBrain + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
   ele.classList.add("-active");
-} 
+}
 // globe section
 var globeAnim = lottie.loadAnimation({
   container: document.querySelector(".platform__contentGlobe"),
@@ -223,4 +223,57 @@ var globeAnim = lottie.loadAnimation({
 function globeBtnClick(ele) {
   document.querySelectorAll(".platform__contentGlobe + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
   ele.classList.add("-active");
-} 
+}
+// testimonials swiper
+const swiper = new Swiper(".testimonials__swiper", {
+  direction: "horizontal",
+  slidesPerView: 2,
+  spaceBetween: 60,
+  grabCursor: true,
+  autoplay: true,
+});
+// testimonials swiper
+const swiper2 = new Swiper(".industries__swiper", {
+  direction: "horizontal",
+  slidesPerView: 5,
+  spaceBetween: 30,
+  grabCursor: true,
+  autoplay: true,
+});
+
+// counter animation
+// Get all the counter elements
+const counterElements = document.querySelectorAll(".countings__stat");
+
+// Define the updateCount function
+function updateCount(countElement, count) {
+  countElement.textContent = count;
+}
+
+// Define the animateCount function
+function animateCount(countElement, startCount, targetCount, duration, interval) {
+  let count = startCount;
+  const increment = Math.ceil((targetCount - startCount) / (duration / interval));
+
+  const timer = setInterval(() => {
+    count += increment;
+    updateCount(countElement, count);
+    if (count >= targetCount) {
+      clearInterval(timer);
+      count = targetCount;
+      updateCount(countElement, count);
+    }
+  }, interval);
+}
+
+// Loop through each counter element and animate the count
+counterElements.forEach((counterElement) => {
+  const startCount = 0;
+  const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+  const duration = 3000;
+  const interval = Math.floor(duration / targetCount);
+
+  const countElement = counterElement.querySelector(".statCount");
+
+  animateCount(countElement, startCount, targetCount, duration, interval);
+});
