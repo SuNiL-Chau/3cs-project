@@ -271,6 +271,25 @@ const swiper2 = new Swiper(".industries__swiper", {
     },
   },
 });
+// news swiper
+const swiper3 = new Swiper(".news__swiper", {
+  direction: "horizontal",
+  slidesPerView: 3,
+  spaceBetween: 30,
+  grabCursor: true,
+  autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+});
 
 // counter animation
 // Get all the counter elements
@@ -308,3 +327,30 @@ counterElements.forEach((counterElement) => {
 
   animateCount(countElement, startCount, targetCount, duration, interval);
 });
+
+window.onload = function () {
+  let formConfig = {
+    // class of the parent element where the error/success class is added
+    classTo: "form-group",
+    errorClass: "has-danger",
+    successClass: "has-success",
+    // class of the parent element where error text element is appended
+    errorTextParent: "form-group",
+    // type of element to create for the error text
+    errorTextTag: "div",
+    // class of the error text element
+    errorTextClass: "text-danger mt-2",
+  };
+
+  var form = document.getElementById("contact-form");
+
+  // create the pristine instance
+  var pristine = new Pristine(form, formConfig, true);
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // check if the form is valid
+    var valid = pristine.validate(); // returns true or false
+  });
+};

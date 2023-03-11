@@ -30,7 +30,7 @@
       font-weight: 500;
     }
   }
-  .dropdown-menu  {
+  .dropdown-menu {
     min-width: max-content;
   }
   .dropdown-item:hover {
@@ -39,6 +39,22 @@
   }
   .dropdown-toggle::after {
     content: none;
+  }
+  .requestBtn {
+    position: relative;
+    img {
+      position: absolute;
+      left: -13px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: -1;
+    }
+    &:focus {
+      box-shadow: none;
+      border-color: $white;
+      outline: none;
+    }
   }
 }
 
