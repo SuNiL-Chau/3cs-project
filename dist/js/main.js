@@ -22,73 +22,77 @@ document.addEventListener("mouseout", function (event) {
   }
 });
 
+// home cube lottie
+var brainAnim = lottie.loadAnimation({
+  container: document.querySelector("#homebannerCube"),
+  renderer: "svg",
+  path: "assets/lottie/cube.json",
+  autoplay: true,
+  loop: true
+});
 // three js cube home banner
-function homeCube() {
-  var canvas = document.getElementById("homebannerCube"); // <canvas> element from DOM
-  var renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    alpha: true
-  });
-  if (window.innerWidth <= 768) {
-    renderer.setSize(window.innerWidth, window.innerHeight); // set size of renderer to window width and height
-  } else {
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 1.25); // set size of renderer to window width and height
-  }
+// function homeCube() {
+//   const canvas = document.getElementById("homebannerCube"); // <canvas> element from DOM
+//   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+//   if (window.innerWidth <= 768) {
+//     renderer.setSize(window.innerWidth, window.innerHeight); // set size of renderer to window width and height
+//   } else {
+//     renderer.setSize(window.innerWidth / 2, window.innerHeight / 1.25); // set size of renderer to window width and height
+//   }
 
-  // Handle Perspective Camera to view frustum (camera is default looking down the -X axis with +Y)
-  var fov = 30;
-  var aspectRatio;
-  if (window.innerWidth <= 768) {
-    aspectRatio = window.innerWidth / window.innerHeight;
-  } else {
-    aspectRatio = window.innerWidth / 2 / (window.innerHeight / 1.25);
-  }
-  var near = 0.1;
-  var far = 1000;
-  var camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-  camera.position.z = 4;
+//   // Handle Perspective Camera to view frustum (camera is default looking down the -X axis with +Y)
+//   const fov = 30;
+//   var aspectRatio;
+//   if (window.innerWidth <= 768) {
+//     aspectRatio = window.innerWidth / window.innerHeight;
+//   } else {
+//     aspectRatio = window.innerWidth / 2 / (window.innerHeight / 1.25);
+//   }
+//   const near = 0.1;
+//   const far = 1000;
+//   const camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
+//   camera.position.z = 4;
 
-  // Create new Scene
-  var scene = new THREE.Scene();
-  {
-    var color = "#FFF";
-    var intensity = 0.8;
-    var light = new THREE.DirectionalLight(color, intensity);
-    light.position.set(-1, 2, 4);
-    scene.add(light);
-  }
+//   // Create new Scene
+//   const scene = new THREE.Scene();
 
-  // Handle Box Geometry
-  var boxWidth = 1;
-  var boxHeight = 1;
-  var boxDepth = 1;
-  var geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+//   {
+//     const color = "#FFF";
+//     const intensity = 0.8;
+//     const light = new THREE.DirectionalLight(color, intensity);
+//     light.position.set(-1, 2, 4);
+//     scene.add(light);
+//   }
 
-  // Create basic mesh material for box geometry
-  var material = new THREE.MeshPhongMaterial({
-    color: "#E35125"
-  });
+//   // Handle Box Geometry
+//   const boxWidth = 1;
+//   const boxHeight = 1;
+//   const boxDepth = 1;
+//   const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
-  // Create Cube (ie a new mesh with the box geometry and basic material for coloring the box)
-  var cube = new THREE.Mesh(geometry, material);
+//   // Create basic mesh material for box geometry
+//   const material = new THREE.MeshPhongMaterial({ color: "#E35125" });
 
-  // Add the cube to Scene
-  scene.add(cube);
+//   // Create Cube (ie a new mesh with the box geometry and basic material for coloring the box)
+//   const cube = new THREE.Mesh(geometry, material);
 
-  // Render the scene to canvas
-  renderer.render(scene, camera);
-  function renderCube(time) {
-    time *= 0.001; // convert time param to seconds
-    cube.rotation.x = time;
-    cube.rotation.y = time;
-    // Render the scene to canvas
-    renderer.render(scene, camera);
-    requestAnimationFrame(renderCube);
-  }
-  renderCube(5); // start the animation loop
-}
+//   // Add the cube to Scene
+//   scene.add(cube);
 
-homeCube();
+//   // Render the scene to canvas
+//   renderer.render(scene, camera);
+
+//   function renderCube(time) {
+//     time *= 0.001; // convert time param to seconds
+//     cube.rotation.x = time;
+//     cube.rotation.y = time;
+//     // Render the scene to canvas
+//     renderer.render(scene, camera);
+//     requestAnimationFrame(renderCube);
+//   }
+//   renderCube(5); // start the animation loop
+// }
+// homeCube();
 
 // platformsection
 function platformConnectingDots() {
@@ -192,6 +196,15 @@ function platformConnectingDots() {
 }
 platformConnectingDots();
 
+// globe section
+var globeAnim = lottie.loadAnimation({
+  container: document.querySelector(".platform__contentGlobe"),
+  renderer: "svg",
+  path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
+  autoplay: false,
+  loop: false
+});
+
 // brain section
 var brainAnim = lottie.loadAnimation({
   container: document.querySelector(".platform__contentBrain"),
@@ -206,14 +219,6 @@ function brainBtnClick(ele) {
   });
   ele.classList.add("-active");
 }
-// globe section
-var globeAnim = lottie.loadAnimation({
-  container: document.querySelector(".platform__contentGlobe"),
-  renderer: "svg",
-  path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
-  autoplay: false,
-  loop: false
-});
 function globeBtnClick(ele) {
   document.querySelectorAll(".platform__contentGlobe + .platform__contentBtns .platform__contentBtn").forEach(function (btn) {
     return btn.classList.remove("-active");
@@ -226,7 +231,18 @@ var swiper = new Swiper(".testimonials__swiper", {
   slidesPerView: 2,
   spaceBetween: 60,
   grabCursor: true,
-  autoplay: true
+  autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    }
+  }
 });
 // testimonials swiper
 var swiper2 = new Swiper(".industries__swiper", {
@@ -234,7 +250,18 @@ var swiper2 = new Swiper(".industries__swiper", {
   slidesPerView: 5,
   spaceBetween: 30,
   grabCursor: true,
-  autoplay: true
+  autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: "auto",
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 20
+    }
+  }
 });
 
 // counter animation

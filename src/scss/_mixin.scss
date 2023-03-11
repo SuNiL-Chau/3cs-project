@@ -21,6 +21,11 @@
             @content;
         }
     }
+    @if ($breakpoint == 'mdl') {
+        @media screen and (max-width: 768px) {
+            @content;
+        }
+    }
     @if ($breakpoint == 'lg') {
         @media screen and (min-width: 992px) {
             @content;

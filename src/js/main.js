@@ -22,69 +22,77 @@ document.addEventListener("mouseout", (event) => {
   }
 });
 
+// home cube lottie
+var brainAnim = lottie.loadAnimation({
+  container: document.querySelector("#homebannerCube"),
+  renderer: "svg",
+  path: "assets/lottie/cube.json",
+  autoplay: true,
+  loop: true,
+});
 // three js cube home banner
-function homeCube() {
-  const canvas = document.getElementById("homebannerCube"); // <canvas> element from DOM
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-  if (window.innerWidth <= 768) {
-    renderer.setSize(window.innerWidth, window.innerHeight); // set size of renderer to window width and height
-  } else {
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 1.25); // set size of renderer to window width and height
-  }
+// function homeCube() {
+//   const canvas = document.getElementById("homebannerCube"); // <canvas> element from DOM
+//   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+//   if (window.innerWidth <= 768) {
+//     renderer.setSize(window.innerWidth, window.innerHeight); // set size of renderer to window width and height
+//   } else {
+//     renderer.setSize(window.innerWidth / 2, window.innerHeight / 1.25); // set size of renderer to window width and height
+//   }
 
-  // Handle Perspective Camera to view frustum (camera is default looking down the -X axis with +Y)
-  const fov = 30;
-  var aspectRatio;
-  if (window.innerWidth <= 768) {
-    aspectRatio = window.innerWidth / window.innerHeight;
-  } else {
-    aspectRatio = window.innerWidth / 2 / (window.innerHeight / 1.25);
-  }
-  const near = 0.1;
-  const far = 1000;
-  const camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-  camera.position.z = 4;
+//   // Handle Perspective Camera to view frustum (camera is default looking down the -X axis with +Y)
+//   const fov = 30;
+//   var aspectRatio;
+//   if (window.innerWidth <= 768) {
+//     aspectRatio = window.innerWidth / window.innerHeight;
+//   } else {
+//     aspectRatio = window.innerWidth / 2 / (window.innerHeight / 1.25);
+//   }
+//   const near = 0.1;
+//   const far = 1000;
+//   const camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
+//   camera.position.z = 4;
 
-  // Create new Scene
-  const scene = new THREE.Scene();
+//   // Create new Scene
+//   const scene = new THREE.Scene();
 
-  {
-    const color = "#FFF";
-    const intensity = 0.8;
-    const light = new THREE.DirectionalLight(color, intensity);
-    light.position.set(-1, 2, 4);
-    scene.add(light);
-  }
+//   {
+//     const color = "#FFF";
+//     const intensity = 0.8;
+//     const light = new THREE.DirectionalLight(color, intensity);
+//     light.position.set(-1, 2, 4);
+//     scene.add(light);
+//   }
 
-  // Handle Box Geometry
-  const boxWidth = 1;
-  const boxHeight = 1;
-  const boxDepth = 1;
-  const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+//   // Handle Box Geometry
+//   const boxWidth = 1;
+//   const boxHeight = 1;
+//   const boxDepth = 1;
+//   const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
 
-  // Create basic mesh material for box geometry
-  const material = new THREE.MeshPhongMaterial({ color: "#E35125" });
+//   // Create basic mesh material for box geometry
+//   const material = new THREE.MeshPhongMaterial({ color: "#E35125" });
 
-  // Create Cube (ie a new mesh with the box geometry and basic material for coloring the box)
-  const cube = new THREE.Mesh(geometry, material);
+//   // Create Cube (ie a new mesh with the box geometry and basic material for coloring the box)
+//   const cube = new THREE.Mesh(geometry, material);
 
-  // Add the cube to Scene
-  scene.add(cube);
+//   // Add the cube to Scene
+//   scene.add(cube);
 
-  // Render the scene to canvas
-  renderer.render(scene, camera);
+//   // Render the scene to canvas
+//   renderer.render(scene, camera);
 
-  function renderCube(time) {
-    time *= 0.001; // convert time param to seconds
-    cube.rotation.x = time;
-    cube.rotation.y = time;
-    // Render the scene to canvas
-    renderer.render(scene, camera);
-    requestAnimationFrame(renderCube);
-  }
-  renderCube(5); // start the animation loop
-}
-homeCube();
+//   function renderCube(time) {
+//     time *= 0.001; // convert time param to seconds
+//     cube.rotation.x = time;
+//     cube.rotation.y = time;
+//     // Render the scene to canvas
+//     renderer.render(scene, camera);
+//     requestAnimationFrame(renderCube);
+//   }
+//   renderCube(5); // start the animation loop
+// }
+// homeCube();
 
 // platformsection
 function platformConnectingDots() {
@@ -198,6 +206,15 @@ function platformConnectingDots() {
 }
 platformConnectingDots();
 
+// globe section
+var globeAnim = lottie.loadAnimation({
+  container: document.querySelector(".platform__contentGlobe"),
+  renderer: "svg",
+  path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
+  autoplay: false,
+  loop: false,
+});
+
 // brain section
 var brainAnim = lottie.loadAnimation({
   container: document.querySelector(".platform__contentBrain"),
@@ -211,14 +228,6 @@ function brainBtnClick(ele) {
   document.querySelectorAll(".platform__contentBrain + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
   ele.classList.add("-active");
 }
-// globe section
-var globeAnim = lottie.loadAnimation({
-  container: document.querySelector(".platform__contentGlobe"),
-  renderer: "svg",
-  path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
-  autoplay: false,
-  loop: false,
-});
 
 function globeBtnClick(ele) {
   document.querySelectorAll(".platform__contentGlobe + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
@@ -231,6 +240,17 @@ const swiper = new Swiper(".testimonials__swiper", {
   spaceBetween: 60,
   grabCursor: true,
   autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+  },
 });
 // testimonials swiper
 const swiper2 = new Swiper(".industries__swiper", {
@@ -239,6 +259,17 @@ const swiper2 = new Swiper(".industries__swiper", {
   spaceBetween: 30,
   grabCursor: true,
   autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+  },
 });
 
 // counter animation

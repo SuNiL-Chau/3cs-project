@@ -15,6 +15,22 @@
       top: 0;
       right: 0;
       z-index: -1;
+      overflow: hidden;
+      svg,
+      canvas {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(25%) !important;
+        @include media-bp(mdl) {
+          transform: translateX(-21%) !important;
+          width: 180% !important;
+        }
+      }
     }
     &__content {
       align-self: center;
@@ -112,7 +128,7 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      @include media-bp(xs) {
+      @include media-bp(mdl) {
         row-gap: 30px;
       }
     }
@@ -126,7 +142,7 @@
       @include padding-right(40px);
       &:not(:first-child) {
         border-left: 1px solid $white;
-        @include media-bp(xs) {
+        @include media-bp(mdl) {
           border: none;
         }
       }
@@ -136,7 +152,7 @@
         letter-spacing: normal;
         line-height: toRem(98);
         color: $white;
-        @include media-bp(xs) {
+        @include media-bp(mdl) {
           line-height: 1.15;
         }
       }
@@ -171,7 +187,7 @@
       line-height: toRem(42);
       font-weight: 500;
       color: $orange1;
-      @include media-bp(xs) {
+      @include media-bp(mdl) {
         margin-bottom: 30px;
       }
     }
@@ -219,7 +235,7 @@
         &Brain,
         &Globe {
           width: calc(60% - 30px);
-          @include media-bp(xs) {
+          @include media-bp(mdl) {
             width: 100%;
           }
         }
@@ -228,7 +244,7 @@
           display: flex;
           flex-direction: column;
           gap: 30px;
-          @include media-bp(xs) {
+          @include media-bp(mdl) {
             width: 100%;
           }
         }
@@ -252,7 +268,7 @@
           }
         }
       }
-      @include media-bp(xs) {
+      @include media-bp(mdl) {
         &:last-child {
           .platform__content {
             padding-bottom: 0;
@@ -360,13 +376,13 @@
         position: sticky;
         top: 140px;
       }
-      @include media-bp(xs) {
+      @include media-bp(mdl) {
         width: 100%;
       }
     }
     &__rhs {
       width: calc(40% - 30px);
-      @include media-bp(xs) {
+      @include media-bp(mdl) {
         width: 100%;
       }
     }
@@ -459,7 +475,8 @@
       }
     }
   }
-  .testimonials, .industries {
+  .testimonials,
+  .industries, .news {
     background-color: $black_1;
     @include padding-top(130px);
     @include padding-bottom(130px);
@@ -501,7 +518,8 @@
   }
   .countings {
     background-color: $white;
-    &::before, &::after {
+    &::before,
+    &::after {
       content: none;
     }
     &__stat {
@@ -542,6 +560,18 @@
       }
     }
   }
+  .news {
+    background-color: $white;
+    &__slide {
+      &Date {
+        color: $orange1;
+        @include rfs(26px);
+        line-height: 1.2;
+        letter-spacing: normal;
+        font-weight: 600;
+      }
+    }
+  }
 }
 @keyframes arrowDown {
   0% {
@@ -559,18 +589,5 @@
   100% {
     opacity: 1;
     transform: translateY(0%);
-  }
-}
-
-@include media-bp(xs) {
-  .home {
-  }
-}
-@include media-bp(tablet) {
-  .home {
-  }
-}
-@include media-bp(tablet_L) {
-  .home {
   }
 }
