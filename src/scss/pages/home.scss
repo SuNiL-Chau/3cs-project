@@ -474,6 +474,10 @@
         width: 100%;
       }
     }
+    &__lottie {
+      position: sticky;
+      top: 140px;
+    }
   }
   .testimonials,
   .industries,
@@ -820,6 +824,7 @@
       margin-top: 10px;
     }
   }
+
 }
 @keyframes arrowDown {
   0% {
