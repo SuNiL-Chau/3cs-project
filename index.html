@@ -70,7 +70,8 @@
           </div>
         </div>
         <!-- <canvas id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></canvas> -->
-        <div id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></div>
+        <lottie-player id="homeLottie" class="homebanner__canvas" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.8"></lottie-player>
+        <!-- <div id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></div> -->
         <button type="button" class="homebanner__scroll" data-aos="fade-in">
           <p class="homebanner__scrollText">SCROLL DOWN</p>
           <svg class="homebanner__scrollImg" width="17px" height="17px" xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 50 50">
@@ -116,7 +117,9 @@
           </div>
           <p class="platform__para" data-aos="fade-up"><span class="text-primary">A smart all-in-one platform</span> which facilitates you to build and track strong ultra-modern platforms that drive <span class="text-primary">profitability, improve efficiency</span> and operate on <span class="text-primary">sustainability.</span></p>
           <div class="platform__content">
-            <div class="platform__contentBrain" data-aos="fade-in"></div>
+            <div class="platform__contentBrain" data-aos="fade-in">
+              <lottie-player id="scaiLottie" src="assets/lottie/itms.json" autoplay loop style="width: 400px; height: 400px"></lottie-player>
+            </div>
             <div class="platform__contentBtns">
               <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="brainBtnClick(this);brainAnim.playSegments([0, 42], true);">
                 <p class="platform__contentBtnTxt">Integrated Business <br />Planning Platform</p>
@@ -141,7 +144,9 @@
           </div>
           <p class="platform__para" data-aos="fade-up">An <span class="text-primary">intelligent transportation platform</span> that enables the management of the E2E shipment lifecycle of transportation and distribution.</p>
           <div class="platform__content">
-            <div class="platform__contentGlobe"></div>
+            <div class="platform__contentGlobe">
+              <lottie-player id="itmsLottie" src="assets/lottie/itms.json" autoplay loop style="width: 400px; height: 400px"></lottie-player>
+            </div>
             <div class="platform__contentBtns">
               <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100" onclick="globeBtnClick(this);globeAnim.playSegments([0, 75], true);">
                 <p class="platform__contentBtnTxt">Order AI</p>
@@ -181,6 +186,12 @@
             <p class="products__prePara">AI-Powered Supply Chain Management <span class="text-primary">Optimize Your Business with Ease.</span></p>
           </div>
         </div>
+        <div class="products__rhs"></div>
+      </div>
+      <div class="container products__content -planningLottieContainer">
+        <div class="products__lhs">
+          <lottie-player id="planningLottie" src="assets/lottie/planing-product.json" style="width: 100%; height: auto"></lottie-player>
+        </div>
         <div class="products__rhs">
           <div class="products__listing">
             <div class="products__product" data-aos="fade-in">
@@ -212,6 +223,12 @@
             <div class="products__preBottom"></div>
             <p class="products__prePara">Automating the Supply Chain <span class="text-primary">Intelligent Solutions for Smarter Decisions.</span></p>
           </div>
+        </div>
+        <div class="products__rhs"></div>
+      </div>
+      <div class="container products__content -executionLottieContainer">
+        <div class="products__lhs">
+          <lottie-player id="executionLottie" src="assets/lottie/planing-product.json" style="width: 100%; height: auto"></lottie-player>
         </div>
         <div class="products__rhs">
           <div class="products__listing">
@@ -277,7 +294,7 @@
             </div>
             <div class="col-12 col-md-5">
               <div class="services__lottie">
-                <lottie-player id="firstLottie" src="assets/lottie/service.json" style="width: 400px; height: 400px"></lottie-player>
+                <lottie-player id="servicesLottie" src="assets/lottie/service.json" style="width: 400px; height: 400px"></lottie-player>
               </div>
             </div>
           </div>
@@ -546,7 +563,6 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- lottie -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js" integrity="sha512-fTTVSuY9tLP+l/6c6vWz7uAQqd1rq3Q/GyKBN2jOZvJSLC5RjggSdboIFL1ox09/Ezx/AKwcv/xnDeYN9+iDDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
 
@@ -585,20 +601,6 @@
         once: true, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-      });
-    </script>
-    <script>
-      LottieInteractivity.create({
-        player: "#firstLottie",
-        mode: "scroll",
-        container: ".services",
-        actions: [
-          {
-            visibility: [0.15, 1.0],
-            type: "seek",
-            frames: [0, 480],
-          },
-        ],
       });
     </script>
   </body>

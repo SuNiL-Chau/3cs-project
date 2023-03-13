@@ -22,14 +22,6 @@ document.addEventListener("mouseout", (event) => {
   }
 });
 
-// home cube lottie
-var brainAnim = lottie.loadAnimation({
-  container: document.querySelector("#homebannerCube"),
-  renderer: "svg",
-  path: "assets/lottie/cube.json",
-  autoplay: true,
-  loop: true,
-});
 // three js cube home banner
 // function homeCube() {
 //   const canvas = document.getElementById("homebannerCube"); // <canvas> element from DOM
@@ -207,32 +199,34 @@ function platformConnectingDots() {
 platformConnectingDots();
 
 // globe section
-var globeAnim = lottie.loadAnimation({
-  container: document.querySelector(".platform__contentGlobe"),
-  renderer: "svg",
-  path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
-  autoplay: false,
-  loop: false,
-});
+// var globeAnim = lottie.loadAnimation({
+//   container: document.querySelector(".platform__contentGlobe"),
+//   renderer: "svg",
+//   path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
+//   autoplay: false,
+//   loop: false,
+// });
 
-// brain section
-var brainAnim = lottie.loadAnimation({
-  container: document.querySelector(".platform__contentBrain"),
-  renderer: "svg",
-  path: "https://assets2.lottiefiles.com/packages/lf20_bcop55ma.json",
-  autoplay: false,
-  loop: false,
-});
+// // brain section
+// var brainAnim = lottie.loadAnimation({
+//   container: document.querySelector(".platform__contentBrain"),
+//   renderer: "svg",
+//   path: "https://assets2.lottiefiles.com/packages/lf20_bcop55ma.json",
+//   autoplay: false,
+//   loop: false,
+// });
 
-function brainBtnClick(ele) {
-  document.querySelectorAll(".platform__contentBrain + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
-  ele.classList.add("-active");
-}
+// function brainBtnClick(ele) {
+//   document.querySelectorAll(".platform__contentBrain + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
+//   ele.classList.add("-active");
+// }
 
-function globeBtnClick(ele) {
-  document.querySelectorAll(".platform__contentGlobe + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
-  ele.classList.add("-active");
-}
+// function globeBtnClick(ele) {
+//   document.querySelectorAll(".platform__contentGlobe + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
+//   ele.classList.add("-active");
+// }
+
+
 // testimonials swiper
 const swiper = new Swiper(".testimonials__swiper", {
   direction: "horizontal",
@@ -252,7 +246,11 @@ const swiper = new Swiper(".testimonials__swiper", {
     },
   },
 });
-// testimonials swiper
+
+var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
+testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px";
+
+// industries swiper
 const swiper2 = new Swiper(".industries__swiper", {
   direction: "horizontal",
   slidesPerView: 5,
@@ -354,3 +352,41 @@ window.onload = function () {
     var valid = pristine.validate(); // returns true or false
   });
 };
+
+
+LottieInteractivity.create({
+  player: "#servicesLottie",
+  mode: "scroll",
+  container: ".services",
+  actions: [
+    {
+      visibility: [0.15, 1.0],
+      type: "seek",
+      frames: [0, 480],
+    },
+  ],
+});
+LottieInteractivity.create({
+  player: "#planningLottie",
+  mode: "scroll",
+  container: ".-planningLottieContainer",
+  actions: [
+    {
+      visibility: [0.1, 1.0],
+      type: "seek",
+      frames: [0, 176],
+    },
+  ],
+});
+LottieInteractivity.create({
+  player: "#executionLottie",
+  mode: "scroll",
+  container: ".-executionLottieContainer",
+  actions: [
+    {
+      visibility: [0.1, 1.0],
+      type: "seek",
+      frames: [0, 176],
+    },
+  ],
+});
