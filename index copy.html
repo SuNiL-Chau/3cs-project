@@ -276,9 +276,7 @@
               </div>
             </div>
             <div class="col-12 col-md-5">
-              <div class="services__lottie">
-                <lottie-player id="firstLottie" src="assets/lottie/service.json" style="width: 400px; height: 400px"></lottie-player>
-              </div>
+              <div class="services__lottie"></div>
             </div>
           </div>
         </div>
@@ -546,10 +544,7 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- lottie -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js" integrity="sha512-fTTVSuY9tLP+l/6c6vWz7uAQqd1rq3Q/GyKBN2jOZvJSLC5RjggSdboIFL1ox09/Ezx/AKwcv/xnDeYN9+iDDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js" integrity="sha512-fTTVSuY9tLP+l/6c6vWz7uAQqd1rq3Q/GyKBN2jOZvJSLC5RjggSdboIFL1ox09/Ezx/AKwcv/xnDeYN9+iDDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./dist/js/libs/pristine.js"></script>
@@ -587,19 +582,182 @@
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
       });
     </script>
+
     <script>
-      LottieInteractivity.create({
-        player: "#firstLottie",
-        mode: "scroll",
-        container: ".services",
-        actions: [
-          {
-            visibility: [0.1, 1.0],
-            type: "seek",
-            frames: [100, 480],
-          },
-        ],
+      // SVG
+      function debounce(func, delay) {
+        let timeoutId;
+        return function () {
+          const context = this;
+          const args = arguments;
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => func.apply(context, args), delay);
+        };
+      }
+
+      const lottieRef = document.querySelector(".services__lottie");
+
+      const anim = lottie.loadAnimation({
+        container: lottieRef,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "assets/lottie/service.json",
       });
+
+      let animDuration = 10000;
+
+      anim.addEventListener("data_ready", () => {
+        animDuration = anim.getDuration(true);
+        anim.setLocationHref(window.location.href);
+      });
+
+      function animatebodymovin() {
+        const lottieRect = lottieRef.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+
+        // Calculate the position of the center of the animation container
+        const containerCenterY = lottieRect.top + lottieRect.height / 2;
+
+        // Calculate the distance of the center of the container from the center of the viewport
+        const distanceFromViewportCenter = containerCenterY - viewportHeight / 2;
+
+        // Calculate the percentage of the animation that should be played
+        const percentagePlayed = distanceFromViewportCenter / (viewportHeight / 2);
+
+        // Calculate the total duration of the animation based on its frames per second and total number of frames
+        const animDurationInSeconds = anim.totalFrames / anim.frameRate;
+
+        // Calculate the time taken to scroll the animation container into view
+        const timeToScrollIntoViewInSeconds = (Math.abs(distanceFromViewportCenter) / (viewportHeight / 2)) * animDurationInSeconds;
+
+        // Adjust the animDuration value based on the time taken to scroll into view
+        const adjustedDuration = animDurationInSeconds - timeToScrollIntoViewInSeconds;
+
+        // Calculate the frame based on the adjusted duration and the total number of frames
+        const frame = anim.totalFrames * (adjustedDuration / animDurationInSeconds);
+
+        // Set the animation duration to the adjusted duration
+        animDuration = adjustedDuration;
+        console.log("frame: ", frame);
+
+        anim.goToAndStop(frame, true);
+      }
+
+      const onScroll = () => {
+        console.log("Scrolling");
+        animatebodymovin(animDuration);
+      };
+
+      const debouncedOnScroll = debounce(onScroll, 200);
+      document.addEventListener("scroll", debouncedOnScroll);
+
+      window.addEventListener("unload", () => {
+        anim.destroy();
+        document.removeEventListener("scroll", onScroll);
+      });
+
+      // -----------------------------------------------
+      // const lottieRef = document.querySelector(".services__lottie");
+
+      // const anim = lottie.loadAnimation({
+      //   container: lottieRef,
+      //   renderer: "svg",
+      //   loop: false,
+      //   autoplay: false,
+      //   path: "assets/lottie/service.json",
+      // });
+
+      // let animDuration = 10000;
+
+      // anim.addEventListener("data_ready", () => {
+      //   animDuration = anim.getDuration(true);
+      // });
+
+      // function animatebodymovin() {
+      //   const lottieRect = lottieRef.getBoundingClientRect();
+      //   const viewportHeight = window.innerHeight;
+      //   const scrollPosition = window.scrollY;
+
+      //   // Calculate the position of the center of the animation container
+      //   const containerCenterY = lottieRect.top + lottieRect.height / 2;
+
+      //   // Calculate the distance of the center of the container from the center of the viewport
+      //   const distanceFromViewportCenter = containerCenterY - viewportHeight / 2;
+
+      //   // Calculate the percentage of the animation that should be played
+      //   const percentagePlayed = distanceFromViewportCenter / (viewportHeight / 2);
+
+      //   // Calculate the total duration of the animation based on its frames per second and total number of frames
+      //   const animDurationInSeconds = anim.totalFrames / anim.frameRate;
+
+      //   // Calculate the time taken to scroll the animation container into view
+      //   const timeToScrollIntoViewInSeconds = (Math.abs(distanceFromViewportCenter) / (viewportHeight / 2)) * animDurationInSeconds;
+
+      //   // Adjust the animDuration value based on the time taken to scroll into view
+      //   const adjustedDuration = animDurationInSeconds - timeToScrollIntoViewInSeconds;
+
+      //   // Calculate the frame based on the adjusted duration and the total number of frames
+      //   const frame = anim.totalFrames * (adjustedDuration / animDurationInSeconds);
+
+      //   anim.goToAndStop(frame, true);
+      // }
+
+      // // function animatebodymovin(duration) {
+      // //   const lottieRect = lottieRef.closest("section").getBoundingClientRect();
+      // //   const viewportHeight = window.innerHeight;
+      // //   const scrollPosition = window.scrollY;
+
+      // //   // Calculate the position of the center of the animation container
+      // //   const containerCenterY = lottieRect.top + lottieRect.height / 2;
+
+      // //   // Calculate the distance of the center of the container from the center of the viewport
+      // //   const distanceFromViewportCenter = containerCenterY - viewportHeight / 2;
+
+      // //   // Calculate the percentage of the animation that should be played
+      // //   const percentagePlayed = distanceFromViewportCenter / (viewportHeight / 2);
+
+      // //   // Calculate the frame based on the percentage played and the total number of frames
+      // //   const frame = anim.totalFrames * percentagePlayed;
+
+      // //   anim.goToAndStop(frame, true);
+      // // }
+
+      // const onScroll = () => {
+      //   console.log("Scrolling");
+      //   animatebodymovin(animDuration);
+      // };
+
+      // document.addEventListener("scroll", onScroll);
+
+      // window.addEventListener("unload", () => {
+      //   anim.destroy();
+      //   document.removeEventListener("scroll", onScroll);
+      // });
+
+      // -----------------------------------------------
+      // !! working but not properly
+      // function isElementInViewport(element) {
+      //   const rect = element.getBoundingClientRect();
+      //   return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+      // }
+
+      // function playAnimation() {
+      //   const frames = animation.getDuration(true);
+      //   const percentage = window.scrollY / (document.body.clientHeight - window.innerHeight);
+      //   const frameToPlay = Math.floor(percentage * frames);
+      //   console.log("total frames: ", frames);
+      //   console.log("total percentage: ", percentage);
+      //   console.log("frameToPlay: ", frameToPlay);
+      //   animation.goToAndStop(frameToPlay, true);
+      // }
+
+      // window.addEventListener("scroll", function () {
+      //   if (isElementInViewport(animationContainer)) {
+      //     playAnimation();
+      //   }
+      // });
     </script>
   </body>
 </html>
