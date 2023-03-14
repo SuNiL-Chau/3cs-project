@@ -22,199 +22,117 @@ document.addEventListener("mouseout", function (event) {
   }
 });
 
-// three js cube home banner
-// function homeCube() {
-//   const canvas = document.getElementById("homebannerCube"); // <canvas> element from DOM
-//   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-//   if (window.innerWidth <= 768) {
-//     renderer.setSize(window.innerWidth, window.innerHeight); // set size of renderer to window width and height
-//   } else {
-//     renderer.setSize(window.innerWidth / 2, window.innerHeight / 1.25); // set size of renderer to window width and height
-//   }
-
-//   // Handle Perspective Camera to view frustum (camera is default looking down the -X axis with +Y)
-//   const fov = 30;
-//   var aspectRatio;
-//   if (window.innerWidth <= 768) {
-//     aspectRatio = window.innerWidth / window.innerHeight;
-//   } else {
-//     aspectRatio = window.innerWidth / 2 / (window.innerHeight / 1.25);
-//   }
-//   const near = 0.1;
-//   const far = 1000;
-//   const camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
-//   camera.position.z = 4;
-
-//   // Create new Scene
-//   const scene = new THREE.Scene();
-
-//   {
-//     const color = "#FFF";
-//     const intensity = 0.8;
-//     const light = new THREE.DirectionalLight(color, intensity);
-//     light.position.set(-1, 2, 4);
-//     scene.add(light);
-//   }
-
-//   // Handle Box Geometry
-//   const boxWidth = 1;
-//   const boxHeight = 1;
-//   const boxDepth = 1;
-//   const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
-
-//   // Create basic mesh material for box geometry
-//   const material = new THREE.MeshPhongMaterial({ color: "#E35125" });
-
-//   // Create Cube (ie a new mesh with the box geometry and basic material for coloring the box)
-//   const cube = new THREE.Mesh(geometry, material);
-
-//   // Add the cube to Scene
-//   scene.add(cube);
-
-//   // Render the scene to canvas
-//   renderer.render(scene, camera);
-
-//   function renderCube(time) {
-//     time *= 0.001; // convert time param to seconds
-//     cube.rotation.x = time;
-//     cube.rotation.y = time;
-//     // Render the scene to canvas
-//     renderer.render(scene, camera);
-//     requestAnimationFrame(renderCube);
-//   }
-//   renderCube(5); // start the animation loop
-// }
-// homeCube();
-
 // platformsection
-function platformConnectingDots() {
-  var canvas = document.getElementById("platforms__canvas"),
-    ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  var stars = [],
-    // Array that contains the stars
-    FPS = 60,
-    // Frames per second
-    x = 100,
-    // Number of stars
-    mouse = {
-      x: 0,
-      y: 0
-    }; // mouse location
+// function platformConnectingDots() {
+//   var canvas = document.getElementById("platforms__canvas"),
+//     ctx = canvas.getContext("2d");
 
-  // Push stars to array
+//   canvas.width = window.innerWidth;
+//   canvas.height = window.innerHeight;
 
-  for (var i = 0; i < x; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 1 + 1,
-      vx: Math.floor(Math.random() * 50) - 25,
-      vy: Math.floor(Math.random() * 50) - 25
-    });
-  }
+//   var stars = [], // Array that contains the stars
+//     FPS = 60, // Frames per second
+//     x = 100, // Number of stars
+//     mouse = {
+//       x: 0,
+//       y: 0,
+//     }; // mouse location
 
-  // Draw the scene
+//   // Push stars to array
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.globalCompositeOperation = "lighter";
-    for (var i = 0, x = stars.length; i < x; i++) {
-      var s = stars[i];
+//   for (var i = 0; i < x; i++) {
+//     stars.push({
+//       x: Math.random() * canvas.width,
+//       y: Math.random() * canvas.height,
+//       radius: Math.random() * 1 + 1,
+//       vx: Math.floor(Math.random() * 50) - 25,
+//       vy: Math.floor(Math.random() * 50) - 25,
+//     });
+//   }
 
-      // ctx.fillStyle = "#fff";
-      ctx.fillStyle = "#8B8B8B29";
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
-      ctx.fill();
-      // ctx.fillStyle = "black";
-      ctx.fillStyle = "#8B8B8B29";
-      // ctx.fillStyle = "white";
-      ctx.stroke();
-    }
-    ctx.beginPath();
-    for (var i = 0, x = stars.length; i < x; i++) {
-      var starI = stars[i];
-      ctx.moveTo(starI.x, starI.y);
-      if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
-      for (var j = 0, x = stars.length; j < x; j++) {
-        var starII = stars[j];
-        if (distance(starI, starII) < 150) {
-          //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
-          ctx.lineTo(starII.x, starII.y);
-        }
-      }
-    }
-    ctx.lineWidth = 0.05;
-    // ctx.strokeStyle = "white";
-    ctx.strokeStyle = "#D1D1D1";
-    ctx.stroke();
-  }
-  function distance(point1, point2) {
-    var xs = 0;
-    var ys = 0;
-    xs = point2.x - point1.x;
-    xs = xs * xs;
-    ys = point2.y - point1.y;
-    ys = ys * ys;
-    return Math.sqrt(xs + ys);
-  }
+//   // Draw the scene
 
-  // Update star locations
+//   function draw() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  function update() {
-    for (var i = 0, x = stars.length; i < x; i++) {
-      var s = stars[i];
-      s.x += s.vx / FPS;
-      s.y += s.vy / FPS;
-      if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
-      if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
-    }
-  }
-  canvas.addEventListener("mousemove", function (e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
+//     ctx.globalCompositeOperation = "lighter";
 
-  // Update and draw
+//     for (var i = 0, x = stars.length; i < x; i++) {
+//       var s = stars[i];
 
-  function tick() {
-    draw();
-    update();
-    requestAnimationFrame(tick);
-  }
-  tick();
-}
-platformConnectingDots();
+//       // ctx.fillStyle = "#fff";
+//       ctx.fillStyle = "#00000080";
+//       ctx.beginPath();
+//       ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+//       ctx.fill();
+//       // ctx.fillStyle = "black";
+//       ctx.fillStyle = "#00000080";
+//       // ctx.fillStyle = "white";
+//       ctx.stroke();
+//     }
 
-// globe section
-// var globeAnim = lottie.loadAnimation({
-//   container: document.querySelector(".platform__contentGlobe"),
-//   renderer: "svg",
-//   path: "https://assets4.lottiefiles.com/packages/lf20_BjrVvLJexx.json",
-//   autoplay: false,
-//   loop: false,
-// });
+//     ctx.beginPath();
+//     for (var i = 0, x = stars.length; i < x; i++) {
+//       var starI = stars[i];
+//       ctx.moveTo(starI.x, starI.y);
+//       if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
+//       for (var j = 0, x = stars.length; j < x; j++) {
+//         var starII = stars[j];
+//         if (distance(starI, starII) < 150) {
+//           //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
+//           ctx.lineTo(starII.x, starII.y);
+//         }
+//       }
+//     }
+//     ctx.lineWidth = 0.05;
+//     // ctx.strokeStyle = "white";
+//     ctx.strokeStyle = "#D1D1D1";
+//     ctx.stroke();
+//   }
 
-// // brain section
-// var brainAnim = lottie.loadAnimation({
-//   container: document.querySelector(".platform__contentBrain"),
-//   renderer: "svg",
-//   path: "https://assets2.lottiefiles.com/packages/lf20_bcop55ma.json",
-//   autoplay: false,
-//   loop: false,
-// });
+//   function distance(point1, point2) {
+//     var xs = 0;
+//     var ys = 0;
 
-// function brainBtnClick(ele) {
-//   document.querySelectorAll(".platform__contentBrain + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
-//   ele.classList.add("-active");
+//     xs = point2.x - point1.x;
+//     xs = xs * xs;
+
+//     ys = point2.y - point1.y;
+//     ys = ys * ys;
+
+//     return Math.sqrt(xs + ys);
+//   }
+
+//   // Update star locations
+
+//   function update() {
+//     for (var i = 0, x = stars.length; i < x; i++) {
+//       var s = stars[i];
+
+//       s.x += s.vx / FPS;
+//       s.y += s.vy / FPS;
+
+//       if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
+//       if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
+//     }
+//   }
+
+//   canvas.addEventListener("mousemove", function (e) {
+//     mouse.x = e.clientX;
+//     mouse.y = e.clientY;
+//   });
+
+//   // Update and draw
+
+//   function tick() {
+//     draw();
+//     update();
+//     requestAnimationFrame(tick);
+//   }
+
+//   tick();
 // }
-
-// function globeBtnClick(ele) {
-//   document.querySelectorAll(".platform__contentGlobe + .platform__contentBtns .platform__contentBtn").forEach((btn) => btn.classList.remove("-active"));
-//   ele.classList.add("-active");
-// }
+// platformConnectingDots();
 
 // testimonials swiper
 var swiper = new Swiper(".testimonials__swiper", {
@@ -277,39 +195,43 @@ var swiper3 = new Swiper(".news__swiper", {
   }
 });
 
-// counter animation
-// Get all the counter elements
-var counterElements = document.querySelectorAll(".countings__stat");
+// // counter animation
+// // Get all the counter elements
+// const counterElements = document.querySelectorAll(".countings__stat");
 
-// Define the updateCount function
-function updateCount(countElement, count) {
-  countElement.textContent = count;
-}
+// // Define the updateCount function
+// function updateCount(countElement, count) {
+//   countElement.textContent = count;
+// }
 
-// Define the animateCount function
-function animateCount(countElement, startCount, targetCount, duration, interval) {
-  var count = startCount;
-  var increment = Math.ceil((targetCount - startCount) / (duration / interval));
-  var timer = setInterval(function () {
-    count += increment;
-    updateCount(countElement, count);
-    if (count >= targetCount) {
-      clearInterval(timer);
-      count = targetCount;
-      updateCount(countElement, count);
-    }
-  }, interval);
-}
+// // Define the animateCount function
+// function animateCount(countElement, startCount, targetCount, duration, interval) {
+//   let count = startCount;
+//   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
 
-// Loop through each counter element and animate the count
-counterElements.forEach(function (counterElement) {
-  var startCount = 0;
-  var targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-  var duration = 3000;
-  var interval = Math.floor(duration / targetCount);
-  var countElement = counterElement.querySelector(".statCount");
-  animateCount(countElement, startCount, targetCount, duration, interval);
-});
+//   const timer = setInterval(() => {
+//     count += increment;
+//     updateCount(countElement, count);
+//     if (count >= targetCount) {
+//       clearInterval(timer);
+//       count = targetCount;
+//       updateCount(countElement, count);
+//     }
+//   }, interval);
+// }
+
+// // Loop through each counter element and animate the count
+// counterElements.forEach((counterElement) => {
+//   const startCount = 0;
+//   const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+//   const duration = 3000;
+//   const interval = Math.floor(duration / targetCount);
+
+//   const countElement = counterElement.querySelector(".statCount");
+
+//   animateCount(countElement, startCount, targetCount, duration, interval);
+// });
+
 window.onload = function () {
   var formConfig = {
     // class of the parent element where the error/success class is added
@@ -332,6 +254,64 @@ window.onload = function () {
 
     // check if the form is valid
     var valid = pristine.validate(); // returns true or false
+  });
+
+  // counter animation
+  // Get all the counter elements
+  var counterElements = document.querySelectorAll(".countings__stat");
+
+  // Define the updateCount function
+  function updateCount(countElement, count) {
+    countElement.textContent = count;
+  }
+
+  // Define the animateCount function
+  function animateCount(countElement, startCount, targetCount, duration, interval) {
+    var count = startCount;
+    var increment = Math.ceil((targetCount - startCount) / (duration / interval));
+    var timer = setInterval(function () {
+      count += increment;
+      updateCount(countElement, count);
+      if (count >= targetCount) {
+        clearInterval(timer);
+        count = targetCount;
+        updateCount(countElement, count);
+      }
+    }, interval);
+  }
+  var counterOptions = {
+    rootMargin: "-50px",
+    threshold: 1
+  };
+  var counterCallback = function counterCallback(entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var counterElement = entry.target;
+        var startCount = 0;
+        var targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+        var duration = 3000;
+        var interval = Math.floor(duration / targetCount);
+        var countElement = counterElement.querySelector(".statCount");
+        //console.log("counter element: ", counterElement);
+        //console.log("count element: ", countElement);
+        animateCount(countElement, startCount, targetCount, duration, interval);
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  var counterObserver = new IntersectionObserver(counterCallback, counterOptions);
+
+  // Loop through each counter element and animate the count
+  counterElements.forEach(function (counterElement) {
+    counterObserver.observe(counterElement);
+    // const startCount = 0;
+    // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+    // const duration = 3000;
+    // const interval = Math.floor(duration / targetCount);
+
+    // const countElement = counterElement.querySelector(".statCount");
+
+    // animateCount(countElement, startCount, targetCount, duration, interval);
   });
 };
 
@@ -365,4 +345,104 @@ LottieInteractivity.create({
     frames: [0, 176]
   }]
 });
+
+// LottieInteractivity.create({
+//   player: "#scaiLottie",
+//   mode: "scroll",
+//   container: "#scai",
+//   actions: [
+//     {
+//       visibility: [0, 1.0],
+//       type: "seek",
+//       frames: [0, 228],
+//     },
+//     {
+//       visibility: [0.5, 1],
+//       type: "seek",
+//       callback: function () {
+//         console.log("SCAI reached 50%!");
+//       },
+//     },
+//   ],
+//   debug: true
+// });
+
+LottieInteractivity.create({
+  player: "#itmsLottie",
+  mode: "scroll",
+  container: "#itms",
+  actions: [{
+    visibility: [0.1, 1.0],
+    type: "seek",
+    frames: [0, 254]
+  }, {
+    visibility: [0.5, 1.0],
+    type: "function",
+    callback: function callback() {
+      console.log("ITMS reached 50%!");
+    }
+  }]
+});
+
+// Get Lottie player instance
+var player = document.querySelector("#scaiLottie").getLottie();
+
+// Define function to be called on scroll
+function myFunction() {
+  // Code to be executed when player reaches 50% scroll
+  console.log("Player reached 50%!");
+}
+
+// Attach Lottie event listener to player
+player.addEventListener("enterFrame", function (event) {
+  // Calculate percentage of animation that has played
+  var totalFrames = player.getDuration(true);
+  var currentFrame = player.currentFrame;
+  var percentage = currentFrame / totalFrames * 100;
+
+  // Call function if animation is at or past 50%
+  var btns = document.querySelectorAll("#scai .platform__contentBtn");
+  if (percentage >= 25) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[0].classList.add("-active");
+  }
+  if (percentage >= 50) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[1].classList.add("-active");
+  }
+  if (percentage >= 75) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[2].classList.add("-active");
+  }
+  if (percentage >= 90) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[3].classList.add("-active");
+  }
+});
+
+// Add Lottie Interactivity to player
+LottieInteractivity.create({
+  player: player,
+  mode: "scroll",
+  container: "#scai",
+  actions: [{
+    visibility: [0, 1.0],
+    type: "seek",
+    frames: [0, 228]
+  }]
+});
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
+particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
+particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
+particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
 //# sourceMappingURL=main.js.map
