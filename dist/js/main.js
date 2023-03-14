@@ -346,61 +346,79 @@ LottieInteractivity.create({
   }]
 });
 
-// LottieInteractivity.create({
-//   player: "#scaiLottie",
-//   mode: "scroll",
-//   container: "#scai",
-//   actions: [
-//     {
-//       visibility: [0, 1.0],
-//       type: "seek",
-//       frames: [0, 228],
-//     },
-//     {
-//       visibility: [0.5, 1],
-//       type: "seek",
-//       callback: function () {
-//         console.log("SCAI reached 50%!");
-//       },
-//     },
-//   ],
-//   debug: true
-// });
+// Get Lottie player instance
+var itmsplayer = document.querySelector("#itmsLottie").getLottie();
 
+// Attach Lottie event listener to player
+itmsplayer.addEventListener("enterFrame", function (event) {
+  // Calculate percentage of animation that has played
+  var totalFrames = itmsplayer.getDuration(true);
+  var currentFrame = itmsplayer.currentFrame;
+  var percentage = currentFrame / totalFrames * 100;
+
+  // Call function if animation is at or past 50%
+  // console.log("percentage: ", percentage);
+  var btns = document.querySelectorAll("#itms .platform__contentBtn");
+  if (percentage >= 20) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[0].classList.add("-active");
+  }
+  if (percentage >= 25) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[1].classList.add("-active");
+  }
+  if (percentage >= 30) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[2].classList.add("-active");
+  }
+  if (percentage >= 40) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[3].classList.add("-active");
+  }
+  if (percentage >= 50) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[4].classList.add("-active");
+  }
+  if (percentage >= 60) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[5].classList.add("-active");
+  }
+});
 LottieInteractivity.create({
-  player: "#itmsLottie",
+  player: itmsplayer,
   mode: "scroll",
   container: "#itms",
   actions: [{
     visibility: [0.1, 1.0],
     type: "seek",
     frames: [0, 254]
-  }, {
-    visibility: [0.5, 1.0],
-    type: "function",
-    callback: function callback() {
-      console.log("ITMS reached 50%!");
-    }
   }]
 });
 
 // Get Lottie player instance
-var player = document.querySelector("#scaiLottie").getLottie();
-
-// Define function to be called on scroll
-function myFunction() {
-  // Code to be executed when player reaches 50% scroll
-  console.log("Player reached 50%!");
-}
+var scaiplayer = document.querySelector("#scaiLottie").getLottie();
 
 // Attach Lottie event listener to player
-player.addEventListener("enterFrame", function (event) {
+scaiplayer.addEventListener("enterFrame", function (event) {
   // Calculate percentage of animation that has played
-  var totalFrames = player.getDuration(true);
-  var currentFrame = player.currentFrame;
+  var totalFrames = scaiplayer.getDuration(true);
+  var currentFrame = scaiplayer.currentFrame;
   var percentage = currentFrame / totalFrames * 100;
 
   // Call function if animation is at or past 50%
+  // console.log("percentage: ", percentage);
   var btns = document.querySelectorAll("#scai .platform__contentBtn");
   if (percentage >= 25) {
     btns.forEach(function (btn) {
@@ -414,13 +432,13 @@ player.addEventListener("enterFrame", function (event) {
     });
     btns[1].classList.add("-active");
   }
-  if (percentage >= 75) {
+  if (percentage >= 60) {
     btns.forEach(function (btn) {
       return btn.classList.remove("-active");
     });
     btns[2].classList.add("-active");
   }
-  if (percentage >= 90) {
+  if (percentage >= 70) {
     btns.forEach(function (btn) {
       return btn.classList.remove("-active");
     });
@@ -430,7 +448,7 @@ player.addEventListener("enterFrame", function (event) {
 
 // Add Lottie Interactivity to player
 LottieInteractivity.create({
-  player: player,
+  player: scaiplayer,
   mode: "scroll",
   container: "#scai",
   actions: [{
