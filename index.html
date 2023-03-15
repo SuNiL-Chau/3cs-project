@@ -7,11 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boilerplate Title</title>
   <!-- <link rel="shortcut icon" href="assets/faivcon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://unpkg.com/">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
-    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" /> -->
+    <link rel="preconnect" href="https://unpkg.com/">-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./dist/css/bootstrap.css" />
@@ -75,7 +71,7 @@
       </div>
       <!-- <canvas id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></canvas> -->
       <lottie-player id="homeLottie" class="homebanner__canvas" data-aos="fade-in" src="assets/lottie/cube.json"
-        autoplay loop speed="0.8"></lottie-player>
+        autoplay loop speed="0.5"></lottie-player>
       <!-- <div id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></div> -->
       <button type="button" class="homebanner__scroll" data-aos="fade-in">
         <p class="homebanner__scrollText">SCROLL DOWN</p>
@@ -92,27 +88,27 @@
     </div>
   </section>
 
-  <section class="homestats" data-aos="fade-in">
+  <section class="homestats">
     <div class="container-fluid homestats__container">
       <div class="homestats__grid">
-        <div class="homestats__stat" data-aos="fade-up">
-          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">10-18%</p>
-          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">Improved
+        <div class="homestats__stat">
+          <p class="homestats__statCount" data-aos="fade-up">10-18%</p>
+          <p class="homestats__statTitle" data-aos="fade-up" data-aos-offset="100">Improved
             <br />Planner Efficiency</p>
         </div>
-        <div class="homestats__stat" data-aos="fade-up">
-          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">90%</p>
-          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">E2E
+        <div class="homestats__stat">
+          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="50">90%</p>
+          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="100" data-aos-offset="100">E2E
             <br />Visibility</p>
         </div>
-        <div class="homestats__stat" data-aos="fade-up">
-          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">11%</p>
-          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">Improved
+        <div class="homestats__stat">
+          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="150">11%</p>
+          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="200" data-aos-offset="100">Improved
             <br />Forecast Accuracy</p>
         </div>
-        <div class="homestats__stat" data-aos="fade-up">
-          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="30">5%</p>
-          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="50" data-aos-offset="100">Improved
+        <div class="homestats__stat">
+          <p class="homestats__statCount" data-aos="fade-up" data-aos-delay="250">5%</p>
+          <p class="homestats__statTitle" data-aos="fade-up" data-aos-delay="300" data-aos-offset="100">Improved
             <br />Inventory Optimization</p>
         </div>
       </div>
@@ -186,90 +182,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- <section class="platforms" data-aos="fade-in">
-    <div class="container">
-      <canvas id="platforms__canvas" class="platforms__canvas"></canvas>
-      <h3 class="platforms__title" data-aos="fade-up">PLATFORMS</h3>
-      <div class="platform">
-        <div class="platform__pre" data-aos="fade-up">
-          <img src="assets/svgs/icons8-cubes-64.svg" class="platform__preImg" />
-          <p class="platform__preText">SCAI</p>
-          <div class="platform__preBottom"></div>
-        </div>
-        <p class="platform__para" data-aos="fade-up"><span class="text-primary">A smart all-in-one platform</span> which
-          facilitates you to build and track strong ultra-modern platforms that drive <span
-            class="text-primary">profitability, improve efficiency</span> and operate on <span
-            class="text-primary">sustainability.</span></p>
-        <div class="platform__content">
-          <div class="platform__contentBrain" data-aos="fade-in">
-            <lottie-player id="scaiLottie" src="assets/lottie/scai.json" autoplay loop
-              style="width: 100%; height: auto"></lottie-player>
-          </div>
-          <div class="platform__contentBtns">
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="brainBtnClick(this);brainAnim.playSegments([0, 42], true);">
-              <p class="platform__contentBtnTxt">Integrated Business <br />Planning Platform</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="brainBtnClick(this);brainAnim.playSegments([42, 84], true);">
-              <p class="platform__contentBtnTxt">CarbonX <br />Sustainability Platform</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="brainBtnClick(this);brainAnim.playSegments([84, 126], true);">
-              <p class="platform__contentBtnTxt">Supply Chain <br />Digital Twin Platform</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="brainBtnClick(this);brainAnim.playSegments([126, 168], true);">
-              <p class="platform__contentBtnTxt">EDM - Enterprise Data <br />Management Platform</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="platform">
-        <div class="platform__pre" data-aos="fade-up">
-          <img src="assets/svgs/icons8-cubes-64.svg" class="platform__preImg" />
-          <p class="platform__preText">iTMS</p>
-          <div class="platform__preBottom"></div>
-        </div>
-        <p class="platform__para" data-aos="fade-up">An <span class="text-primary">intelligent transportation
-            platform</span> that enables the management of the E2E shipment lifecycle of transportation and
-          distribution.</p>
-        <div class="platform__content">
-          <div class="platform__contentGlobe">
-            <lottie-player id="itmsLottie" src="assets/lottie/itms-2.json" autoplay loop
-              style="width: 90%; height: auto"></lottie-player>
-          </div>
-          <div class="platform__contentBtns">
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="globeBtnClick(this);globeAnim.playSegments([0, 75], true);">
-              <p class="platform__contentBtnTxt">Order AI</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="globeBtnClick(this);globeAnim.playSegments([75, 150], true);">
-              <p class="platform__contentBtnTxt">Dispatch AI</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="globeBtnClick(this);globeAnim.playSegments([150, 225], true);">
-              <p class="platform__contentBtnTxt">Orchestration AI</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="globeBtnClick(this);globeAnim.playSegments([225, 300], true);">
-              <p class="platform__contentBtnTxt">Track AI</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="globeBtnClick(this);globeAnim.playSegments([300, 375], true);">
-              <p class="platform__contentBtnTxt">Contract AI</p>
-            </button>
-            <button class="platform__contentBtn" data-aos="fade-left" data-aos-delay="100"
-              onclick="globeBtnClick(this);globeAnim.playSegments([375, 450], true);">
-              <p class="platform__contentBtnTxt">Insight AI</p>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="products">
     <div class="products__bg" data-aos="fade-in"></div>
@@ -335,7 +247,7 @@
     </div>
     <div class="container products__content -executionLottieContainer">
       <div class="products__lhs">
-        <lottie-player id="executionLottie" src="assets/lottie/planing-product.json"
+        <lottie-player id="executionLottie" src="assets/lottie/execution.json"
           style="width: 100%; height: auto"></lottie-player>
       </div>
       <div class="products__rhs">
@@ -737,7 +649,7 @@
       throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
       // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-      offset: 200, // offset (in px) from the original trigger point
+      offset: 100, // offset (in px) from the original trigger point
       delay: 50, // values from 0 to 3000, with step 50ms
       duration: 400, // values from 0 to 3000, with step 50ms
       easing: "ease", // default easing for AOS animations

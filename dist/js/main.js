@@ -320,7 +320,7 @@ LottieInteractivity.create({
   mode: "scroll",
   container: ".services",
   actions: [{
-    visibility: [0.15, 1.0],
+    visibility: [0.15, 0.75],
     type: "seek",
     frames: [0, 480]
   }]
@@ -330,7 +330,7 @@ LottieInteractivity.create({
   mode: "scroll",
   container: ".-planningLottieContainer",
   actions: [{
-    visibility: [0.1, 1.0],
+    visibility: [0.1, 1],
     type: "seek",
     frames: [0, 176]
   }]
@@ -340,70 +340,9 @@ LottieInteractivity.create({
   mode: "scroll",
   container: ".-executionLottieContainer",
   actions: [{
-    visibility: [0.1, 1.0],
+    visibility: [0.1, 0.7],
     type: "seek",
-    frames: [0, 176]
-  }]
-});
-
-// Get Lottie player instance
-var itmsplayer = document.querySelector("#itmsLottie").getLottie();
-
-// Attach Lottie event listener to player
-itmsplayer.addEventListener("enterFrame", function (event) {
-  // Calculate percentage of animation that has played
-  var totalFrames = itmsplayer.getDuration(true);
-  var currentFrame = itmsplayer.currentFrame;
-  var percentage = currentFrame / totalFrames * 100;
-
-  // Call function if animation is at or past 50%
-  // console.log("percentage: ", percentage);
-  var btns = document.querySelectorAll("#itms .platform__contentBtn");
-  if (percentage >= 20) {
-    btns.forEach(function (btn) {
-      return btn.classList.remove("-active");
-    });
-    btns[0].classList.add("-active");
-  }
-  if (percentage >= 25) {
-    btns.forEach(function (btn) {
-      return btn.classList.remove("-active");
-    });
-    btns[1].classList.add("-active");
-  }
-  if (percentage >= 30) {
-    btns.forEach(function (btn) {
-      return btn.classList.remove("-active");
-    });
-    btns[2].classList.add("-active");
-  }
-  if (percentage >= 40) {
-    btns.forEach(function (btn) {
-      return btn.classList.remove("-active");
-    });
-    btns[3].classList.add("-active");
-  }
-  if (percentage >= 50) {
-    btns.forEach(function (btn) {
-      return btn.classList.remove("-active");
-    });
-    btns[4].classList.add("-active");
-  }
-  if (percentage >= 60) {
-    btns.forEach(function (btn) {
-      return btn.classList.remove("-active");
-    });
-    btns[5].classList.add("-active");
-  }
-});
-LottieInteractivity.create({
-  player: itmsplayer,
-  mode: "scroll",
-  container: "#itms",
-  actions: [{
-    visibility: [0.1, 1.0],
-    type: "seek",
-    frames: [0, 254]
+    frames: [0, 228]
   }]
 });
 
@@ -426,19 +365,19 @@ scaiplayer.addEventListener("enterFrame", function (event) {
     });
     btns[0].classList.add("-active");
   }
-  if (percentage >= 50) {
+  if (percentage >= 45) {
     btns.forEach(function (btn) {
       return btn.classList.remove("-active");
     });
     btns[1].classList.add("-active");
   }
-  if (percentage >= 60) {
+  if (percentage >= 55) {
     btns.forEach(function (btn) {
       return btn.classList.remove("-active");
     });
     btns[2].classList.add("-active");
   }
-  if (percentage >= 70) {
+  if (percentage >= 65) {
     btns.forEach(function (btn) {
       return btn.classList.remove("-active");
     });
@@ -452,9 +391,70 @@ LottieInteractivity.create({
   mode: "scroll",
   container: "#scai",
   actions: [{
-    visibility: [0, 1.0],
+    visibility: [0, 0.8],
     type: "seek",
     frames: [0, 228]
+  }]
+});
+
+// Get Lottie player instance
+var itmsplayer = document.querySelector("#itmsLottie").getLottie();
+
+// Attach Lottie event listener to player
+itmsplayer.addEventListener("enterFrame", function (event) {
+  // Calculate percentage of animation that has played
+  var totalFrames = itmsplayer.getDuration(true);
+  var currentFrame = itmsplayer.currentFrame;
+  var percentage = currentFrame / totalFrames * 100;
+
+  // Call function if animation is at or past 50%
+  // console.log("percentage: ", percentage);
+  var btns = document.querySelectorAll("#itms .platform__contentBtn");
+  if (percentage >= 20) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[0].classList.add("-active");
+  }
+  if (percentage >= 30) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[1].classList.add("-active");
+  }
+  if (percentage >= 40) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[2].classList.add("-active");
+  }
+  if (percentage >= 50) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[3].classList.add("-active");
+  }
+  if (percentage >= 60) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[4].classList.add("-active");
+  }
+  if (percentage >= 70) {
+    btns.forEach(function (btn) {
+      return btn.classList.remove("-active");
+    });
+    btns[5].classList.add("-active");
+  }
+});
+LottieInteractivity.create({
+  player: itmsplayer,
+  mode: "scroll",
+  container: "#itms",
+  actions: [{
+    visibility: [0.1, 0.8],
+    type: "seek",
+    frames: [0, 254]
   }]
 });
 
@@ -463,4 +463,33 @@ particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function
 particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
 particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
 particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
+
+// particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () { });
+// Load particleJS
+particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
+document.addEventListener("DOMContentLoaded", function () {
+  // Get reference to particleJS object
+  var particleJS = particlesJS("platforms__canvas").pJS;
+
+  // Set initial scroll state
+  var isScrolling = false;
+
+  // Add event listener for scroll event
+  window.addEventListener("scroll", function () {
+    // Check if user is currently scrolling
+    if (window.scrollY > 0) {
+      isScrolling = true;
+    } else {
+      isScrolling = false;
+    }
+
+    // Pause or resume particleJS animation based on scroll state
+    if (isScrolling) {
+      particleJS.fn.particlesRefresh();
+      particleJS.fn.play();
+    } else {
+      particleJS.fn.pause();
+    }
+  });
+});
 //# sourceMappingURL=main.js.map

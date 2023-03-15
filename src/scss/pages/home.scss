@@ -21,8 +21,8 @@
     overflow: hidden;
     &__canvas {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       top: 0;
       right: 0;
       z-index: -1;
@@ -30,7 +30,7 @@
       object-fit: cover;
       object-position: center;
       position: absolute;
-      transform: translateX(25%) !important;
+      transform: translate(32%, 10%) !important;
       @include media-bp(mdl) {
         transform: translateX(-21%) !important;
         width: 180% !important;
@@ -169,122 +169,6 @@
       }
     }
   }
-  // .platforms {
-  //   position: relative;
-  //   display: block;
-  //   min-height: 100vh;
-  //   @include padding-top(98px);
-  //   @include padding-bottom(226px);
-  //   &__canvas {
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     z-index: -1;
-  //     object-fit: cover;
-  //   }
-  //   &__title {
-  //     text-align: center;
-  //     @include rfs(35px);
-  //     letter-spacing: toRem(10.5);
-  //     line-height: toRem(42);
-  //     font-weight: 500;
-  //     color: $orange1;
-  //     @include media-bp(mdl) {
-  //       margin-bottom: 30px;
-  //     }
-  //   }
-  //   .platform {
-  //     &__pre {
-  //       display: grid;
-  //       grid-template-columns: repeat(2, 1fr);
-  //       column-gap: 19px;
-  //       row-gap: 0px;
-  //       width: min-content;
-  //       align-items: center;
-  //       justify-items: flex-start;
-  //       &Img {
-  //         width: 51px;
-  //         height: 51px;
-  //       }
-  //       &Text {
-  //         @include rfs(50px);
-  //         line-height: toRem(58);
-  //         letter-spacing: normal;
-  //         color: $black_1;
-  //         font-weight: 700;
-  //       }
-  //       &Bottom {
-  //         grid-column: 1/3;
-  //         width: 100%;
-  //         height: 5px;
-  //         background: transparent linear-gradient(270deg, $orange1 0%, #e3512500 100%) 0% 0% no-repeat padding-box;
-  //       }
-  //     }
-  //     &__para {
-  //       @include rfs(40px);
-  //       line-height: toRem(55px);
-  //       letter-spacing: toRem(0.8);
-  //       color: $black_1;
-  //       @include margin-top(15px);
-  //       font-weight: 600;
-  //     }
-  //     &__content {
-  //       display: flex;
-  //       flex-flow: row wrap;
-  //       gap: 60px;
-  //       @include padding-top(120px);
-  //       @include padding-bottom(120px);
-  //       &Brain,
-  //       &Globe {
-  //         width: calc(60% - 30px);
-  //         position: sticky;
-  //         top: 140px;
-  //         @include media-bp(mdl) {
-  //           width: 100%;
-  //         }
-  //       }
-  //       &Btns {
-  //         width: calc(40% - 30px);
-  //         display: flex;
-  //         flex-direction: column;
-  //         // gap: 30px;
-  //         // for now only
-  //         gap: calc(100vh / 4);
-  //         @include media-bp(mdl) {
-  //           width: 100%;
-  //         }
-  //       }
-  //       &Btn {
-  //         padding-bottom: 16px;
-  //         width: 100%;
-  //         max-width: 294px;
-  //         text-align: left;
-  //         border-bottom: 1px solid $black_1;
-  //         &Txt {
-  //           @include rfs(27px);
-  //           line-height: toRem(33);
-  //           letter-spacing: toRem(0.81);
-  //           color: $black_1;
-  //         }
-  //         &.-active {
-  //           .platform__contentBtnTxt {
-  //             font-weight: 700;
-  //             color: $orange1;
-  //           }
-  //         }
-  //       }
-  //     }
-  //     @include media-bp(mdl) {
-  //       &:last-child {
-  //         .platform__content {
-  //           padding-bottom: 0;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .platforms {
     position: relative;
     display: block;
@@ -312,12 +196,12 @@
         align-items: center;
         justify-items: flex-start;
         &Img {
-          width: 51px;
-          height: 51px;
+          width: 40px;
+          height: 40px;
         }
         &Text {
-          @include rfs(50px);
-          line-height: toRem(58);
+          @include rfs(40px);
+          line-height: 1.2;
           letter-spacing: normal;
           color: $black_1;
           font-weight: 700;
@@ -330,8 +214,8 @@
         }
       }
       &__para {
-        @include rfs(40px);
-        line-height: toRem(55px);
+        @include rfs(32px);
+        line-height: 1.5;
         letter-spacing: toRem(0.8);
         color: $black_1;
         @include margin-top(15px);
@@ -341,8 +225,8 @@
         display: flex;
         flex-flow: row wrap;
         gap: 60px;
-        @include padding-top(120px);
-        @include padding-bottom(120px);
+        @include padding-top(60px);
+        @include padding-bottom(60px);
         &Brain,
         &Globe {
           width: calc(60% - 30px);
@@ -361,8 +245,8 @@
           gap: 30px;
           // for now only
           // gap: calc(100vh / 4);
-          @include padding-top(220px);
-          @include padding-bottom(220px);
+          @include padding-top(60px);
+          @include padding-bottom(60px);
           @include media-bp(mdl) {
             width: 100%;
           }
