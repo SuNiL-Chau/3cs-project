@@ -22,10 +22,9 @@ document.addEventListener("mouseout", (event) => {
   }
 });
 
-document.querySelectorAll("lottie-player[data-src]").forEach((lp) => {
-  // console.log("lp: ", lp);
-  lp.load(lp.dataset.src);
-});
+// document.querySelectorAll("lottie-player[data-src]").forEach((lp) => {
+//   lp.load(lp.dataset.src);
+// });
 
 // platformsection
 // function platformConnectingDots() {
