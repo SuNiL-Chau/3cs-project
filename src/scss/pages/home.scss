@@ -598,6 +598,9 @@
   .news {
     position: relative;
     background-color: $white;
+    &__title {
+      @include margin-bottom(60px);
+    }
     .particlecanvas {
       z-index: 1;
     }
@@ -636,10 +639,10 @@
         line-height: 1.2;
         letter-spacing: normal;
         font-weight: 600;
-        @include margin-top(80px);
+        @include margin-top(40px);
       }
       &Para {
-        @include rfs(35px);
+        @include rfs(28px);
         font-weight: 700;
         line-height: 1.5;
         letter-spacing: toRem(0.7);

@@ -22,6 +22,11 @@ document.addEventListener("mouseout", (event) => {
   }
 });
 
+document.querySelectorAll("lottie-player[data-src]").forEach((lp) => {
+  console.log("lp: ", lp);
+  lp.load(lp.dataset.src);
+});
+
 // platformsection
 // function platformConnectingDots() {
 //   var canvas = document.getElementById("platforms__canvas"),
@@ -477,28 +482,28 @@ particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {
 // particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () { });
 // Load particleJS
 particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
-document.addEventListener("DOMContentLoaded", function () {
-  // Get reference to particleJS object
-  var particleJS = particlesJS("platforms__canvas").pJS;
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Get reference to particleJS object
+//   var particleJS = particlesJS("platforms__canvas").pJS;
 
-  // Set initial scroll state
-  var isScrolling = false;
+//   // Set initial scroll state
+//   var isScrolling = false;
 
-  // Add event listener for scroll event
-  window.addEventListener("scroll", function () {
-    // Check if user is currently scrolling
-    if (window.scrollY > 0) {
-      isScrolling = true;
-    } else {
-      isScrolling = false;
-    }
+//   // Add event listener for scroll event
+//   window.addEventListener("scroll", function () {
+//     // Check if user is currently scrolling
+//     if (window.scrollY > 0) {
+//       isScrolling = true;
+//     } else {
+//       isScrolling = false;
+//     }
 
-    // Pause or resume particleJS animation based on scroll state
-    if (isScrolling) {
-      particleJS.fn.particlesRefresh();
-      particleJS.fn.play();
-    } else {
-      particleJS.fn.pause();
-    }
-  });
-});
+//     // Pause or resume particleJS animation based on scroll state
+//     if (isScrolling) {
+//       particleJS.fn.particlesRefresh();
+//       particleJS.fn.play();
+//     } else {
+//       particleJS.fn.pause();
+//     }
+//   });
+// });
