@@ -22,7 +22,7 @@ document.addEventListener("mouseout", function (event) {
   }
 });
 document.querySelectorAll("lottie-player[data-src]").forEach(function (lp) {
-  console.log("lp: ", lp);
+  // console.log("lp: ", lp);
   lp.load(lp.dataset.src);
 });
 
