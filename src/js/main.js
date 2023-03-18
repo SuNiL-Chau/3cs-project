@@ -269,20 +269,20 @@ window.onload = function () {
   }
 
   // Define the animateCount function
-  function animateCount(countElement, startCount, targetCount, duration, interval) {
-    let count = startCount;
-    const increment = Math.ceil((targetCount - startCount) / (duration / interval));
+  // function animateCount(countElement, startCount, targetCount, duration, interval) {
+  //   let count = startCount;
+  //   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
 
-    const timer = setInterval(() => {
-      count += increment;
-      updateCount(countElement, count);
-      if (count >= targetCount) {
-        clearInterval(timer);
-        count = targetCount;
-        updateCount(countElement, count);
-      }
-    }, interval);
-  }
+  //   const timer = setInterval(() => {
+  //     count += increment;
+  //     updateCount(countElement, count);
+  //     if (count >= targetCount) {
+  //       clearInterval(timer);
+  //       count = targetCount;
+  //       updateCount(countElement, count);
+  //     }
+  //   }, interval);
+  // }
 
   let counterOptions = {
     rootMargin: "-50px",
@@ -293,14 +293,26 @@ window.onload = function () {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         let counterElement = entry.target;
-        const startCount = 0;
-        const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-        const duration = 3000;
-        const interval = Math.floor(duration / targetCount);
+        // const startCount = 0;
+        // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+        const duration = parseInt(counterElement.getAttribute("data-count-duration"));
+        // const interval = Math.floor(duration / targetCount);
         const countElement = counterElement.querySelector(".statCount");
-        //console.log("counter element: ", counterElement);
-        //console.log("count element: ", countElement);
-        animateCount(countElement, startCount, targetCount, duration, interval);
+        // //console.log("counter element: ", counterElement);
+        // //console.log("count element: ", countElement);
+        // animateCount(countElement, startCount, targetCount, duration, interval);
+
+        // counterElement.innerText = "0";
+        const updateCounter = () => {
+          const target = +counterElement.getAttribute("data-count");
+          const count = +countElement.innerText;
+          const increment = target / duration;
+          if (count < target) {
+            countElement.innerText = `${Math.ceil(count + increment)}`;
+            setTimeout(updateCounter, 1);
+          } else countElement.innerText = target;
+        };
+        updateCounter();
         observer.unobserve(entry.target);
       }
     });

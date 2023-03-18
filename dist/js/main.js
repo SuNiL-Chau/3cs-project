@@ -266,19 +266,21 @@ window.onload = function () {
   }
 
   // Define the animateCount function
-  function animateCount(countElement, startCount, targetCount, duration, interval) {
-    var count = startCount;
-    var increment = Math.ceil((targetCount - startCount) / (duration / interval));
-    var timer = setInterval(function () {
-      count += increment;
-      updateCount(countElement, count);
-      if (count >= targetCount) {
-        clearInterval(timer);
-        count = targetCount;
-        updateCount(countElement, count);
-      }
-    }, interval);
-  }
+  // function animateCount(countElement, startCount, targetCount, duration, interval) {
+  //   let count = startCount;
+  //   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
+
+  //   const timer = setInterval(() => {
+  //     count += increment;
+  //     updateCount(countElement, count);
+  //     if (count >= targetCount) {
+  //       clearInterval(timer);
+  //       count = targetCount;
+  //       updateCount(countElement, count);
+  //     }
+  //   }, interval);
+  // }
+
   var counterOptions = {
     rootMargin: "-50px",
     threshold: 1
@@ -287,14 +289,26 @@ window.onload = function () {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         var counterElement = entry.target;
-        var startCount = 0;
-        var targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-        var duration = 3000;
-        var interval = Math.floor(duration / targetCount);
+        // const startCount = 0;
+        // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+        var duration = parseInt(counterElement.getAttribute("data-count-duration"));
+        // const interval = Math.floor(duration / targetCount);
         var countElement = counterElement.querySelector(".statCount");
-        //console.log("counter element: ", counterElement);
-        //console.log("count element: ", countElement);
-        animateCount(countElement, startCount, targetCount, duration, interval);
+        // //console.log("counter element: ", counterElement);
+        // //console.log("count element: ", countElement);
+        // animateCount(countElement, startCount, targetCount, duration, interval);
+
+        // counterElement.innerText = "0";
+        var updateCounter = function updateCounter() {
+          var target = +counterElement.getAttribute("data-count");
+          var count = +countElement.innerText;
+          var increment = target / duration;
+          if (count < target) {
+            countElement.innerText = "".concat(Math.ceil(count + increment));
+            setTimeout(updateCounter, 1);
+          } else countElement.innerText = target;
+        };
+        updateCounter();
         observer.unobserve(entry.target);
       }
     });
