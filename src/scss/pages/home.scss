@@ -190,7 +190,7 @@
       min-height: 400vh;
       &__sticky {
         position: sticky;
-        top: 140px;
+        top: 100px;
       }
       &__pre {
         display: grid;
@@ -243,7 +243,7 @@
           }
           lottie-player {
             position: sticky;
-            top: 140px;
+            top: 100px;
           }
         }
         &Globe {
@@ -779,93 +779,6 @@
         color: #fff !important;
         box-shadow: none !important;
       }
-    }
-  }
-  .footer {
-    background-color: $gray4;
-    @include padding-top(77px);
-    @include padding-bottom(77px);
-
-    .footer-title,
-    .footer-links,
-    .footer-contact,
-    .footer-bottom {
-      color: $white;
-    }
-
-    .footer-title {
-      @include rfs(21px);
-      line-height: 1.2;
-      letter-spacing: normal;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .footer-contain {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    .footer-contain:first-child {
-      .footer-title {
-        @include rfs(25px);
-      }
-    }
-
-    @include media-bp(lg) {
-      .footer-contain:nth-child(n + 3) {
-        @include margin-left(30px);
-      }
-    }
-
-    .footer-contact {
-      @include rfs(25px);
-      line-height: 1.2;
-      letter-spacing: normal;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-
-      a {
-        display: inline-block;
-        margin-right: 20px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-    .footer-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      &__a {
-        @include rfs(21px);
-        line-height: 1.2;
-        letter-spacing: normal;
-        font-weight: 400;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          color: $white;
-          opacity: 0.6;
-        }
-      }
-    }
-
-    .footer-bottom {
-      font-size: 13px;
-      line-height: 19px;
-      letter-spacing: -0.13px;
-      color: $white;
-      margin-top: 10px;
     }
   }
 }
