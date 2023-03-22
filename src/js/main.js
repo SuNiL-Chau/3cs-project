@@ -22,6 +22,23 @@ document.addEventListener("mouseout", (event) => {
   }
 });
 
+// nav mobile toggle btn code
+const navbarToggler = document.querySelector(".navbar-toggler");
+const navbarCollapse = document.querySelector(".navbar-collapse");
+
+navbarToggler.addEventListener("click", () => {
+  let isShown = navbarCollapse.classList.contains("show");
+  setTimeout(() => {
+    if (isShown) {
+      navbarCollapse.style.maxHeight = "0";
+    } else {
+      navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + "px";
+    }
+    // navbarCollapse.classList.toggle("show");
+  }, 50);
+});
+
+// lazyload lotties
 // document.querySelectorAll("lottie-player[data-src]").forEach((lp) => {
 //   lp.load(lp.dataset.src);
 // });
@@ -180,6 +197,7 @@ const swiper2 = new Swiper(".industries__swiper", {
     },
   },
 });
+
 // news swiper
 const swiper3 = new Swiper(".news__swiper", {
   direction: "horizontal",
@@ -199,43 +217,6 @@ const swiper3 = new Swiper(".news__swiper", {
     },
   },
 });
-
-// // counter animation
-// // Get all the counter elements
-// const counterElements = document.querySelectorAll(".countings__stat");
-
-// // Define the updateCount function
-// function updateCount(countElement, count) {
-//   countElement.textContent = count;
-// }
-
-// // Define the animateCount function
-// function animateCount(countElement, startCount, targetCount, duration, interval) {
-//   let count = startCount;
-//   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
-
-//   const timer = setInterval(() => {
-//     count += increment;
-//     updateCount(countElement, count);
-//     if (count >= targetCount) {
-//       clearInterval(timer);
-//       count = targetCount;
-//       updateCount(countElement, count);
-//     }
-//   }, interval);
-// }
-
-// // Loop through each counter element and animate the count
-// counterElements.forEach((counterElement) => {
-//   const startCount = 0;
-//   const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-//   const duration = 3000;
-//   const interval = Math.floor(duration / targetCount);
-
-//   const countElement = counterElement.querySelector(".statCount");
-
-//   animateCount(countElement, startCount, targetCount, duration, interval);
-// });
 
 window.onload = function () {
   let formConfig = {
@@ -288,6 +269,7 @@ window.onload = function () {
   //   }, interval);
   // }
 
+  // counter animation
   let counterOptions = {
     rootMargin: "-50px",
     threshold: 1,
@@ -338,6 +320,7 @@ window.onload = function () {
   });
 };
 
+// lottie interactivity
 LottieInteractivity.create({
   player: "#servicesLottie",
   mode: "scroll",
@@ -356,9 +339,10 @@ LottieInteractivity.create({
   container: ".-planningLottieContainer",
   actions: [
     {
-      visibility: [0.1, 1],
+      visibility: [0.2, 1],
       type: "seek",
-      frames: [0, 176],
+      // frames: [0, 176],
+      frames: [0, 155],
     },
   ],
 });
@@ -368,7 +352,7 @@ LottieInteractivity.create({
   container: ".-executionLottieContainer",
   actions: [
     {
-      visibility: [0.1, 0.7],
+      visibility: [0.2, 0.7],
       type: "seek",
       frames: [0, 228],
     },

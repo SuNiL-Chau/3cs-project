@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    margin-top: 97px;
     &__canvas {
       position: absolute;
       width: 90%;
@@ -26,20 +27,25 @@
       top: 0;
       right: 0;
       z-index: -1;
-
       object-fit: cover;
       object-position: center;
       position: absolute;
       transform: translate(32%, 10%) !important;
       @include media-bp(mdl) {
-        transform: translateX(-21%) !important;
-        width: 180% !important;
+        width: 120% !important;
+        transform: translateX(0px) !important;
+        height: 100% !important;
       }
     }
     &__content {
       align-self: center;
       display: flex;
       flex-direction: column;
+      @include media-bp(mdl) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     &__title {
       @include rfs(75px);
@@ -47,6 +53,11 @@
       letter-spacing: toRem(-1.5);
       font-weight: 800;
       color: $black_1;
+      @include media-bp(mdl) {
+        @include rfs(31px);
+        line-height: 1.25;
+        letter-spacing: toRem(-0.62);
+      }
     }
     .homebanner__title + .homebanner__subtitle {
       @include margin-top(60px);
@@ -56,12 +67,22 @@
       letter-spacing: toRem(-1.75);
       line-height: toRem(42);
       color: $black_2;
+      @include media-bp(mdl) {
+        @include rfs(14px);
+        line-height: 1.25;
+        letter-spacing: toRem(-0.7);
+      }
     }
     &__arrow {
       @include rfs(35px);
       letter-spacing: toRem(-1.75);
       line-height: toRem(42);
       color: $orange1;
+      @include media-bp(mdl) {
+        @include rfs(14px);
+        line-height: 1.25;
+        letter-spacing: toRem(-0.7);
+      }
     }
     &__scroll {
       position: absolute;
@@ -97,6 +118,8 @@
           animation-delay: 0.1s;
         }
       }
+    }
+    @include media-bp(mdl) {
     }
   }
   .homestats,
@@ -423,6 +446,8 @@
       gap: 30px;
       align-items: center;
       text-align: center;
+      height: 70vh;
+      justify-content: center;
       &Title {
         @include rfs(27px);
         line-height: toRem(33);
