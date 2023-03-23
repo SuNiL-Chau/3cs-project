@@ -96,14 +96,14 @@
       width: max-content;
       cursor: pointer;
       &Text {
-        @include rfs(21px);
+        @include rfs(16px);
         letter-spacing: toRem(-1.05);
         line-height: normal;
         color: $black_2;
       }
       &Img {
-        width: 4vw;
-        height: 4vh;
+        width: 3.5vw;
+        height: 3.5vh;
       }
       &Img path {
         transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);

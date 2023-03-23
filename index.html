@@ -15,12 +15,12 @@
   </head>
 
   <body class="home">
-    <object id="lottie-preload" data="assets/lottie/cube.json" type="application/json" style="display:none"></object>
-    <object id="lottie-preload" data="assets/lottie/scai.json" type="application/json" style="display:none"></object>
-    <object id="lottie-preload" data="assets/lottie/itms-2.json" type="application/json" style="display:none"></object>
-    <object id="lottie-preload" data="assets/lottie/planing-product-t.json" type="application/json" style="display:none"></object>
-    <object id="lottie-preload" data="assets/lottie/execution-t.json" type="application/json" style="display:none"></object>
-    <object id="lottie-preload" data="assets/lottie/service.json" type="application/json" style="display:none"></object>
+    <object id="lottie-preload" data="assets/lottie/cube.json" type="application/json" style="display: none"></object>
+    <object id="lottie-preload" data="assets/lottie/scai.json" type="application/json" style="display: none"></object>
+    <object id="lottie-preload" data="assets/lottie/itms-2.json" type="application/json" style="display: none"></object>
+    <!-- <object id="lottie-preload" data="assets/lottie/planing-product-t.json" type="application/json" style="display: none"></object>
+    <object id="lottie-preload" data="assets/lottie/execution-t.json" type="application/json" style="display: none"></object>
+    <object id="lottie-preload" data="assets/lottie/service.json" type="application/json" style="display: none"></object> -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="slide-down">
       <a class="navbar-brand" href="#">
@@ -80,7 +80,7 @@
         <!-- <canvas id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></canvas> -->
         <lottie-player id="homeLottie" class="homebanner__canvas" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.5"></lottie-player>
         <!-- <div id="homebannerCube" class="homebanner__canvas" data-aos="fade-in"></div> -->
-        <button type="button" class="homebanner__scroll" data-aos="fade-in">
+        <button type="button" class="homebanner__scroll" data-aos="fade-in" data-aos-offset="0">
           <p class="homebanner__scrollText">SCROLL DOWN</p>
           <svg class="homebanner__scrollImg" width="17px" height="17px" xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 50 50">
             <path d="M4 8.8c0 .4 4.7 5.4 10.5 11.2L25 30.5l10.7-10.7c5.9-5.9 10.4-11.1 10-11.5-.4-.4-5.3 3.8-10.7 9.2l-10 10-9.8-9.8C6 8.6 4 6.9 4 8.8z" fill="#E35125" />
@@ -94,20 +94,20 @@
       <div class="container-fluid homestats__container">
         <div class="homestats__grid">
           <div class="homestats__stat">
-            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos="fade-up" data-aos-duration="800">10-18%</p>
-            <p class="homestats__statTitle" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom">Improved <br />Planner Efficiency</p>
+            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos-offset="300" data-aos="fade-up">10-18%</p>
+            <p class="homestats__statTitle" data-aos-anchor-placement="bottom-bottom" data-aos-offset="250" data-aos="fade-up" data-aos-delay="400">Improved <br />Planner Efficiency</p>
           </div>
           <div class="homestats__stat">
-            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">90%</p>
-            <p class="homestats__statTitle" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom" data-aos-delay="100">E2E <br />Visibility</p>
+            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos-offset="300" data-aos="fade-up" data-aos-delay="800">90%</p>
+            <p class="homestats__statTitle" data-aos-anchor-placement="bottom-bottom" data-aos-offset="250" data-aos="fade-up" data-aos-delay="1200">E2E <br />Visibility</p>
           </div>
           <div class="homestats__stat">
-            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">11%</p>
-            <p class="homestats__statTitle" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom" data-aos-delay="200">Improved <br />Forecast Accuracy</p>
+            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos-offset="300" data-aos="fade-up" data-aos-delay="1600">11%</p>
+            <p class="homestats__statTitle" data-aos-anchor-placement="bottom-bottom" data-aos-offset="250" data-aos="fade-up" data-aos-delay="2000">Improved <br />Forecast Accuracy</p>
           </div>
           <div class="homestats__stat">
-            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">5%</p>
-            <p class="homestats__statTitle" data-aos="fade-up" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300">Improved <br />Inventory Optimization</p>
+            <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos-offset="300" data-aos="fade-up" data-aos-delay="2400">5%</p>
+            <p class="homestats__statTitle" data-aos-anchor-placement="bottom-bottom" data-aos-offset="250" data-aos="fade-up" data-aos-delay="2800">Improved <br />Inventory Optimization</p>
           </div>
         </div>
       </div>
@@ -116,7 +116,6 @@
     <section class="platforms" data-aos="fade-in">
       <div class="container">
         <div id="platforms__canvas" class="particlecanvas"></div>
-        <!-- <canvas id="platforms__canvas" class="platforms__canvas"></canvas> -->
         <h3 class="platforms__title" data-aos="fade-up">PLATFORMS</h3>
         <div class="platform" id="scai">
           <div class="platform__sticky">
@@ -185,23 +184,9 @@
       </div>
     </section>
 
-    <section class="products">
+    <!-- <section class="products">
       <div class="products__bg" data-aos="fade-in"></div>
       <h3 class="products__title" data-aos="fade-in">PRODUCTS</h3>
-      <!-- <div class="container products__content">
-      <div class="products__lhs">
-        <div class="products__pre" data-aos="fade-up">
-          <div class="d-flex align-items-center">
-            <img src="assets/svgs/icons8-cubes-64-white.svg" class="products__preImg" />
-            <p class="products__preText ml-3">Planning Products</p>
-          </div>
-          <div class="products__preBottom"></div>
-          <p class="products__prePara">AI-Powered Supply Chain Management <span class="text-primary">Optimize Your
-              Business with Ease.</span></p>
-        </div>
-      </div>
-      <div class="products__rhs"></div>
-    </div> -->
       <div class="container products__content -planningLottieContainer">
         <div class="products__lhs">
           <div class="products__pre" data-aos="fade-up">
@@ -235,20 +220,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="container products__content">
-      <div class="products__lhs">
-        <div class="products__pre" data-aos="fade-up">
-          <div class="d-flex align-items-center">
-            <img src="assets/svgs/icons8-cubes-64-white.svg" class="products__preImg" />
-            <p class="products__preText ml-3">Execution Products</p>
-          </div>
-          <div class="products__preBottom"></div>
-          <p class="products__prePara">Automating the Supply Chain <span class="text-primary">Intelligent Solutions for
-              Smarter Decisions.</span></p>
-        </div>
-      </div>
-      <div class="products__rhs"></div>
-    </div> -->
       <div class="container products__content -executionLottieContainer">
         <div class="products__lhs">
           <div class="products__pre" data-aos="fade-up">
@@ -337,11 +308,8 @@
     <section class="testimonials">
       <div class="container-fluid">
         <h3 class="testimonials__title">TESTIMONIALS</h3>
-        <!-- Slider main container -->
         <div class="swiper testimonials__swiper">
-          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper-slide testimonials__slide">
               <p class="testimonials__slidePara">Strong team with great capabilities.</p>
               <img src="assets/images/home/testimonials/pepsico.png" alt="" class="testimonials__slideImg" />
@@ -386,11 +354,8 @@
     <section class="industries">
       <div class="container-fluid">
         <h3 class="industries__title" data-aos="fade-up">INDUSTRIES</h3>
-        <!-- Slider main container -->
         <div class="swiper industries__swiper">
-          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper-slide industries__slide" data-aos="fade-left">
               <img src="assets/images/home/industries/agro.png" alt="" class="industries__slideImg" />
               <p class="industries__slidePara">Agriculture</p>
@@ -440,11 +405,8 @@
       <div id="news__canvas" class="particlecanvas"></div>
       <div class="container-fluid">
         <h3 class="news__title" data-aos="fade-up">BUSINESS INSIGHTS</h3>
-        <!-- Slider main container -->
         <div class="swiper news__swiper">
-          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper-slide news__slide" data-aos="fade-up">
               <div class="news__slideImgC">
                 <img src="assets/images/home/news/1.png" alt="" class="news__slideImg" />
@@ -480,35 +442,26 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <!-- <label for="name" class="get-in-touch__label">Name*</label> -->
                     <input type="text" class="form-control get-in-touch__input" id="name" name="name" placeholder="Enter your name" required data-pristine-required-message="Please enter your name." />
-                    <!-- <div class="invalid-feedback">Please enter your name.</div> -->
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <!-- <label for="email" class="get-in-touch__label">Email*</label> -->
                     <input type="email" class="form-control get-in-touch__input" id="email" name="email" placeholder="Enter your email" required data-pristine-required-message="Please enter a valid email address." />
-                    <!-- <div class="invalid-feedback">Please enter a valid email address.</div> -->
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <!-- <label for="company" class="get-in-touch__label">Company Name*</label> -->
                     <input type="text" class="form-control get-in-touch__input" id="company" name="company" placeholder="Enter your company name" required data-pristine-required-message="Please enter your company name." />
-                    <!-- <div class="invalid-feedback">Please enter your company name.</div> -->
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <!-- <label for="contact-number" class="get-in-touch__label">Contact Number*</label> -->
                     <input type="tel" class="form-control get-in-touch__input" id="contact-number" name="contact-number" required placeholder="Enter your contact number" pattern="/^\d{10}$/g" data-pristine-required-message="Please enter a valid contact number." data-pristine-pattern-message="Number should be 10 digit only" />
-                    <!-- <div class="invalid-feedback">Please enter a valid contact number.</div> -->
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <!-- <label for="message" class="get-in-touch__label">Message*</label> -->
                     <textarea class="form-control get-in-touch__input" required id="message" name="message" rows="6" placeholder="Enter your message"></textarea>
                     <div class="invalid-feedback">Please enter your message.</div>
                   </div>
@@ -589,7 +542,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
     <!-- Jquery & Bootstrap Bundle js -->
     <script src="./dist/js/libs/jquery-3.5.1.slim.min.js"></script>
     <script src="./dist/js/libs/bootstrap.bundle.min.js"></script>
@@ -628,9 +581,9 @@
         throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
         // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 100, // offset (in px) from the original trigger point
-        delay: 50, // values from 0 to 3000, with step 50ms
-        duration: 400, // values from 0 to 3000, with step 50ms
+        offset: 150, // offset (in px) from the original trigger point
+        delay: 80, // values from 0 to 3000, with step 50ms
+        duration: 600, // values from 0 to 3000, with step 50ms
         easing: "ease", // default easing for AOS animations
         once: true, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
