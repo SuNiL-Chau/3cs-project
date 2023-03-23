@@ -43,118 +43,6 @@ navbarToggler.addEventListener("click", () => {
 //   lp.load(lp.dataset.src);
 // });
 
-// platformsection
-// function platformConnectingDots() {
-//   var canvas = document.getElementById("platforms__canvas"),
-//     ctx = canvas.getContext("2d");
-
-//   canvas.width = window.innerWidth;
-//   canvas.height = window.innerHeight;
-
-//   var stars = [], // Array that contains the stars
-//     FPS = 60, // Frames per second
-//     x = 100, // Number of stars
-//     mouse = {
-//       x: 0,
-//       y: 0,
-//     }; // mouse location
-
-//   // Push stars to array
-
-//   for (var i = 0; i < x; i++) {
-//     stars.push({
-//       x: Math.random() * canvas.width,
-//       y: Math.random() * canvas.height,
-//       radius: Math.random() * 1 + 1,
-//       vx: Math.floor(Math.random() * 50) - 25,
-//       vy: Math.floor(Math.random() * 50) - 25,
-//     });
-//   }
-
-//   // Draw the scene
-
-//   function draw() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-//     ctx.globalCompositeOperation = "lighter";
-
-//     for (var i = 0, x = stars.length; i < x; i++) {
-//       var s = stars[i];
-
-//       // ctx.fillStyle = "#fff";
-//       ctx.fillStyle = "#00000080";
-//       ctx.beginPath();
-//       ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
-//       ctx.fill();
-//       // ctx.fillStyle = "black";
-//       ctx.fillStyle = "#00000080";
-//       // ctx.fillStyle = "white";
-//       ctx.stroke();
-//     }
-
-//     ctx.beginPath();
-//     for (var i = 0, x = stars.length; i < x; i++) {
-//       var starI = stars[i];
-//       ctx.moveTo(starI.x, starI.y);
-//       if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
-//       for (var j = 0, x = stars.length; j < x; j++) {
-//         var starII = stars[j];
-//         if (distance(starI, starII) < 150) {
-//           //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
-//           ctx.lineTo(starII.x, starII.y);
-//         }
-//       }
-//     }
-//     ctx.lineWidth = 0.05;
-//     // ctx.strokeStyle = "white";
-//     ctx.strokeStyle = "#D1D1D1";
-//     ctx.stroke();
-//   }
-
-//   function distance(point1, point2) {
-//     var xs = 0;
-//     var ys = 0;
-
-//     xs = point2.x - point1.x;
-//     xs = xs * xs;
-
-//     ys = point2.y - point1.y;
-//     ys = ys * ys;
-
-//     return Math.sqrt(xs + ys);
-//   }
-
-//   // Update star locations
-
-//   function update() {
-//     for (var i = 0, x = stars.length; i < x; i++) {
-//       var s = stars[i];
-
-//       s.x += s.vx / FPS;
-//       s.y += s.vy / FPS;
-
-//       if (s.x < 0 || s.x > canvas.width) s.vx = -s.vx;
-//       if (s.y < 0 || s.y > canvas.height) s.vy = -s.vy;
-//     }
-//   }
-
-//   canvas.addEventListener("mousemove", function (e) {
-//     mouse.x = e.clientX;
-//     mouse.y = e.clientY;
-//   });
-
-//   // Update and draw
-
-//   function tick() {
-//     draw();
-//     update();
-//     requestAnimationFrame(tick);
-//   }
-
-//   tick();
-// }
-// platformConnectingDots();
-
 // testimonials swiper
 const swiper = new Swiper(".testimonials__swiper", {
   direction: "horizontal",
@@ -176,188 +64,188 @@ const swiper = new Swiper(".testimonials__swiper", {
 });
 
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
-testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px";
+testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
 
 // industries swiper
-const swiper2 = new Swiper(".industries__swiper", {
-  direction: "horizontal",
-  slidesPerView: 5,
-  spaceBetween: 30,
-  grabCursor: true,
-  autoplay: true,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: "auto",
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 20,
-    },
-  },
-});
+// const swiper2 = new Swiper(".industries__swiper", {
+//   direction: "horizontal",
+//   slidesPerView: 5,
+//   spaceBetween: 30,
+//   grabCursor: true,
+//   autoplay: true,
+//   breakpoints: {
+//     // when window width is >= 320px
+//     320: {
+//       slidesPerView: "auto",
+//       spaceBetween: 20,
+//     },
+//     1024: {
+//       slidesPerView: 5,
+//       spaceBetween: 20,
+//     },
+//   },
+// });
 
 // news swiper
-const swiper3 = new Swiper(".news__swiper", {
-  direction: "horizontal",
-  slidesPerView: 3,
-  spaceBetween: 30,
-  grabCursor: true,
-  autoplay: true,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: "auto",
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-  },
-});
+// const swiper3 = new Swiper(".news__swiper", {
+//   direction: "horizontal",
+//   slidesPerView: 3,
+//   spaceBetween: 30,
+//   grabCursor: true,
+//   autoplay: true,
+//   breakpoints: {
+//     // when window width is >= 320px
+//     320: {
+//       slidesPerView: "auto",
+//       spaceBetween: 20,
+//     },
+//     1024: {
+//       slidesPerView: 3,
+//       spaceBetween: 30,
+//     },
+//   },
+// });
 
-window.onload = function () {
-  let formConfig = {
-    // class of the parent element where the error/success class is added
-    classTo: "form-group",
-    errorClass: "has-danger",
-    successClass: "has-success",
-    // class of the parent element where error text element is appended
-    errorTextParent: "form-group",
-    // type of element to create for the error text
-    errorTextTag: "div",
-    // class of the error text element
-    errorTextClass: "text-danger mt-2",
-  };
+// window.onload = function () {
+//   let formConfig = {
+//     // class of the parent element where the error/success class is added
+//     classTo: "form-group",
+//     errorClass: "has-danger",
+//     successClass: "has-success",
+//     // class of the parent element where error text element is appended
+//     errorTextParent: "form-group",
+//     // type of element to create for the error text
+//     errorTextTag: "div",
+//     // class of the error text element
+//     errorTextClass: "text-danger mt-2",
+//   };
 
-  var form = document.getElementById("contact-form");
+//   var form = document.getElementById("contact-form");
 
-  // create the pristine instance
-  var pristine = new Pristine(form, formConfig, true);
+//   // create the pristine instance
+//   var pristine = new Pristine(form, formConfig, true);
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+//   form.addEventListener("submit", function (e) {
+//     e.preventDefault();
 
-    // check if the form is valid
-    var valid = pristine.validate(); // returns true or false
-  });
+//     // check if the form is valid
+//     var valid = pristine.validate(); // returns true or false
+//   });
 
-  // counter animation
-  // Get all the counter elements
-  const counterElements = document.querySelectorAll(".countings__stat");
+//   // counter animation
+//   // Get all the counter elements
+//   const counterElements = document.querySelectorAll(".countings__stat");
 
-  // Define the updateCount function
-  function updateCount(countElement, count) {
-    countElement.textContent = count;
-  }
+//   // Define the updateCount function
+//   function updateCount(countElement, count) {
+//     countElement.textContent = count;
+//   }
 
-  // Define the animateCount function
-  // function animateCount(countElement, startCount, targetCount, duration, interval) {
-  //   let count = startCount;
-  //   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
+//   // Define the animateCount function
+//   // function animateCount(countElement, startCount, targetCount, duration, interval) {
+//   //   let count = startCount;
+//   //   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
 
-  //   const timer = setInterval(() => {
-  //     count += increment;
-  //     updateCount(countElement, count);
-  //     if (count >= targetCount) {
-  //       clearInterval(timer);
-  //       count = targetCount;
-  //       updateCount(countElement, count);
-  //     }
-  //   }, interval);
-  // }
+//   //   const timer = setInterval(() => {
+//   //     count += increment;
+//   //     updateCount(countElement, count);
+//   //     if (count >= targetCount) {
+//   //       clearInterval(timer);
+//   //       count = targetCount;
+//   //       updateCount(countElement, count);
+//   //     }
+//   //   }, interval);
+//   // }
 
-  // counter animation
-  let counterOptions = {
-    rootMargin: "-50px",
-    threshold: 1,
-  };
+//   // counter animation
+//   let counterOptions = {
+//     rootMargin: "-50px",
+//     threshold: 1,
+//   };
 
-  let counterCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        let counterElement = entry.target;
-        // const startCount = 0;
-        // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-        const duration = parseInt(counterElement.getAttribute("data-count-duration"));
-        // const interval = Math.floor(duration / targetCount);
-        const countElement = counterElement.querySelector(".statCount");
-        // //console.log("counter element: ", counterElement);
-        // //console.log("count element: ", countElement);
-        // animateCount(countElement, startCount, targetCount, duration, interval);
+//   let counterCallback = (entries, observer) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         let counterElement = entry.target;
+//         // const startCount = 0;
+//         // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+//         const duration = parseInt(counterElement.getAttribute("data-count-duration"));
+//         // const interval = Math.floor(duration / targetCount);
+//         const countElement = counterElement.querySelector(".statCount");
+//         // //console.log("counter element: ", counterElement);
+//         // //console.log("count element: ", countElement);
+//         // animateCount(countElement, startCount, targetCount, duration, interval);
 
-        // counterElement.innerText = "0";
-        const updateCounter = () => {
-          const target = +counterElement.getAttribute("data-count");
-          const count = +countElement.innerText;
-          const increment = target / duration;
-          if (count < target) {
-            countElement.innerText = `${Math.ceil(count + increment)}`;
-            setTimeout(updateCounter, 1);
-          } else countElement.innerText = target;
-        };
-        updateCounter();
-        observer.unobserve(entry.target);
-      }
-    });
-  };
+//         // counterElement.innerText = "0";
+//         const updateCounter = () => {
+//           const target = +counterElement.getAttribute("data-count");
+//           const count = +countElement.innerText;
+//           const increment = target / duration;
+//           if (count < target) {
+//             countElement.innerText = `${Math.ceil(count + increment)}`;
+//             setTimeout(updateCounter, 1);
+//           } else countElement.innerText = target;
+//         };
+//         updateCounter();
+//         observer.unobserve(entry.target);
+//       }
+//     });
+//   };
 
-  let counterObserver = new IntersectionObserver(counterCallback, counterOptions);
+//   let counterObserver = new IntersectionObserver(counterCallback, counterOptions);
 
-  // Loop through each counter element and animate the count
-  counterElements.forEach((counterElement) => {
-    counterObserver.observe(counterElement);
-    // const startCount = 0;
-    // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-    // const duration = 3000;
-    // const interval = Math.floor(duration / targetCount);
+//   // Loop through each counter element and animate the count
+//   counterElements.forEach((counterElement) => {
+//     counterObserver.observe(counterElement);
+//     // const startCount = 0;
+//     // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+//     // const duration = 3000;
+//     // const interval = Math.floor(duration / targetCount);
 
-    // const countElement = counterElement.querySelector(".statCount");
+//     // const countElement = counterElement.querySelector(".statCount");
 
-    // animateCount(countElement, startCount, targetCount, duration, interval);
-  });
-};
+//     // animateCount(countElement, startCount, targetCount, duration, interval);
+//   });
+// };
 
 // lottie interactivity
-LottieInteractivity.create({
-  player: "#servicesLottie",
-  mode: "scroll",
-  container: ".services",
-  actions: [
-    {
-      visibility: [0.15, 0.75],
-      type: "seek",
-      frames: [0, 480],
-    },
-  ],
-});
-LottieInteractivity.create({
-  player: "#planningLottie",
-  mode: "scroll",
-  container: ".-planningLottieContainer",
-  actions: [
-    {
-      visibility: [0.2, 1],
-      type: "seek",
-      // frames: [0, 176],
-      frames: [0, 155],
-    },
-  ],
-});
-LottieInteractivity.create({
-  player: "#executionLottie",
-  mode: "scroll",
-  container: ".-executionLottieContainer",
-  actions: [
-    {
-      visibility: [0.2, 0.7],
-      type: "seek",
-      frames: [0, 228],
-    },
-  ],
-});
+// LottieInteractivity.create({
+//   player: "#servicesLottie",
+//   mode: "scroll",
+//   container: ".services",
+//   actions: [
+//     {
+//       visibility: [0.15, 0.75],
+//       type: "seek",
+//       frames: [0, 480],
+//     },
+//   ],
+// });
+// LottieInteractivity.create({
+//   player: "#planningLottie",
+//   mode: "scroll",
+//   container: ".-planningLottieContainer",
+//   actions: [
+//     {
+//       visibility: [0.2, 1],
+//       type: "seek",
+//       // frames: [0, 176],
+//       frames: [0, 155],
+//     },
+//   ],
+// });
+// LottieInteractivity.create({
+//   player: "#executionLottie",
+//   mode: "scroll",
+//   container: ".-executionLottieContainer",
+//   actions: [
+//     {
+//       visibility: [0.2, 0.7],
+//       type: "seek",
+//       frames: [0, 228],
+//     },
+//   ],
+// });
 
 // Get Lottie player instance
 var scaiplayer = document.querySelector("#scaiLottie").getLottie();
@@ -458,13 +346,12 @@ LottieInteractivity.create({
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
-particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
-particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
-particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
+// particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
+// particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
+// particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
 
 // particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () { });
-// Load particleJS
-particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
+
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Get reference to particleJS object
 //   var particleJS = particlesJS("platforms__canvas").pJS;
