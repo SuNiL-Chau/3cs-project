@@ -483,6 +483,12 @@
       flex-direction: column;
       gap: 60px;
     }
+    &__service {
+      display: flex;
+      flex-direction: column;
+      height: 70vh;
+      justify-content: center;
+    }
     .service {
       &__pre {
         display: grid;

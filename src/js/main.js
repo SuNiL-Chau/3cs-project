@@ -67,160 +67,160 @@ var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .s
 testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
 
 // industries swiper
-// const swiper2 = new Swiper(".industries__swiper", {
-//   direction: "horizontal",
-//   slidesPerView: 5,
-//   spaceBetween: 30,
-//   grabCursor: true,
-//   autoplay: true,
-//   breakpoints: {
-//     // when window width is >= 320px
-//     320: {
-//       slidesPerView: "auto",
-//       spaceBetween: 20,
-//     },
-//     1024: {
-//       slidesPerView: 5,
-//       spaceBetween: 20,
-//     },
-//   },
-// });
+const swiper2 = new Swiper(".industries__swiper", {
+  direction: "horizontal",
+  slidesPerView: 5,
+  spaceBetween: 30,
+  grabCursor: true,
+  autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 20,
+    },
+  },
+});
 
 // news swiper
-// const swiper3 = new Swiper(".news__swiper", {
-//   direction: "horizontal",
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   grabCursor: true,
-//   autoplay: true,
-//   breakpoints: {
-//     // when window width is >= 320px
-//     320: {
-//       slidesPerView: "auto",
-//       spaceBetween: 20,
-//     },
-//     1024: {
-//       slidesPerView: 3,
-//       spaceBetween: 30,
-//     },
-//   },
-// });
+const swiper3 = new Swiper(".news__swiper", {
+  direction: "horizontal",
+  slidesPerView: 3,
+  spaceBetween: 30,
+  grabCursor: true,
+  autoplay: true,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+});
 
-// window.onload = function () {
-//   let formConfig = {
-//     // class of the parent element where the error/success class is added
-//     classTo: "form-group",
-//     errorClass: "has-danger",
-//     successClass: "has-success",
-//     // class of the parent element where error text element is appended
-//     errorTextParent: "form-group",
-//     // type of element to create for the error text
-//     errorTextTag: "div",
-//     // class of the error text element
-//     errorTextClass: "text-danger mt-2",
-//   };
+window.onload = function () {
+  let formConfig = {
+    // class of the parent element where the error/success class is added
+    classTo: "form-group",
+    errorClass: "has-danger",
+    successClass: "has-success",
+    // class of the parent element where error text element is appended
+    errorTextParent: "form-group",
+    // type of element to create for the error text
+    errorTextTag: "div",
+    // class of the error text element
+    errorTextClass: "text-danger mt-2",
+  };
 
-//   var form = document.getElementById("contact-form");
+  var form = document.getElementById("contact-form");
 
-//   // create the pristine instance
-//   var pristine = new Pristine(form, formConfig, true);
+  // create the pristine instance
+  var pristine = new Pristine(form, formConfig, true);
 
-//   form.addEventListener("submit", function (e) {
-//     e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-//     // check if the form is valid
-//     var valid = pristine.validate(); // returns true or false
-//   });
+    // check if the form is valid
+    var valid = pristine.validate(); // returns true or false
+  });
 
-//   // counter animation
-//   // Get all the counter elements
-//   const counterElements = document.querySelectorAll(".countings__stat");
+  // counter animation
+  // Get all the counter elements
+  const counterElements = document.querySelectorAll(".countings__stat");
 
-//   // Define the updateCount function
-//   function updateCount(countElement, count) {
-//     countElement.textContent = count;
-//   }
+  // Define the updateCount function
+  function updateCount(countElement, count) {
+    countElement.textContent = count;
+  }
 
-//   // Define the animateCount function
-//   // function animateCount(countElement, startCount, targetCount, duration, interval) {
-//   //   let count = startCount;
-//   //   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
+  // Define the animateCount function
+  // function animateCount(countElement, startCount, targetCount, duration, interval) {
+  //   let count = startCount;
+  //   const increment = Math.ceil((targetCount - startCount) / (duration / interval));
 
-//   //   const timer = setInterval(() => {
-//   //     count += increment;
-//   //     updateCount(countElement, count);
-//   //     if (count >= targetCount) {
-//   //       clearInterval(timer);
-//   //       count = targetCount;
-//   //       updateCount(countElement, count);
-//   //     }
-//   //   }, interval);
-//   // }
+  //   const timer = setInterval(() => {
+  //     count += increment;
+  //     updateCount(countElement, count);
+  //     if (count >= targetCount) {
+  //       clearInterval(timer);
+  //       count = targetCount;
+  //       updateCount(countElement, count);
+  //     }
+  //   }, interval);
+  // }
 
-//   // counter animation
-//   let counterOptions = {
-//     rootMargin: "-50px",
-//     threshold: 1,
-//   };
+  // counter animation
+  let counterOptions = {
+    rootMargin: "-50px",
+    threshold: 1,
+  };
 
-//   let counterCallback = (entries, observer) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         let counterElement = entry.target;
-//         // const startCount = 0;
-//         // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-//         const duration = parseInt(counterElement.getAttribute("data-count-duration"));
-//         // const interval = Math.floor(duration / targetCount);
-//         const countElement = counterElement.querySelector(".statCount");
-//         // //console.log("counter element: ", counterElement);
-//         // //console.log("count element: ", countElement);
-//         // animateCount(countElement, startCount, targetCount, duration, interval);
+  let counterCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let counterElement = entry.target;
+        // const startCount = 0;
+        // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+        const duration = parseInt(counterElement.getAttribute("data-count-duration"));
+        // const interval = Math.floor(duration / targetCount);
+        const countElement = counterElement.querySelector(".statCount");
+        // //console.log("counter element: ", counterElement);
+        // //console.log("count element: ", countElement);
+        // animateCount(countElement, startCount, targetCount, duration, interval);
 
-//         // counterElement.innerText = "0";
-//         const updateCounter = () => {
-//           const target = +counterElement.getAttribute("data-count");
-//           const count = +countElement.innerText;
-//           const increment = target / duration;
-//           if (count < target) {
-//             countElement.innerText = `${Math.ceil(count + increment)}`;
-//             setTimeout(updateCounter, 1);
-//           } else countElement.innerText = target;
-//         };
-//         updateCounter();
-//         observer.unobserve(entry.target);
-//       }
-//     });
-//   };
+        // counterElement.innerText = "0";
+        const updateCounter = () => {
+          const target = +counterElement.getAttribute("data-count");
+          const count = +countElement.innerText;
+          const increment = target / duration;
+          if (count < target) {
+            countElement.innerText = `${Math.ceil(count + increment)}`;
+            setTimeout(updateCounter, 1);
+          } else countElement.innerText = target;
+        };
+        updateCounter();
+        observer.unobserve(entry.target);
+      }
+    });
+  };
 
-//   let counterObserver = new IntersectionObserver(counterCallback, counterOptions);
+  let counterObserver = new IntersectionObserver(counterCallback, counterOptions);
 
-//   // Loop through each counter element and animate the count
-//   counterElements.forEach((counterElement) => {
-//     counterObserver.observe(counterElement);
-//     // const startCount = 0;
-//     // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
-//     // const duration = 3000;
-//     // const interval = Math.floor(duration / targetCount);
+  // Loop through each counter element and animate the count
+  counterElements.forEach((counterElement) => {
+    counterObserver.observe(counterElement);
+    // const startCount = 0;
+    // const targetCount = parseInt(counterElement.getAttribute("data-count"), 10);
+    // const duration = 3000;
+    // const interval = Math.floor(duration / targetCount);
 
-//     // const countElement = counterElement.querySelector(".statCount");
+    // const countElement = counterElement.querySelector(".statCount");
 
-//     // animateCount(countElement, startCount, targetCount, duration, interval);
-//   });
-// };
+    // animateCount(countElement, startCount, targetCount, duration, interval);
+  });
+};
 
 // lottie interactivity
-// LottieInteractivity.create({
-//   player: "#servicesLottie",
-//   mode: "scroll",
-//   container: ".services",
-//   actions: [
-//     {
-//       visibility: [0.15, 0.75],
-//       type: "seek",
-//       frames: [0, 480],
-//     },
-//   ],
-// });
+LottieInteractivity.create({
+  player: "#servicesLottie",
+  mode: "scroll",
+  container: ".services",
+  actions: [
+    {
+      visibility: [0.15, 0.75],
+      type: "seek",
+      frames: [0, 480],
+    },
+  ],
+});
 LottieInteractivity.create({
   player: "#planningLottie",
   mode: "scroll",
@@ -346,11 +346,9 @@ LottieInteractivity.create({
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
-// particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
-// particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
-// particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
-
-// particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () { });
+particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
+particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
+particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Get reference to particleJS object
