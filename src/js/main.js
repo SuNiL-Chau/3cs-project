@@ -221,31 +221,31 @@ testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonia
 //     },
 //   ],
 // });
-// LottieInteractivity.create({
-//   player: "#planningLottie",
-//   mode: "scroll",
-//   container: ".-planningLottieContainer",
-//   actions: [
-//     {
-//       visibility: [0.2, 1],
-//       type: "seek",
-//       // frames: [0, 176],
-//       frames: [0, 155],
-//     },
-//   ],
-// });
-// LottieInteractivity.create({
-//   player: "#executionLottie",
-//   mode: "scroll",
-//   container: ".-executionLottieContainer",
-//   actions: [
-//     {
-//       visibility: [0.2, 0.7],
-//       type: "seek",
-//       frames: [0, 228],
-//     },
-//   ],
-// });
+LottieInteractivity.create({
+  player: "#planningLottie",
+  mode: "scroll",
+  container: ".-planningLottieContainer",
+  actions: [
+    {
+      visibility: [0.2, 1],
+      type: "seek",
+      // frames: [0, 176],
+      frames: [0, 155],
+    },
+  ],
+});
+LottieInteractivity.create({
+  player: "#executionLottie",
+  mode: "scroll",
+  container: ".-executionLottieContainer",
+  actions: [
+    {
+      visibility: [0.2, 0.7],
+      type: "seek",
+      frames: [0, 228],
+    },
+  ],
+});
 
 // Get Lottie player instance
 var scaiplayer = document.querySelector("#scaiLottie").getLottie();
