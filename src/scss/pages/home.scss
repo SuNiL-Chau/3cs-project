@@ -2,6 +2,8 @@
 @import "../mixin";
 @import "../rfs";
 
+$mobilePad: 35px;
+
 .particlecanvas {
   position: absolute;
   top: 0;
@@ -20,6 +22,9 @@
     align-items: center;
     overflow: hidden;
     margin-top: 97px;
+    @include media-bp(mdl) {
+      min-height: 500px;
+    }
     &__canvas {
       position: absolute;
       width: 90%;
@@ -32,9 +37,10 @@
       position: absolute;
       transform: translate(32%, 10%) !important;
       @include media-bp(mdl) {
-        width: 120% !important;
-        transform: translateX(0px) !important;
+        width: 120vw !important;
+        transform: translateX(-10%) !important;
         height: 100% !important;
+        position: relative;
       }
     }
     &__content {
@@ -42,9 +48,12 @@
       display: flex;
       flex-direction: column;
       @include media-bp(mdl) {
-        width: 70%;
+        // width: 70%;
+        padding-left: $mobilePad;
+        padding-right: $mobilePad;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 100px;
       }
     }
     &__title {
@@ -61,6 +70,9 @@
     }
     .homebanner__title + .homebanner__subtitle {
       @include margin-top(60px);
+      @include media-bp(mdl) {
+        @include margin-top(17px);
+      }
     }
     &__subtitle {
       @include rfs(35px);
@@ -119,8 +131,6 @@
         }
       }
     }
-    @include media-bp(mdl) {
-    }
   }
   .homestats,
   .countings {
@@ -131,6 +141,11 @@
     background-color: $black_1;
     @include padding-top(176px);
     @include padding-bottom(176px);
+    @include media-bp(mdl) {
+      margin-top: 0;
+      padding-left: $mobilePad;
+      padding-right: $mobilePad;
+    }
     &::before,
     &::after {
       content: "";
@@ -139,9 +154,9 @@
       top: 0;
       bottom: 0;
       width: 100%;
-      // background: transparent radial-gradient(circle closest-side at 50% 50%, #b94609 0%, #e3512500 100%) 0% 0% no-repeat padding-box;
       background: radial-gradient(circle at center, #b94609, transparent) 0% 0% no-repeat padding-box;
       opacity: 0.5;
+      z-index: 1;
     }
     &::before {
       left: 0;
@@ -151,12 +166,21 @@
       right: 0;
       transform: translateX(50%);
     }
+    &__container {
+      @include media-bp(mdl) {
+        position: relative;
+        z-index: 2;
+      }
+    }
     &__grid {
       display: flex;
-      flex-flow: row wrap;
       justify-content: center;
       @include media-bp(mdl) {
         row-gap: 30px;
+        overflow: visible;
+        overflow-x: scroll;
+        justify-content: flex-start;
+        scroll-snap-type: x mandatory;
       }
     }
     &__stat {
@@ -167,10 +191,21 @@
       text-align: center;
       @include padding-left(40px);
       @include padding-right(40px);
+      @include media-bp(mdl) {
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
       &:not(:first-child) {
         border-left: 1px solid $white;
+      }
+      &:first-child {
         @include media-bp(mdl) {
-          border: none;
+          padding-left: 0;
+        }
+      }
+      &:last-child {
+        @include media-bp(mdl) {
+          padding-right: 0;
         }
       }
       &Count {
@@ -181,6 +216,8 @@
         color: $white;
         @include media-bp(mdl) {
           line-height: 1.15;
+          font-size: 46px;
+          letter-spacing: normal;
         }
       }
       &Title {
@@ -189,6 +226,11 @@
         letter-spacing: normal;
         font-weight: 700;
         color: $orange1;
+        @include media-bp(mdl) {
+          font-size: 14px;
+          line-height: 1.25;
+          letter-spacing: normal;
+        }
       }
     }
   }
@@ -198,6 +240,10 @@
     min-height: 100vh;
     @include padding-top(98px);
     @include padding-bottom(113px);
+    @include media-bp(mdl) {
+      padding-left: $mobilePad;
+      padding-right: $mobilePad;
+    }
     &__title {
       text-align: center;
       @include rfs(35px);
@@ -207,6 +253,9 @@
       color: $orange1;
       @include media-bp(mdl) {
         margin-bottom: 30px;
+        @include rfs(21px);
+        line-height: 1.25;
+        letter-spacing: toRem(6.3px);
       }
     }
     .platform {
@@ -223,6 +272,9 @@
         width: min-content;
         align-items: center;
         justify-items: flex-start;
+        @include media-bp(mdl) {
+          column-gap: 10px;
+        }
         &Img {
           width: 40px;
           height: 40px;
@@ -233,6 +285,11 @@
           letter-spacing: normal;
           color: $black_1;
           font-weight: 700;
+          @include media-bp(mdl) {
+            font-size: 21px;
+            line-height: 1.25;
+            letter-spacing: normal;
+          }
         }
         &Bottom {
           grid-column: 1/3;
@@ -250,13 +307,18 @@
         font-weight: 600;
         max-width: 800px;
         width: 100%;
+        @include media-bp(mdl) {
+          font-size: 16px;
+          line-height: 25px;
+          letter-spacing: -0.32px;
+        }
       }
       &__content {
         display: flex;
         flex-flow: row wrap;
         gap: 60px;
-        @include padding-top(50px);
-        @include padding-bottom(50px);
+        @include padding-top(20px);
+        @include padding-bottom(20px);
         justify-content: space-between;
         &Brain,
         &Globe {
@@ -277,12 +339,12 @@
           display: flex;
           flex-direction: column;
           gap: 30px;
-          // for now only
-          // gap: calc(100vh / 4);
-          // @include padding-top(40px);
-          // @include padding-bottom(40px);
           @include media-bp(mdl) {
             width: 100%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            overflow-x: scroll;
           }
         }
         &Btn {
@@ -291,11 +353,21 @@
           max-width: 294px;
           text-align: left;
           border-bottom: 1px solid $black_1;
+          @include media-bp(mdl) {
+            flex-shrink: 0;
+            width: max-content;
+            border-bottom: 0;
+          }
           &Txt {
             @include rfs(24px);
             line-height: 1.25;
             letter-spacing: toRem(0.81);
             color: $black_1;
+            @include media-bp(mdl) {
+              font-size: 12px;
+              line-height: 15px;
+              letter-spacing: 0.36px;
+            }
           }
           &.-active {
             .platform__contentBtnTxt {

@@ -34,8 +34,13 @@ navbarToggler.addEventListener("click", function () {
       navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + "px";
     }
     // navbarCollapse.classList.toggle("show");
-  }, 50);
+  }, 10);
 });
+if (window.innerWidth <= 768) {
+  document.querySelectorAll("button[data-aos='fade-left']").forEach(function (btn) {
+    btn.setAttribute("data-aos", "fade-in");
+  });
+}
 
 // lazyload lotties
 // document.querySelectorAll("lottie-player[data-src]").forEach((lp) => {
