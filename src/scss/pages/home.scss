@@ -177,7 +177,7 @@ $mobilePad: 35px;
       justify-content: center;
       @include media-bp(mdl) {
         row-gap: 30px;
-        overflow: visible;
+        overflow: hidden;
         overflow-x: scroll;
         justify-content: flex-start;
         scroll-snap-type: x mandatory;
@@ -333,18 +333,52 @@ $mobilePad: 35px;
         }
         &Globe {
           width: calc(60% - 30px);
+          @include media-bp(mdl) {
+            width: 100%;
+            lottie-player {
+              width: 100% !important;
+            }
+          }
+        }
+        .platform__contentBtns__Swiper {
+          width: calc(30% - 30px);
+          @include media-bp(mdl) {
+            width: 100%;
+            padding-bottom: 30px;
+            .swiper-pagination.swiper-pagination-bullets {
+              bottom: 0;
+              .swiper-pagination-bullet {
+                width: 9px;
+                height: 9px;
+                border-radius: 0;
+                background-color: $white;
+                border: 1px solid $gray;
+                box-sizing: border-box;
+                &-active {
+                  background-color: $orange1;
+                  border-color: $orange1;
+                }
+              }
+            }
+          }
         }
         &Btns {
           width: calc(30% - 30px);
           display: flex;
           flex-direction: column;
           gap: 30px;
+          &.swiper-wrapper {
+            width: 100%;
+          }
           @include media-bp(mdl) {
             width: 100%;
+            gap: 0;
             flex-direction: row;
             flex-wrap: nowrap;
-            overflow: hidden;
-            overflow-x: scroll;
+            // overflow: hidden;
+            // overflow-x: scroll;
+            // scroll-behavior: smooth;
+            // scroll-snap-type: x mandatory;
           }
         }
         &Btn {
@@ -353,10 +387,20 @@ $mobilePad: 35px;
           max-width: 294px;
           text-align: left;
           border-bottom: 1px solid $black_1;
+          &.swiper-slide {
+            height: max-content;
+          }
           @include media-bp(mdl) {
             flex-shrink: 0;
             width: max-content;
             border-bottom: 0;
+            scroll-snap-align: end;
+            &:not(:first-child) {
+              // margin-left: 15px;
+              padding-left: 15px;
+            }
+            padding-right: 15px;
+            border-right: 1px solid $gray;
           }
           &Txt {
             @include rfs(24px);
@@ -369,7 +413,8 @@ $mobilePad: 35px;
               letter-spacing: 0.36px;
             }
           }
-          &.-active {
+          &.-active,
+          &.swiper-slide-active {
             .platform__contentBtnTxt {
               font-weight: 700;
               color: $orange1;
@@ -395,6 +440,10 @@ $mobilePad: 35px;
     background-color: $black_1;
     @include padding-top(142px);
     @include padding-bottom(142px);
+    @include media-bp(mdl) {
+      padding-left: $mobilePad;
+      padding-right: $mobilePad;
+    }
     &__bg {
       position: absolute;
       top: 0;
@@ -429,6 +478,12 @@ $mobilePad: 35px;
       line-height: toRem(42);
       font-weight: 500;
       color: $white;
+      @include media-bp(mdl) {
+        margin-bottom: 30px;
+        @include rfs(21px);
+        line-height: 1.25;
+        letter-spacing: toRem(6.3px);
+      }
     }
     &__pre {
       display: grid;
@@ -438,12 +493,19 @@ $mobilePad: 35px;
       width: 100%;
       align-items: center;
       justify-items: flex-start;
+      @include media-bp(mdl) {
+        column-gap: 10px;
+      }
       & > .d-flex {
         grid-column: 1/3;
       }
       &Img {
         width: 51px;
         height: 51px;
+        @include media-bp(mdl) {
+          width: 40px;
+          height: 40px;
+        }
       }
       &Text {
         // @include rfs(65px);
@@ -452,6 +514,11 @@ $mobilePad: 35px;
         letter-spacing: normal;
         color: $white;
         font-weight: 700;
+        @include media-bp(mdl) {
+          font-size: 21px;
+          line-height: 1.25;
+          letter-spacing: normal;
+        }
       }
       &Para {
         // @include rfs(40px);
@@ -463,6 +530,11 @@ $mobilePad: 35px;
         grid-column: 1/3;
         // @include margin-top(40px);
         @include margin-top(12px);
+        @include media-bp(mdl) {
+          font-size: 16px;
+          line-height: 25px;
+          letter-spacing: -0.32px;
+        }
       }
       &Bottom {
         grid-column: 1/3;
@@ -504,6 +576,7 @@ $mobilePad: 35px;
       width: calc(40% - 30px);
       @include media-bp(mdl) {
         width: 100%;
+        padding-bottom: 30px;
       }
     }
     &__listing {
@@ -511,6 +584,11 @@ $mobilePad: 35px;
       flex-direction: column;
       gap: 60px;
       @include padding-top(180px);
+      @include media-bp(mdl) {
+        gap: 0;
+        flex-direction: row;
+        @include padding-top(30px);
+      }
     }
     &__product {
       display: flex;
@@ -520,12 +598,20 @@ $mobilePad: 35px;
       text-align: center;
       height: 70vh;
       justify-content: center;
+      @include media-bp(mdl) {
+        height: max-content;
+      }
       &Title {
         @include rfs(27px);
         line-height: toRem(33);
         letter-spacing: normal;
         color: $orange1;
         font-weight: 700;
+        @include media-bp(mdl) {
+          @include rfs(21px);
+          line-height: 24px;
+          letter-spacing: normal;
+        }
       }
       &Para {
         @include rfs(20px);
@@ -533,6 +619,11 @@ $mobilePad: 35px;
         letter-spacing: normal;
         color: $white;
         font-weight: 400;
+        @include media-bp(mdl) {
+          @include rfs(16px);
+          line-height: 245x;
+          letter-spacing:  0.32px;
+        }
       }
     }
   }
