@@ -320,6 +320,10 @@ $mobilePad: 35px;
         @include padding-top(20px);
         @include padding-bottom(20px);
         justify-content: space-between;
+        @include media-bp(mdl) {
+          gap: 30px;
+          padding-bottom: 30px;
+        }
         &Brain,
         &Globe {
           width: calc(70% - 30px);
@@ -395,6 +399,7 @@ $mobilePad: 35px;
             width: max-content;
             border-bottom: 0;
             scroll-snap-align: end;
+            padding-bottom: 0;
             &:not(:first-child) {
               // margin-left: 15px;
               padding-left: 15px;
@@ -552,6 +557,9 @@ $mobilePad: 35px;
       position: relative;
       @include padding-top(120px);
       @include padding-bottom(120px);
+      @include media-bp(mdl) {
+        gap: 30px;
+      }
     }
     .products__content:nth-child(4),
     .products__content:nth-child(5) {
@@ -577,6 +585,21 @@ $mobilePad: 35px;
       @include media-bp(mdl) {
         width: 100%;
         padding-bottom: 30px;
+        .swiper-pagination.swiper-pagination-bullets {
+          bottom: 0;
+          .swiper-pagination-bullet {
+            width: 9px;
+            height: 9px;
+            border-radius: 0;
+            background-color: $white;
+            border: 1px solid $gray;
+            box-sizing: border-box;
+            &-active {
+              background-color: $orange1;
+              border-color: $orange1;
+            }
+          }
+        }
       }
     }
     &__listing {
@@ -600,6 +623,7 @@ $mobilePad: 35px;
       justify-content: center;
       @include media-bp(mdl) {
         height: max-content;
+        gap: 20px;
       }
       &Title {
         @include rfs(27px);
@@ -621,8 +645,8 @@ $mobilePad: 35px;
         font-weight: 400;
         @include media-bp(mdl) {
           @include rfs(16px);
-          line-height: 245x;
-          letter-spacing:  0.32px;
+          line-height: 1.5;
+          letter-spacing: 0.32px;
         }
       }
     }
@@ -633,6 +657,11 @@ $mobilePad: 35px;
     min-height: 100vh;
     @include padding-top(98px);
     @include padding-bottom(226px);
+    @include media-bp(mdl) {
+      @include padding-bottom(98px);
+      padding-left: $mobilePad;
+      padding-right: $mobilePad;
+    }
     &__title {
       text-align: center;
       @include rfs(35px);
@@ -640,17 +669,55 @@ $mobilePad: 35px;
       line-height: toRem(42);
       font-weight: 500;
       color: $orange1;
+      @include media-bp(mdl) {
+        margin-bottom: 30px;
+        @include rfs(21px);
+        line-height: 1.25;
+        letter-spacing: toRem(6.3px);
+      }
+    }
+    .row > .col-12 {
+      padding: 0;
+    }
+    .swiper {
+      @include media-bp(mdl) {
+        .swiper-pagination.swiper-pagination-bullets {
+          bottom: 0;
+          .swiper-pagination-bullet {
+            width: 9px;
+            height: 9px;
+            border-radius: 0;
+            background-color: $white;
+            border: 1px solid $gray;
+            box-sizing: border-box;
+            &-active {
+              background-color: $orange1;
+              border-color: $orange1;
+            }
+          }
+        }
+      }
     }
     &__listing {
       display: flex;
       flex-direction: column;
       gap: 60px;
+      @include media-bp(mdl) {
+        flex-direction: row;
+        gap: 0;
+        margin-bottom: 40px;
+      }
     }
     &__service {
       display: flex;
       flex-direction: column;
       height: 70vh;
       justify-content: center;
+      @include media-bp(mdl) {
+        height: max-content;
+        padding-top: 40px;
+        padding-bottom: 4 0px;
+      }
     }
     .service {
       &__pre {
@@ -675,6 +742,11 @@ $mobilePad: 35px;
           letter-spacing: normal;
           color: $black_1;
           font-weight: 700;
+          @include media-bp(mdl) {
+            font-size: 21px;
+            line-height: 1.25;
+            letter-spacing: normal;
+          }
         }
         &Bottom {
           grid-column: 1/3;
@@ -693,6 +765,11 @@ $mobilePad: 35px;
         font-weight: 600;
         max-width: 700px;
         width: 100%;
+        @include media-bp(mdl) {
+          font-size: 16px;
+          line-height: 25px;
+          letter-spacing: -0.32px;
+        }
       }
     }
     &__lottie {
@@ -710,6 +787,10 @@ $mobilePad: 35px;
     background-color: $black_1;
     @include padding-top(100px);
     @include padding-bottom(100px);
+    @include media-bp(mdl) {
+      padding-left: $mobilePad;
+      padding-right: $mobilePad;
+    }
     &__title {
       @include rfs(35px);
       line-height: toRem(47);
@@ -719,6 +800,11 @@ $mobilePad: 35px;
       text-align: center;
       @include margin-bottom(60px);
       // @include margin-bottom(130px);
+      @include media-bp(mdl) {
+        font-size: 21px;
+        line-height: 25px;
+        letter-spacing: 6.3px;
+      }
     }
     &__swiper {
       width: 100%;
@@ -727,6 +813,24 @@ $mobilePad: 35px;
       height: max-content;
       .swiper-wrapper {
         align-items: stretch;
+      }
+      @include media-bp(mdl) {
+        padding-bottom: 50px;
+        .swiper-pagination.swiper-pagination-bullets {
+          bottom: 0;
+          .swiper-pagination-bullet {
+            width: 9px;
+            height: 9px;
+            border-radius: 0;
+            background-color: $white;
+            border: 1px solid $gray;
+            box-sizing: border-box;
+            &-active {
+              background-color: $orange1;
+              border-color: $orange1;
+            }
+          }
+        }
       }
     }
     &__slide {
@@ -744,12 +848,24 @@ $mobilePad: 35px;
         letter-spacing: normal;
         color: $white;
         font-weight: 600;
+        @include media-bp(mdl) {
+          font-size: 15px;
+          line-height: 25px;
+          letter-spacing: 0.3px;
+        }
       }
     }
   }
   .testimonials {
     &__slide {
       padding: toRem(30) toRem(30);
+      @include media-bp(mdl) {
+        gap: 30px;
+        &Img {
+          width: 150px;
+          height: auto;
+        }
+      }
     }
   }
   .countings {
@@ -798,6 +914,11 @@ $mobilePad: 35px;
         font-weight: 300;
       }
     }
+    &__swiper {
+      @include media-bp(mdl) {
+        width: calc(100% + $mobilePad + 15px);
+      }
+    }
   }
   .news {
     position: relative;
@@ -826,6 +947,9 @@ $mobilePad: 35px;
           z-index: 2;
           mix-blend-mode: multiply;
         }
+        @include media-bp(mdl) {
+          width: 170px;
+        }
       }
       &Img {
         position: relative;
@@ -841,6 +965,11 @@ $mobilePad: 35px;
         letter-spacing: normal;
         font-weight: 600;
         @include margin-top(40px);
+        @include media-bp(mdl) {
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: normal;
+        }
       }
       &Para {
         @include rfs(28px);
@@ -849,12 +978,22 @@ $mobilePad: 35px;
         letter-spacing: toRem(0.7);
         color: $black_1;
         margin-top: 16px;
+        @include media-bp(mdl) {
+          font-size: 16px;
+          line-height: 25px;
+          letter-spacing: 0.32px;
+          max-width: 250px;
+          margin-top: 12px;
+        }
       }
     }
   }
   .get-in-touch {
     background: $black_1;
     padding: 100px 0;
+    @include media-bp(mdl) {
+      padding: 50px $mobilePad;
+    }
 
     .form-wrapper {
       max-width: 1200px;
@@ -873,6 +1012,11 @@ $mobilePad: 35px;
       text-align: center;
       margin-bottom: 40px;
       font-weight: 500;
+      @include media-bp(mdl) {
+        font-size: 21px;
+        line-height: 25px;
+        letter-spacing: 6.3px;
+      }
     }
 
     .form-row {
@@ -916,6 +1060,11 @@ $mobilePad: 35px;
         color: #fff !important;
         box-shadow: none !important;
       }
+      @include media-bp(mdl) {
+        font-size: 20px;
+        line-height: 1.25;
+        letter-spacing: normal;
+      }
     }
 
     .has-error .form-control {
@@ -926,6 +1075,16 @@ $mobilePad: 35px;
     background-color: $white;
     @include padding-top(120px);
     @include padding-bottom(120px);
+    @include media-bp(mdl) {
+      padding-left: $mobilePad;
+      padding-right: $mobilePad;
+      .row {
+        gap: 30px;
+        & > .col-12 {
+          text-align: center !important;
+        }
+      }
+    }
 
     .subscribe-title {
       @include rfs(27px);
@@ -943,6 +1102,9 @@ $mobilePad: 35px;
       color: $black_1;
       &::placeholder {
         color: $black_1;
+      }
+      @include media-bp(mdl) {
+        min-height: 40px;
       }
     }
     .form-group {
@@ -972,6 +1134,11 @@ $mobilePad: 35px;
         border-color: $orange1 !important;
         color: #fff !important;
         box-shadow: none !important;
+      }
+      @include media-bp(mdl) {
+        font-size: 20px;
+        line-height: 1.25;
+        letter-spacing: normal;
       }
     }
   }

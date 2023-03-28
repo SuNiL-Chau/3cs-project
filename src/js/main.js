@@ -67,6 +67,10 @@ const swiper = new Swiper(".testimonials__swiper", {
       spaceBetween: 20,
     },
   },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
 });
 
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
@@ -90,6 +94,10 @@ const swiper2 = new Swiper(".industries__swiper", {
       spaceBetween: 20,
     },
   },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
 });
 
 // news swiper
@@ -109,6 +117,10 @@ const swiper3 = new Swiper(".news__swiper", {
       slidesPerView: 3,
       spaceBetween: 30,
     },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
   },
 });
 
@@ -180,17 +192,68 @@ window.onload = function () {
 };
 
 // lottie interactivity
-LottieInteractivity.create({
-  player: "#servicesLottie",
-  mode: "scroll",
-  container: ".services",
-  actions: [
-    {
-      visibility: [0.15, 0.75],
-      type: "seek",
-      frames: [0, 480],
+// LottieInteractivity.create({
+//   player: "#servicesLottie",
+//   mode: "scroll",
+//   container: ".services",
+//   actions: [
+//     {
+//       visibility: [0.15, 0.75],
+//       type: "seek",
+//       frames: [0, 480],
+//     },
+//   ],
+// });
+
+const services__Swiper = new Swiper("#servicesSwiper", {
+  breakpoints: {
+    320: {
+      direction: "horizontal",
+      loop: true,
+      slidesPerView: "1",
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 3000,
+      },
     },
-  ],
+    // when window width is >= 640px
+    1024: {
+      direction: "vertical",
+      slidesPerView: "auto",
+      autoplay: false,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
+});
+
+const execution__Swiper = new Swiper("#executionSwiper", {
+  breakpoints: {
+    320: {
+      direction: "horizontal",
+      loop: true,
+      // slidesPerView: 2,
+      slidesPerView: "1",
+      slidesPerGroup: 1,
+      // spaceBetween: 30,
+      autoplay: {
+        delay: 4000,
+      },
+    },
+    // when window width is >= 640px
+    1024: {
+      direction: "vertical",
+      slidesPerView: "auto",
+      autoplay: false,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
 });
 
 const planning__Swiper = new Swiper("#planingSwiper", {
@@ -218,15 +281,38 @@ const planning__Swiper = new Swiper("#planingSwiper", {
     type: "bullets",
   },
 });
+
 if (window.innerWidth < 1024) {
   // var scaiContainer = document.querySelector("#scai");
   // scaiContainer.style.minHeight = "max-content";
+  var servicesLottie = document.querySelector("#servicesLottie");
+  servicesLottie.setAttribute("autoplay", "");
+  servicesLottie.setAttribute("loop", "");
+  servicesLottie.play();
+  services__Swiper.autoplay.start();
   var planingLottie = document.querySelector("#planningLottie");
   planingLottie.setAttribute("autoplay", "");
   planingLottie.setAttribute("loop", "");
   planingLottie.play();
   planning__Swiper.autoplay.start();
+  var executionLottie = document.querySelector("#executionLottie");
+  executionLottie.setAttribute("autoplay", "");
+  executionLottie.setAttribute("loop", "");
+  executionLottie.play();
+  execution__Swiper.autoplay.start();
 } else {
+  LottieInteractivity.create({
+    player: "#servicesLottie",
+    mode: "scroll",
+    container: ".services",
+    actions: [
+      {
+        visibility: [0.15, 0.75],
+        type: "seek",
+        frames: [0, 480],
+      },
+    ],
+  });
   LottieInteractivity.create({
     player: "#planningLottie",
     mode: "scroll",
@@ -237,6 +323,18 @@ if (window.innerWidth < 1024) {
         type: "seek",
         // frames: [0, 176],
         frames: [0, 155],
+      },
+    ],
+  });
+  LottieInteractivity.create({
+    player: "#executionLottie",
+    mode: "scroll",
+    container: ".-executionLottieContainer",
+    actions: [
+      {
+        visibility: [0.2, 0.7],
+        type: "seek",
+        frames: [0, 228],
       },
     ],
   });
@@ -256,18 +354,18 @@ if (window.innerWidth < 1024) {
 //   ],
 // });
 
-LottieInteractivity.create({
-  player: "#executionLottie",
-  mode: "scroll",
-  container: ".-executionLottieContainer",
-  actions: [
-    {
-      visibility: [0.2, 0.7],
-      type: "seek",
-      frames: [0, 228],
-    },
-  ],
-});
+// LottieInteractivity.create({
+//   player: "#executionLottie",
+//   mode: "scroll",
+//   container: ".-executionLottieContainer",
+//   actions: [
+//     {
+//       visibility: [0.2, 0.7],
+//       type: "seek",
+//       frames: [0, 228],
+//     },
+//   ],
+// });
 
 // swiper check for desk and mobile
 const platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
@@ -503,29 +601,3 @@ if (window.innerWidth < 1024) {
   particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
   particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Get reference to particleJS object
-//   var particleJS = particlesJS("platforms__canvas").pJS;
-
-//   // Set initial scroll state
-//   var isScrolling = false;
-
-//   // Add event listener for scroll event
-//   window.addEventListener("scroll", function () {
-//     // Check if user is currently scrolling
-//     if (window.scrollY > 0) {
-//       isScrolling = true;
-//     } else {
-//       isScrolling = false;
-//     }
-
-//     // Pause or resume particleJS animation based on scroll state
-//     if (isScrolling) {
-//       particleJS.fn.particlesRefresh();
-//       particleJS.fn.play();
-//     } else {
-//       particleJS.fn.pause();
-//     }
-//   });
-// });
