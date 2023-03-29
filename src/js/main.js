@@ -158,7 +158,7 @@ window.onload = function () {
   // counter animation
   let counterOptions = {
     rootMargin: "-50px",
-    threshold: 1,
+    threshold: 0.5,
   };
 
   let counterCallback = (entries, observer) => {
