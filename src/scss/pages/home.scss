@@ -2,8 +2,6 @@
 @import "../mixin";
 @import "../rfs";
 
-$mobilePad: 35px;
-
 .particlecanvas {
   position: absolute;
   top: 0;
@@ -711,7 +709,7 @@ $mobilePad: 35px;
     &__service {
       display: flex;
       flex-direction: column;
-      height: 70vh;
+      height: 60vh;
       justify-content: center;
       @include media-bp(mdl) {
         height: max-content;

@@ -58,16 +58,17 @@ var swiper = new Swiper(".testimonials__swiper", {
     // when window width is >= 320px
     320: {
       slidesPerView: 1,
-      spaceBetween: 20
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets"
+      }
     },
     1024: {
       slidesPerView: 2,
-      spaceBetween: 20
+      spaceBetween: 20,
+      pagination: false
     }
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets"
   }
 });
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
@@ -270,8 +271,6 @@ var planning__Swiper = new Swiper("#planingSwiper", {
   }
 });
 if (window.innerWidth < 1024) {
-  // var scaiContainer = document.querySelector("#scai");
-  // scaiContainer.style.minHeight = "max-content";
   var servicesLottie = document.querySelector("#servicesLottie");
   servicesLottie.setAttribute("autoplay", "");
   servicesLottie.setAttribute("loop", "");
@@ -431,29 +430,29 @@ if (window.innerWidth < 1024) {
     // Call function if animation is at or past 50%
     // console.log("percentage: ", percentage);
     var btns = document.querySelectorAll("#scai .platform__contentBtn");
-    if (percentage >= 25) {
+    if (percentage >= 20) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[0].classList.add("-active");
+      btns[0].classList.add("swiper-slide-active");
     }
-    if (percentage >= 45) {
+    if (percentage >= 40) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[1].classList.add("-active");
+      btns[1].classList.add("swiper-slide-active");
     }
-    if (percentage >= 55) {
+    if (percentage >= 60) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[2].classList.add("-active");
+      btns[2].classList.add("swiper-slide-active");
     }
-    if (percentage >= 65) {
+    if (percentage >= 80) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[3].classList.add("-active");
+      btns[3].classList.add("swiper-slide-active");
     }
   });
   // Add Lottie Interactivity to player
@@ -484,39 +483,39 @@ if (window.innerWidth < 1024) {
     var btnsParent = document.querySelector("#itms .platform__contentBtns");
     if (percentage >= 20) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[0].classList.add("-active");
+      btns[0].classList.add("swiper-slide-active");
     }
     if (percentage >= 30) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[1].classList.add("-active");
+      btns[1].classList.add("swiper-slide-active");
     }
     if (percentage >= 40) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[2].classList.add("-active");
+      btns[2].classList.add("swiper-slide-active");
     }
     if (percentage >= 50) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[3].classList.add("-active");
+      btns[3].classList.add("swiper-slide-active");
     }
     if (percentage >= 60) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[4].classList.add("-active");
+      btns[4].classList.add("swiper-slide-active");
     }
     if (percentage >= 70) {
       btns.forEach(function (btn) {
-        return btn.classList.remove("-active");
+        return btn.classList.remove("swiper-slide-active");
       });
-      btns[5].classList.add("-active");
+      btns[5].classList.add("swiper-slide-active");
     }
   });
   LottieInteractivity.create({
@@ -524,7 +523,7 @@ if (window.innerWidth < 1024) {
     mode: "scroll",
     container: "#itms",
     actions: [{
-      visibility: [0.1, 0.8],
+      visibility: [0.1, 0.9],
       type: "seek",
       frames: [0, 254]
     }]
@@ -586,14 +585,14 @@ if (window.innerWidth < 1024) {
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 if (window.innerWidth < 1024) {
-  particlesJS.load("platforms__canvas", "assets/particlesjs-config-mobile.json", function () {});
-  particlesJS.load("services__canvas", "assets/particlesjs-config-mobile.json", function () {});
-  particlesJS.load("countings__canvas", "assets/particlesjs-config-mobile.json", function () {});
-  particlesJS.load("news__canvas", "assets/particlesjs-config-mobile.json", function () {});
+  particlesJS.load("platforms__canvas", "assets/particlesjs-config-less.json", function () {});
+  particlesJS.load("services__canvas", "assets/particlesjs-config-less.json", function () {});
+  particlesJS.load("countings__canvas", "assets/particlesjs-config-less.json", function () {});
+  particlesJS.load("news__canvas", "assets/particlesjs-config-less.json", function () {});
 } else {
   particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
   particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
-  particlesJS.load("countings__canvas", "assets/particlesjs-config.json", function () {});
-  particlesJS.load("news__canvas", "assets/particlesjs-config.json", function () {});
+  particlesJS.load("countings__canvas", "assets/particlesjs-config-less.json", function () {});
+  particlesJS.load("news__canvas", "assets/particlesjs-config-less.json", function () {});
 }
 //# sourceMappingURL=main.js.map

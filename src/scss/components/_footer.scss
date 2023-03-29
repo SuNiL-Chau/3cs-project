@@ -3,6 +3,9 @@
   background-color: $gray4;
   @include padding-top(77px);
   @include padding-bottom(77px);
+  @include media-bp(mdl) {
+    padding: 30px $mobilePad;
+  }
 
   .footer-title,
   .footer-links,
@@ -17,15 +20,31 @@
     letter-spacing: normal;
     font-weight: 700;
     margin-bottom: 10px;
+    @include media-bp(mdl) {
+      font-size: 12px;
+      line-height: 1.25;
+      letter-spacing: normal;
+    }
   }
 
   .footer-contain {
     padding-left: 15px;
     padding-right: 15px;
+    @include media-bp(mdl) {
+      &:not(:first-child) {
+        width: 33.33%;
+      }
+      &.ml-auto {
+        margin-left: 0 !important;
+      }
+    }
   }
   .footer-contain:first-child {
     .footer-title {
       @include rfs(25px);
+      @include media-bp(mdl) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -41,12 +60,22 @@
     letter-spacing: normal;
     font-weight: 500;
     margin-bottom: 20px;
+    &-txt {
+      @include media-bp(mdl) {
+        font-size: 12px;
+        letter-spacing: normal;
+        line-height: 1.25;
+      }
+    }
   }
 
   .footer-social {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+      @include media-bp(mdl) {
+        padding-bottom: 30px;
+      }
 
     a {
       display: inline-block;
@@ -54,6 +83,15 @@
 
       &:last-child {
         margin-right: 0;
+      }
+      @include media-bp(mdl) {
+        & > img {
+          width: 15px;
+          height: auto;
+        }
+        &:nth-child(4) > img {
+          width: 8px;
+        }
       }
     }
   }
@@ -70,6 +108,11 @@
       letter-spacing: normal;
       font-weight: 400;
       transition: all 0.3s ease-in-out;
+      @include media-bp(mdl) {
+        font-size: 12px;
+        letter-spacing: normal;
+        line-height: 1.25;
+      }
 
       &:hover {
         color: $white;
