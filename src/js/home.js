@@ -36,6 +36,10 @@ const swiper = new Swiper(".testimonials__swiper", {
 
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
 testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
+window.onload = () => {
+  var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
+  testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
+};
 
 // industries swiper
 const swiper2 = new Swiper(".industries__swiper", {
@@ -49,15 +53,15 @@ const swiper2 = new Swiper(".industries__swiper", {
     320: {
       slidesPerView: "auto",
       spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+      },
     },
     1024: {
       slidesPerView: 5,
       spaceBetween: 20,
     },
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
   },
 });
 
@@ -185,7 +189,8 @@ if (window.innerWidth < 1024) {
     container: ".services",
     actions: [
       {
-        visibility: [0.15, 0.75],
+        // visibility: [0.15, 0.75],
+        visibility: [0.2, 1],
         type: "seek",
         frames: [0, 480],
       },
