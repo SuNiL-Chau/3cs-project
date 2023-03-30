@@ -1,0 +1,83 @@
+.get-in-touch {
+  background: $black_1;
+  padding: 100px 0;
+  @include media-bp(mdl) {
+    padding: 50px $mobilePad;
+  }
+
+  .form-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &__title {
+    @include rfs(33px);
+    letter-spacing: toRem(6.93);
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 500;
+    @include media-bp(mdl) {
+      font-size: 21px;
+      line-height: 25px;
+      letter-spacing: 6.3px;
+    }
+  }
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form-row .form-group {
+    width: 48%;
+  }
+
+  .form-group {
+    @include margin-bottom(30px);
+  }
+  .form-group:nth-child(2n) {
+    margin-left: 4%;
+  }
+
+  &__submit-btn {
+    background: $white;
+    color: $orange1;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    @include rfs(33px);
+    line-height: 1.2;
+    letter-spacing: toRem(-0.99);
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    &:focus,
+    &:active {
+      box-shadow: none;
+    }
+    &:hover,
+    &:active {
+      background-color: $orange1 !important;
+      border-color: $orange1 !important;
+      color: #fff !important;
+      box-shadow: none !important;
+    }
+    @include media-bp(mdl) {
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: normal;
+    }
+  }
+
+  .has-error .form-control {
+    border: 2px solid red;
+  }
+}

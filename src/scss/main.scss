@@ -59,6 +59,7 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
+    color: $orange1;
   }
 }
 
@@ -85,13 +86,8 @@ button {
 // components styles
 @import "./components/navbar";
 @import "./components/banner";
-@import "./components/header";
-@import "./components/content-section";
-@import "./components/figure";
-@import "./components/timeline";
-@import "./components/project-modal";
-@import "./components/pagination";
-@import "./components/woven-grid";
+@import "./components/get-in-touch";
+@import "./components/subscribe";
 @import "./components/footer";
 
 .animate-text {
@@ -145,4 +141,39 @@ button {
     font-size: 16px;
     line-height: 1.25;
   }
+}
+
+.particlecanvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+@keyframes arrowDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.btn-dark,
+btn-outline-dark:hover {
+  background-color: $black_3;
+  color: $white;
 }
