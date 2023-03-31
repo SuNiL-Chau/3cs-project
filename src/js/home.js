@@ -205,7 +205,7 @@ if (window.innerWidth < 1024) {
         visibility: [0.2, 1],
         type: "seek",
         // frames: [0, 176],
-        frames: [0, 155],
+        frames: [25, 155],
       },
     ],
   });

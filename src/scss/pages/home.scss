@@ -48,7 +48,7 @@
       @include rfs(75px);
       line-height: toRem(60);
       letter-spacing: toRem(-1.5);
-      font-weight: 800;
+      font-weight: 700;
       color: $black_1;
       @include media-bp(mdl) {
         @include rfs(31px);
@@ -260,6 +260,7 @@
         width: min-content;
         align-items: center;
         justify-items: flex-start;
+        z-index: 1;
         @include media-bp(mdl) {
           column-gap: 10px;
         }
@@ -295,6 +296,7 @@
         font-weight: 600;
         max-width: 800px;
         width: 100%;
+        z-index: 1;
         @include media-bp(mdl) {
           font-size: 16px;
           line-height: 25px;
@@ -308,6 +310,8 @@
         @include padding-top(20px);
         @include padding-bottom(20px);
         justify-content: space-between;
+        position: relative;
+        z-index: -1;
         @include media-bp(mdl) {
           gap: 30px;
           padding-bottom: 30px;
@@ -321,6 +325,23 @@
           lottie-player {
             position: sticky;
             top: 100px;
+          }
+        }
+        &Brain lottie-player {
+          width: 125% !important;
+          margin-left: -30%;
+          margin-top: -20%;
+        }
+        &Globe lottie-player {
+          width: 104% !important;
+          // margin-left: -30%;
+          margin-top: -24%;
+        }
+        @include media-bp(mdl) {
+          &Globe lottie-player,
+          &Brain lottie-player {
+            width: 100% !important;
+            margin: 0 !important;
           }
         }
         &Globe {
@@ -380,7 +401,8 @@
           text-align: left;
           border-bottom: 1px solid $black_1;
           opacity: 0;
-          &.swiper-slide-active, &.aos-animate {
+          &.swiper-slide-active,
+          &.aos-animate {
             opacity: 1;
           }
           &.swiper-slide {
@@ -699,7 +721,7 @@
         flex-direction: row;
         gap: 0;
         margin-bottom: 40px;
-      @include padding-top(30px);
+        @include padding-top(30px);
       }
     }
     &__service {
