@@ -426,11 +426,11 @@ if (window.innerWidth < 1024) {
 if (window.innerWidth < 1024) {
   particlesJS.load("platforms__canvas", "assets/particlesjs-config-less.json", function () {});
   particlesJS.load("services__canvas", "assets/particlesjs-config-less.json", function () {});
-  particlesJS.load("countings__canvas", "assets/particlesjs-config-less.json", function () {});
-  particlesJS.load("news__canvas", "assets/particlesjs-config-less.json", function () {});
+  // particlesJS.load("countings__canvas", "assets/particlesjs-config-less.json", function () {});
+  // particlesJS.load("news__canvas", "assets/particlesjs-config-less.json", function () {});
 } else {
   particlesJS.load("platforms__canvas", "assets/particlesjs-config.json", function () {});
   particlesJS.load("services__canvas", "assets/particlesjs-config.json", function () {});
-  particlesJS.load("countings__canvas", "assets/particlesjs-config-less.json", function () {});
-  particlesJS.load("news__canvas", "assets/particlesjs-config-less.json", function () {});
+  // particlesJS.load("countings__canvas", "assets/particlesjs-config-less.json", function () {});
+  // particlesJS.load("news__canvas", "assets/particlesjs-config-less.json", function () {});
 }

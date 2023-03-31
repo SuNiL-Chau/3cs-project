@@ -33,7 +33,7 @@ navbarToggler.addEventListener("click", () => {
   }, 10);
 });
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   let formConfig = {
     // class of the parent element where the error/success class is added
     classTo: "form-group",
@@ -98,4 +98,4 @@ window.onload = function () {
   counterElements.forEach((counterElement) => {
     counterObserver.observe(counterElement);
   });
-};
+});

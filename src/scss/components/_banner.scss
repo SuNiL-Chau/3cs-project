@@ -18,7 +18,7 @@
     line-height: 1.2;
     color: $black_3;
     font-weight: 700;
-    letter-spacing: -2.6px
+    letter-spacing: -2.6px;
   }
   &__subtitle {
     @include rfs(38px);
@@ -33,6 +33,7 @@
     @include rfs(30px);
     font-weight: 700;
     padding: 16px 30px;
+    border-width: 2px;
   }
   &__image {
     width: 100%;
