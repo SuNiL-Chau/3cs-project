@@ -948,11 +948,17 @@
       position: relative;
       padding: 0;
       gap: 0;
+      &:hover {
+        .news__slideImgC img {
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+      }
       &ImgC {
         position: relative;
         width: 100%;
         display: block;
-        height: auto;
+        height: max-content;
+        overflow: hidden;
         &::before {
           content: "";
           display: block;
@@ -975,6 +981,8 @@
         display: block;
         height: auto;
         z-index: 1;
+        transform: scale3d(1, 1, 1);
+        transition: transform 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       }
       &Date {
         color: $orange1;
