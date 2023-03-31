@@ -60,10 +60,9 @@
         <div class="row no-gutters">
           <div class="col-md-6 align-self-center">
             <div class="c-banner__left ibpBanner__left">
-              <!-- <p class="c-banner__pre" data-aos="fade-up">SCAI</p> -->
-              <h2 class="c-banner__title" data-aos="fade-up" data-aos-delay="100">Integrated Business Planning <span class="text-primary font-weight-bolder">- IBP</span></h2>
-              <p class="c-banner__subtitle" data-aos="fade-up" data-aos-delay="200">Collaborative Planning Made <br class="d-none d-md-block" />Easy for Sustainability</p>
-              <a class="btn btn-outline-dark btn-lg c-banner__cta" role="button" href="#" data-aos-delay="300" data-aos="fade-up">SCHEDULE DEMO</a>
+              <h2 class="c-banner__title" data-aos="fade-up" data-aos-delay="300">Integrated Business Planning <span class="text-primary font-weight-bolder">- IBP</span></h2>
+              <p class="c-banner__subtitle" data-aos="fade-up" data-aos-delay="600">Collaborative Planning Made <br class="d-none d-md-block" />Easy for Sustainability</p>
+              <a class="btn btn-outline-dark btn-lg c-banner__cta" role="button" href="#" data-aos-delay="900" data-aos="fade-up">SCHEDULE DEMO</a>
             </div>
           </div>
           <div class="col-md-6 order-1 order-md-last" data-aos="fade-up">
@@ -77,14 +76,14 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-md-6 col-12">
-            <figure class="ibpService__figure">
+            <figure class="ibpService__figure" data-aos="fade-up" data-aos-offset="300">
               <img src="assets/images/ibp/cs.png" alt="ibp" class="img-fluid" />
-              <figcaption class="ibpService__figcaption">A bird's eye view pf the entire process.</figcaption>
+              <figcaption class="ibpService__figcaption" data-aos="fade-up">A bird's eye view pf the entire process.</figcaption>
             </figure>
           </div>
           <div class="col-md-6 col-12">
-            <h2 class="ibpService__title">Delivering High levels of <span class="text-primary">customer service</span> while minimizing costs through <span class="text-primary">seamless and synchronous</span> supply chain planning.</h2>
-            <p class="ibpService__para">3SC's Integrated Business Planning solution leverages analytics and combined finance, marketing, sales, and supply chain to address planning issues and opportunities in real time. Integrated Business Planning (3SC-lBP) is a process that encompasses the entire supply chain, from raw materials to finished goods, to create a seamless, integrated business plan. This process includes forecasting demand, planning production, and managing inventory levels to meet customer demand.</p>
+            <h2 class="ibpService__title" data-aos="fade-up" data-aos-offset="300">Delivering High levels of <span class="text-primary">customer service</span> while minimizing costs through <span class="text-primary">seamless and synchronous</span> supply chain planning.</h2>
+            <p class="ibpService__para" data-aos="fade-up" data-aos-offset="300">3SC's Integrated Business Planning solution leverages analytics and combined finance, marketing, sales, and supply chain to address planning issues and opportunities in real time. Integrated Business Planning (3SC-lBP) is a process that encompasses the entire supply chain, from raw materials to finished goods, to create a seamless, integrated business plan. This process includes forecasting demand, planning production, and managing inventory levels to meet customer demand.</p>
           </div>
         </div>
       </div>
@@ -93,41 +92,91 @@
     <section class="ibpBiz">
       <div class="row no-gutters">
         <div class="container">
-          <h2 class="ibpBiz__title">What Value Does IBP Add to your Business?</h2>
+          <h2 class="ibpBiz__title" data-aos="fade-up" data-aos-offset="300">What Value Does IBP Add to your Business?</h2>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="accordion" id="accordionExample">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Collapsible Group Item #1</button>
-              </h2>
+        <div class="accordion w-100">
+          <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample1">
+            <div class="c-accordion__container container">
+              <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                Better Visibility 
+                <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                  <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                </svg>
+              </button>
+              <div id="collapse1" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                <div class="container p-0">
+                  <p class="c-accordion__para">With visibility into all lines of business, decision-makers can agree on one plan and understand where they fit into it, driving the project focus. Balancing demand and supply, developing 'what-if' scenarios using real-time information, and embedded communication and analytics.</p>
+                </div>
+              </div>
             </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.</div>
-            </div>
+            <div class="c-accordion__gradient"></div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Collapsible Group Item #2</button>
-              </h2>
+          <!-- active state example -active class to parent aria-expanded true to btn & show to content -->
+          <div class="c-accordion -active" data-aos="fade-up" data-aos-offset="300" id="accordionExample2">
+            <div class="c-accordion__container container">
+              <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                Greater Alignment
+                <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                  <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                </svg>
+              </button>
+              <div id="collapse2" class="c-accordion__content collapse show" aria-labelledby="headingOne" data-parent="#accordionExample2">
+                <div class="container p-0">
+                  <p class="c-accordion__para">With visibility into all lines of business, decision-makers can agree on one plan and understand where they fit into it, driving the project focus. Balancing demand and supply, developing 'what-if' scenarios using real-time information, and embedded communication and analytics.</p>
+                </div>
+              </div>
             </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">Some placeholder content for the second accordion panel. This panel is hidden by default.</div>
-            </div>
+            <div class="c-accordion__gradient"></div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Collapsible Group Item #3</button>
-              </h2>
+          <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample3">
+            <div class="c-accordion__container container">
+              <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                More accountability
+                <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                  <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                </svg>
+              </button>
+              <div id="collapse3" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample3">
+                <div class="container p-0">
+                  <p class="c-accordion__para">With visibility into all lines of business, decision-makers can agree on one plan and understand where they fit into it, driving the project focus. Balancing demand and supply, developing 'what-if' scenarios using real-time information, and embedded communication and analytics.</p>
+                </div>
+              </div>
             </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.</div>
+            <div class="c-accordion__gradient"></div>
+          </div>
+          <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample4">
+            <div class="c-accordion__container container">
+              <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                Better descision making
+                <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                  <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                </svg>
+              </button>
+              <div id="collapse4" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample4">
+                <div class="container p-0">
+                  <p class="c-accordion__para">With visibility into all lines of business, decision-makers can agree on one plan and understand where they fit into it, driving the project focus. Balancing demand and supply, developing 'what-if' scenarios using real-time information, and embedded communication and analytics.</p>
+                </div>
+              </div>
             </div>
+            <div class="c-accordion__gradient"></div>
+          </div>
+          <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample5">
+            <div class="c-accordion__container container">
+              <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                Delivers results
+                <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                  <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                </svg>
+              </button>
+              <div id="collapse5" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample5">
+                <div class="container p-0">
+                  <p class="c-accordion__para">With visibility into all lines of business, decision-makers can agree on one plan and understand where they fit into it, driving the project focus. Balancing demand and supply, developing 'what-if' scenarios using real-time information, and embedded communication and analytics.</p>
+                </div>
+              </div>
+            </div>
+            <div class="c-accordion__gradient"></div>
           </div>
         </div>
       </div>

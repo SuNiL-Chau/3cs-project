@@ -1,0 +1,61 @@
+.c-accordion {
+  position: relative;
+  display: block;
+  &__container {
+  }
+  &__btn {
+    padding: 20px 0px;
+    @include rfs(34px);
+    line-height: 1.25;
+    letter-spacing: normal;
+    font-weight: 700;
+    color: $orange1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $orange1;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .c-accordion__icon {
+      position: relative;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transform: rotate(0);
+      transform-origin: center;
+    }
+    &[aria-expanded="true"] .c-accordion__icon {
+      transform: rotate(45deg);
+    }
+  }
+  &__content {
+  }
+  &__para {
+    @include rfs(28px);
+    line-height: 1.25;
+    letter-spacing: normal;
+    padding-bottom: 40px;
+    max-width: 780px;
+    width: 100%;
+  }
+  &__gradient {
+    opacity: 0;
+    z-index: -1;
+    background: $gradient1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &.-active .c-accordion__gradient {
+    opacity: 1;
+  }
+  &.-active * {
+    color: $white;
+    fill: $white;
+  }
+}

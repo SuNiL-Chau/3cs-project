@@ -13,6 +13,7 @@ $lines: #d5d5d4;
 $orange1: #e94f1c;
 $orange2: #DF8263;
 $mobilePad: 35px;
+$gradient1: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(2, 1, 1, 1) 30%, rgba(106, 44, 27, 1) 100%);
 
 // sass function px to rem
 @function toRem($val) {

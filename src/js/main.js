@@ -98,4 +98,38 @@ document.addEventListener("DOMContentLoaded", function () {
   counterElements.forEach((counterElement) => {
     counterObserver.observe(counterElement);
   });
+
+  // mutation observer for accordions
+  // Select the node that will be observed for mutations
+  const targetNode = document;
+
+  // Options for the observer (which mutations to observe)
+  const config = { attributes: true, childList: true, subtree: true };
+
+  // Callback function to execute when mutations are observed
+  const callback = function (mutationsList, observer) {
+    // Loop through the mutations
+    for (const mutation of mutationsList) {
+      // Check if the mutation is a change in attribute
+      if (mutation.type === "attributes" && mutation.attributeName === "aria-expanded") {
+        // Select the closest parent with the class "c-accordion"
+        const accordion = mutation.target.closest(".c-accordion");
+        if (!accordion) {
+          continue;
+        }
+        // Add or remove the class "-active" based on the attribute value
+        if (mutation.target.getAttribute("aria-expanded") === "true") {
+          accordion.classList.add("-active");
+        } else {
+          accordion.classList.remove("-active");
+        }
+      }
+    }
+  };
+
+  // Create an observer instance linked to the callback function
+  const observer = new MutationObserver(callback);
+
+  // Start observing the target node for configured mutations
+  observer.observe(targetNode, config);
 });
