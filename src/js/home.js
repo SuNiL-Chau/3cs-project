@@ -309,18 +309,30 @@ if (window.innerWidth < 1024) {
     var btns = document.querySelectorAll("#scai .platform__contentBtn");
     if (percentage >= 20) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
+      btns[0].classList.add("aos-init");
+      btns[0].classList.add("aos-animate");
       btns[0].classList.add("swiper-slide-active");
     }
     if (percentage >= 40) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
+      btns[1].classList.add("aos-init");
+      btns[1].classList.add("aos-animate");
       btns[1].classList.add("swiper-slide-active");
     }
     if (percentage >= 60) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
+      btns[2].classList.add("aos-init");
+      btns[2].classList.add("aos-animate");
       btns[2].classList.add("swiper-slide-active");
     }
     if (percentage >= 80) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
+      btns[3].classList.add("aos-init");
+      btns[3].classList.add("aos-animate");
       btns[3].classList.add("swiper-slide-active");
     }
   });
@@ -354,26 +366,44 @@ if (window.innerWidth < 1024) {
     var btnsParent = document.querySelector("#itms .platform__contentBtns");
     if (percentage >= 20) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
+      btns[0].classList.add("aos-init");
+      btns[0].classList.add("aos-animate");
       btns[0].classList.add("swiper-slide-active");
     }
     if (percentage >= 30) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
+      btns[1].classList.add("aos-init");
+      btns[1].classList.add("aos-animate");
       btns[1].classList.add("swiper-slide-active");
     }
     if (percentage >= 40) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
+      btns[2].classList.add("aos-init");
+      btns[2].classList.add("aos-animate");
       btns[2].classList.add("swiper-slide-active");
     }
     if (percentage >= 50) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
+      btns[3].classList.add("aos-init");
+      btns[3].classList.add("aos-animate");
       btns[3].classList.add("swiper-slide-active");
     }
     if (percentage >= 60) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[4].setAttribute("data-aos", btns[4].dataset.aosAnim);
+      btns[4].classList.add("aos-init");
+      btns[4].classList.add("aos-animate");
       btns[4].classList.add("swiper-slide-active");
     }
     if (percentage >= 70) {
       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+      btns[5].setAttribute("data-aos", btns[5].dataset.aosAnim);
+      btns[5].classList.add("aos-init");
+      btns[5].classList.add("aos-animate");
       btns[5].classList.add("swiper-slide-active");
     }
   });
