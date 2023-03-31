@@ -401,9 +401,11 @@
           text-align: left;
           border-bottom: 1px solid $black_1;
           opacity: 0;
+          transform: translateX(150px);
           &.swiper-slide-active,
           &.aos-animate {
             opacity: 1;
+            transform: translateX(0px);
           }
           &.swiper-slide {
             height: max-content;
