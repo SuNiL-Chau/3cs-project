@@ -1,0 +1,28 @@
+.c-textContent {
+    position: relative;
+    @include padding-top(120px);
+    @include padding-bottom(120px);
+    &.-withBg {
+        background-color: $gray5;
+    }
+    &__canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__title {
+        @include rfs(60px);
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+    &__para {
+        @include rfs(35px);
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: normal;
+        @include margin-top(30px);
+    }
+}

@@ -87,6 +87,7 @@ button {
 @import "./components/navbar";
 @import "./components/banner";
 @import "./components/accordion";
+@import "./components/textContent";
 @import "./components/get-in-touch";
 @import "./components/subscribe";
 @import "./components/footer";
@@ -190,4 +191,21 @@ btn-outline-dark:hover {
 }
 .hImgContainer:hover > .hImg {
   transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.ibpBiz {
+  &__title {
+    @include rfs(60px);
+    line-height: 1.25;
+    letter-spacing: normal;
+    font-weight: 700;
+    @include margin-top(80px);
+    @include margin-bottom(80px);
+  }
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include margin-bottom(60px);
+  }
 }
