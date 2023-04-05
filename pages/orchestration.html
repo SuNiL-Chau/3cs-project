@@ -73,7 +73,8 @@
     </section>
 
     <div class="c-textContent">
-      <div class="c-textContent__canvas" id="c-textContent__canvas1"></div>
+      <div class="bgParticle"></div>
+      <!-- <div class="c-textContent__canvas" id="c-textContent__canvas1"></div> -->
       <div class="container text-center">
         <p class="c-textContent__para" data-aos="fade-up">3SC's <span class="text-primary">Orchestration Al</span>, aided by the <span class="text-primary">power of advanced analytics</span>, helps you with different simulations to evaluate logistical changes that you might bring into the <span class="text-primary">supply chain process</span> by showcasing its comprehensive impact from <span class="text-primary">transportation planning</span> to the costs incurred.</p>
       </div>
@@ -89,7 +90,8 @@
     </div>
 
     <div class="c-textContent" data-aos="fade-in">
-      <div class="c-textContent__canvas" id="c-textContent__canvas2"></div>
+      <div class="bgParticle"></div>
+      <!-- <div class="c-textContent__canvas" id="c-textContent__canvas2"></div> -->
       <div class="container text-center">
         <h2 class="c-textContent__title text-primary" data-aos="fade-up">Reducing Complexities Through Computation</h2>
         <p class="c-textContent__para" data-aos="fade-up" data-aos-delay="300">Funneling your vetted <span class="text-primary">operational data</span> into an action plan, 3SC's <span class="text-primary">Orchestration Al</span> nullifies uncertainties & errors in your transport management to improve <span class="text-primary">efficiency & accountability</span> among the logistics verticals & its stakeholders. Orchestration Al improves <span class="text-primary">operational visibility & acts</span> as a catalyst for supplier collaboration.</p>
@@ -289,7 +291,7 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./dist/js/libs/pristine.js"></script>
-    <script src="./dist/js/libs/particles.min.js"></script>
+    <!-- <script src="./dist/js/libs/particles.min.js"></script> -->
     <!-- Custom main js -->
     <script src="./dist/js/main.js"></script>
     <!-- <script src="./js/animations.js"></script> -->
@@ -316,13 +318,13 @@
       });
     </script>
     <script>
-      if (window.innerWidth < 1024) {
-        particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config-less.json", function () {});
-        particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config-less.json", function () {});
-      } else {
-        particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config.json", function () {});
-        particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config.json", function () {});
-      }
+      // if (window.innerWidth < 1024) {
+      //   particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config-less.json", function () {});
+      //   particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config-less.json", function () {});
+      // } else {
+      //   particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config.json", function () {});
+      //   particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config.json", function () {});
+      // }
     </script>
   </body>
 </html>
