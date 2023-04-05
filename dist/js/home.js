@@ -169,11 +169,11 @@ if (window.innerWidth < 1024) {
   servicesLottie.setAttribute("loop", "");
   servicesLottie.play();
   services__Swiper.autoplay.start();
-  var planingLottie = document.querySelector("#planningLottie");
-  planingLottie.setAttribute("autoplay", "");
-  planingLottie.setAttribute("loop", "");
-  planingLottie.play();
-  planning__Swiper.autoplay.start();
+  // var planingLottie = document.querySelector("#planningLottie");
+  // planingLottie.setAttribute("autoplay", "");
+  // planingLottie.setAttribute("loop", "");
+  // planingLottie.play();
+  // planning__Swiper.autoplay.start();
   var executionLottie = document.querySelector("#executionLottie");
   executionLottie.setAttribute("autoplay", "");
   executionLottie.setAttribute("loop", "");
@@ -191,17 +191,19 @@ if (window.innerWidth < 1024) {
       frames: [0, 480]
     }]
   });
-  LottieInteractivity.create({
-    player: "#planningLottie",
-    mode: "scroll",
-    container: ".-planningLottieContainer",
-    actions: [{
-      visibility: [0.2, 1],
-      type: "seek",
-      // frames: [0, 176],
-      frames: [25, 155]
-    }]
-  });
+  // LottieInteractivity.create({
+  //   player: "#planningLottie",
+  //   mode: "scroll",
+  //   container: ".-planningLottieContainer",
+  //   actions: [
+  //     {
+  //       visibility: [0.2, 1],
+  //       type: "seek",
+  //       // frames: [0, 176],
+  //       frames: [25, 155],
+  //     },
+  //   ],
+  // });
   LottieInteractivity.create({
     player: "#executionLottie",
     mode: "scroll",

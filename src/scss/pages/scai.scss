@@ -6,6 +6,11 @@
   &Banner {
     margin-top: 97px;
   }
+  .c-textContent.-withBg {
+    .bgParticle {
+      mix-blend-mode: color-dodge;
+    }
+  }
   &Tabs {
     position: relative;
     z-index: 1;
@@ -16,6 +21,10 @@
       line-height: 1;
       color: $orange1;
       font-weight: 800;
+      @include media-bp(mdl) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     &__subtitle {
       @include rfs(38px);
@@ -23,6 +32,10 @@
       color: $black_3;
       margin-top: 20px;
       @include margin-bottom(100px);
+      @include media-bp(mdl) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     .nav {
       width: calc(40% - 15px);

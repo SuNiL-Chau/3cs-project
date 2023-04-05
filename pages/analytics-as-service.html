@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./dist/css/bootstrap.css" />
     <link rel="stylesheet" href="./dist/css/main.css" />
     <link rel="stylesheet" href="./dist/css/pages/scai.css" />
+    <link rel="preload" as="video" type="video/mp4" href="assets/videos/analytics-as-service/banner.mp4" />
   </head>
   <body class="scai">
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-aos="slide-down">
@@ -66,21 +67,24 @@
             </div>
           </div>
           <div class="col-md-6 order-1 order-md-last" data-aos="fade-up">
-            <img class="c-banner__image" src="assets/images/analytics-as-service/banner.png" />
+            <!-- <img class="c-banner__image" src="assets/images/analytics-as-service/banner.png" /> -->
+            <video class="c-banner__image" preload="auto" playsinline autoplay muted loop src="assets/videos/analytics-as-service/banner.mp4"></video>
           </div>
         </div>
       </div>
     </section>
 
     <div class="c-textContent">
-      <div class="c-textContent__canvas" id="c-textContent__canvas1"></div>
+      <div class="bgParticle"></div>
+      <!-- <div class="c-textContent__canvas" id="c-textContent__canvas1"></div> -->
       <div class="container text-center">
         <p class="c-textContent__para" data-aos="fade-up">Tap into the true potential of your <span class="text-primary">supply chain by turning your data</span> into actionable insights with <span class="text-primary">3SC's Analytics</span>. Generating improved production plans & helping you set relevant key performing metrics, our <span class="text-primary">analytics services optimize your supply chain</span> verticals from procurement to delivery to be accountable, <span class="text-primary">effective & actively</span> contributing towards your sustainable growth plans.</p>
       </div>
     </div>
 
     <div class="c-textContent -withBg" data-aos="fade-in">
-      <div class="c-textContent__canvas" id="c-textContent__canvas2"></div>
+      <div class="bgParticle"></div>
+      <!-- <div class="c-textContent__canvas" id="c-textContent__canvas2"></div> -->
       <div class="container text-center">
         <h2 class="c-textContent__title text-primary" data-aos="fade-up">A Progress Fueled by Data</h2>
         <p class="c-textContent__para" data-aos="fade-up" data-aos-delay="300">Align your business <span class="text-primary">S&OP and S&OE</span> verticals through vetted data projections. <span class="text-primary">3SC's Analytics makes</span> your supply chain cognitive of customer <span class="text-primary">demands & helps</span> your organizations take proactive measures to counter risks & be scalable to maximize <span class="text-primary">industrial opportunities</span>.</p>
@@ -280,7 +284,7 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./dist/js/libs/pristine.js"></script>
-    <script src="./dist/js/libs/particles.min.js"></script>
+    <!-- <script src="./dist/js/libs/particles.min.js"></script> -->
     <!-- Custom main js -->
     <script src="./dist/js/main.js"></script>
     <!-- <script src="./js/animations.js"></script> -->
@@ -307,13 +311,13 @@
       });
     </script>
     <script>
-      if (window.innerWidth < 1024) {
-        particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config-less.json", function () {});
-        particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config-less.json", function () {});
-      } else {
-        particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config.json", function () {});
-        particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config.json", function () {});
-      }
+      // if (window.innerWidth < 1024) {
+      //   particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config-less.json", function () {});
+      //   particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config-less.json", function () {});
+      // } else {
+      //   particlesJS.load("c-textContent__canvas1", "assets/particlesjs-config.json", function () {});
+      //   particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config.json", function () {});
+      // }
     </script>
   </body>
 </html>

@@ -635,7 +635,7 @@
       gap: 30px;
       align-items: center;
       text-align: center;
-      height: 65vh;
+      height: 50vh;
       justify-content: center;
       @include media-bp(mdl) {
         height: max-content;
@@ -729,7 +729,7 @@
     &__service {
       display: flex;
       flex-direction: column;
-      height: 60vh;
+      height: 52vh;
       justify-content: center;
       @include media-bp(mdl) {
         height: max-content;

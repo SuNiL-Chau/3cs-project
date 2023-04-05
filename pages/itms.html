@@ -72,13 +72,14 @@
     </section>
 
     <section class="scaiTabs">
-      <div id="scaiTabs__canvas" class="particlecanvas"></div>
+      <div class="bgParticle"></div>
+      <!-- <div id="scaiTabs__canvas" class="particlecanvas"></div> -->
       <div class="container">
         <div class="row flex-column">
           <h3 class="scaiTabs__title">ITMS</h3>
           <p class="scaiTabs__subtitle">intelligent Transporation Management Platform</p>
         </div>
-        <div class="row justify-content-between">
+        <div class="row justify-content-between d-none d-md-flex">
           <ul class="nav nav-tabs d-flex flex-column" role="tablist">
             <li class="nav-item d-flex flex-column role="presentation" data-aos="fade-left">
               <a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1">Dispatch AI</a>
@@ -117,6 +118,79 @@
               <img src="assets/images/itms/tab.png" class="img-fluid" width="100%" height="auto" alt="respresentation image" loading="lazy" />
               <p class="scaiTabs__para">3SC's Integrated Business Planning delivers the agility to harness the capability of using operational and financial data from across your organization. It helps amalgamate demand planning, supply planning, finances, sales, and marketing to obtain an optimized output to give you a seamless supply chain network. Our Al-based planning solution offers the agility and accountability required to align your business goals and financial targets with your operations and decision getting visibility of the correlation between capability resources and results.</p>
               <a class="btn btn-dark scaiTabs__btn" role="button" href="#">LEARN MORE</a>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters d-flex d-md-none">
+          <div class="accordion w-100">
+            <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample1">
+              <div class="c-accordion__container container">
+                <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                  Dispatch AI
+                  <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                    <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                  </svg>
+                </button>
+                <div id="collapse1" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                  <div class="container p-0">
+                    <img src="assets/images/itms/tab.png" class="img-fluid" width="100%" height="auto" alt="respresentation image" loading="lazy" />
+                    <p class="c-accordion__para">Dispatch Ai is an intelligent dispatch planning tool offered by 3SC solution that enables enterprises to automate route optimization and scheduling process. It provides more efficient and straightforward ways to develop coordinated and optimized dispatch routes while mitigating costly errors in delivery. As with the ever-increasing reach of e-commerce, customers now have unprecedented expectations regarding delivery speed and accuracy. 3SC's Dispatch Al has the capability to streamline the dispatch process to deliver products on time with excellent efficiency and accuracy.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="c-accordion__gradient"></div>
+            </div>
+            <!-- active state example -active class to parent aria-expanded true to btn & show to content -->
+            <div class="c-accordion -active" data-aos="fade-up" data-aos-offset="300" id="accordionExample2">
+              <div class="c-accordion__container container">
+                <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                  Orchestration AI
+                  <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                    <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                  </svg>
+                </button>
+                <div id="collapse2" class="c-accordion__content collapse show" aria-labelledby="headingOne" data-parent="#accordionExample2">
+                  <div class="container p-0">
+                   <img src="assets/images/itms/tab.png" class="img-fluid" width="100%" height="auto" alt="respresentation image" loading="lazy" />
+                    <p class="c-accordion__para">Dispatch Ai is an intelligent dispatch planning tool offered by 3SC solution that enables enterprises to automate route optimization and scheduling process. It provides more efficient and straightforward ways to develop coordinated and optimized dispatch routes while mitigating costly errors in delivery. As with the ever-increasing reach of e-commerce, customers now have unprecedented expectations regarding delivery speed and accuracy. 3SC's Dispatch Al has the capability to streamline the dispatch process to deliver products on time with excellent efficiency and accuracy</p>
+                  </div>
+                </div>
+              </div>
+              <div class="c-accordion__gradient"></div>
+            </div>
+            <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample3">
+              <div class="c-accordion__container container">
+                <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                  Track Al
+                  <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                    <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                  </svg>
+                </button>
+                <div id="collapse3" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample3">
+                  <div class="container p-0">
+                    <img src="assets/images/itms/tab.png" class="img-fluid" width="100%" height="auto" alt="respresentation image" loading="lazy" />
+                    <p class="c-accordion__para">Dispatch Ai is an intelligent dispatch planning tool offered by 3SC solution that enables enterprises to automate route optimization and scheduling process. It provides more efficient and straightforward ways to develop coordinated and optimized dispatch routes while mitigating costly errors in delivery. As with the ever-increasing reach of e-commerce, customers now have unprecedented expectations regarding delivery speed and accuracy. 3SC's Dispatch Al has the capability to streamline the dispatch process to deliver products on time with excellent efficiency and accuracy.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="c-accordion__gradient"></div>
+            </div>
+            <div class="c-accordion" data-aos="fade-up" data-aos-offset="300" id="accordionExample4">
+              <div class="c-accordion__container container">
+                <button class="c-accordion__btn btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  Order Al
+                  <svg xmlns="http://www.w3.org/2000/svg" class="c-accordion__icon" width="50px" height="50px" version="1.0" viewBox="0 0 100 100">
+                    <path fill="#e94f1c" d="M48 33v15H33c-14.3 0-15 .1-15 2s.7 2 15 2h15v15c0 14.3.1 15 2 15s2-.7 2-15V52h15c14.3 0 15-.1 15-2s-.7-2-15-2H52V33c0-14.3-.1-15-2-15s-2 .7-2 15z" />
+                  </svg>
+                </button>
+                <div id="collapse4" class="c-accordion__content collapse" aria-labelledby="headingOne" data-parent="#accordionExample4">
+                  <div class="container p-0">
+                    <img src="assets/images/itms/tab.png" class="img-fluid" width="100%" height="auto" alt="respresentation image" loading="lazy" />
+                    <p class="c-accordion__para">3SC's Integrated Business Planning delivers the agility to harness the capability of using operational and financial data from across your organization. It helps amalgamate demand planning, supply planning, finances, sales, and marketing to obtain an optimized output to give you a seamless supply chain network. Our Al-based planning solution offers the agility and accountability required to align your business goals and financial targets with your operations and decision getting visibility of the correlation between capability resources and results.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="c-accordion__gradient"></div>
             </div>
           </div>
         </div>
@@ -239,7 +313,7 @@
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./dist/js/libs/pristine.js"></script>
-    <script src="./dist/js/libs/particles.min.js"></script>
+    <!-- <script src="./dist/js/libs/particles.min.js"></script> -->
     <!-- Custom main js -->
     <script src="./dist/js/main.js"></script>
     <!-- <script src="./js/animations.js"></script> -->
@@ -266,11 +340,11 @@
       });
     </script>
     <script>
-      if (window.innerWidth < 1024) {
-        particlesJS.load("scaiTabs__canvas", "assets/particlesjs-config-less.json", function () {});
-      } else {
-        particlesJS.load("scaiTabs__canvas", "assets/particlesjs-config.json", function () {});
-      }
+      // if (window.innerWidth < 1024) {
+      //   particlesJS.load("scaiTabs__canvas", "assets/particlesjs-config-less.json", function () {});
+      // } else {
+      //   particlesJS.load("scaiTabs__canvas", "assets/particlesjs-config.json", function () {});
+      // }
     </script>
   </body>
 </html>

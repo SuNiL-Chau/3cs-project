@@ -210,3 +210,16 @@ btn-outline-dark:hover {
     @include margin-bottom(60px);
   }
 }
+
+.bgParticle {
+  background: url(../../assets/images/particles.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
