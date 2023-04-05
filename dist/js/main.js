@@ -140,5 +140,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Start observing the target node for configured mutations
   observer.observe(targetNode, config);
+  var accordions = document.querySelectorAll(".c-accordion__btn");
+  accordions.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      accordions.forEach(function (cbtn) {
+        if (cbtn != btn) {
+          cbtn.classList.add("collapsed");
+          cbtn.setAttribute("aria-expanded", "false");
+          cbtn.nextElementSibling.classList.remove("show");
+        }
+      });
+    });
+  });
 });
 //# sourceMappingURL=main.js.map

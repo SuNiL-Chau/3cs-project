@@ -2,26 +2,34 @@
 // full width banner
 .c-banner {
   padding: 0;
+  overflow: hidden;
   &__left {
     max-width: 570px;
     margin-left: auto;
     margin-right: 40px;
+    @include media-bp(mdl) {
+      width: 100%;
+      max-width: 100%;
+      padding-bottom: 28px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
   }
   &__pre {
-    @include rfs(96px);
+    @include rfs(76px);
     line-height: 1;
     color: $orange1;
     font-weight: 800;
   }
   &__title {
-    @include rfs(71px);
+    @include rfs(56px);
     line-height: 1.2;
     color: $black_3;
     font-weight: 700;
     letter-spacing: -2.6px;
   }
   &__subtitle {
-    @include rfs(38px);
+    @include rfs(28px);
     line-height: 1.2;
     color: $black_3;
     margin-top: 20px;
@@ -30,12 +38,16 @@
     margin-top: 36px;
     border-color: $lines;
     color: $black_3;
-    @include rfs(30px);
+    @include rfs(20px);
     font-weight: 700;
     padding: 16px 30px;
     border-width: 2px;
   }
   &__image {
     width: 100%;
+    max-height: 500px;
+    @include media-bp(mdl) {
+      max-height: max-content;
+    }
   }
 }
