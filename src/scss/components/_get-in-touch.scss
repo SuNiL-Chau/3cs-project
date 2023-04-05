@@ -64,7 +64,7 @@
       box-shadow: none;
     }
     &:hover,
-    &:active {
+    &:active, &:focus {
       background-color: $orange1 !important;
       border-color: $orange1 !important;
       color: #fff !important;
