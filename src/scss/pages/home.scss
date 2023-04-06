@@ -411,6 +411,8 @@
             height: max-content;
           }
           @include media-bp(mdl) {
+            transform: translateX(0px);
+            opacity: 1;
             flex-shrink: 0;
             width: max-content;
             border-bottom: 0;
@@ -435,6 +437,7 @@
             }
           }
           // &.swiper-slide-active,
+          &:hover,
           &.-active {
             .platform__contentBtnTxt {
               font-weight: 700;

@@ -257,7 +257,8 @@ const platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
       loop: true,
       // slidesPerView: 3,
       slidesPerView: "auto",
-      slidesPerGroup: 2,
+      slidesPerGroup: 3,
+      // slidesPerGroup: 2,
       // spaceBetween: 30,
       autoplay: {
         delay: 4000,
