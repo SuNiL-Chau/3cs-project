@@ -434,8 +434,8 @@
               letter-spacing: 0.36px;
             }
           }
-          &.-active,
-          &.swiper-slide-active {
+          // &.swiper-slide-active,
+          &.-active {
             .platform__contentBtnTxt {
               font-weight: 700;
               color: $orange1;

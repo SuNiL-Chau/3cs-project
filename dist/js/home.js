@@ -174,11 +174,11 @@ if (window.innerWidth < 1024) {
   // planingLottie.setAttribute("loop", "");
   // planingLottie.play();
   // planning__Swiper.autoplay.start();
-  var executionLottie = document.querySelector("#executionLottie");
-  executionLottie.setAttribute("autoplay", "");
-  executionLottie.setAttribute("loop", "");
-  executionLottie.play();
-  execution__Swiper.autoplay.start();
+  // var executionLottie = document.querySelector("#executionLottie");
+  // executionLottie.setAttribute("autoplay", "");
+  // executionLottie.setAttribute("loop", "");
+  // executionLottie.play();
+  // execution__Swiper.autoplay.start();
 } else {
   LottieInteractivity.create({
     player: "#servicesLottie",
@@ -204,16 +204,18 @@ if (window.innerWidth < 1024) {
   //     },
   //   ],
   // });
-  LottieInteractivity.create({
-    player: "#executionLottie",
-    mode: "scroll",
-    container: ".-executionLottieContainer",
-    actions: [{
-      visibility: [0.2, 0.7],
-      type: "seek",
-      frames: [0, 228]
-    }]
-  });
+  // LottieInteractivity.create({
+  //   player: "#executionLottie",
+  //   mode: "scroll",
+  //   container: ".-executionLottieContainer",
+  //   actions: [
+  //     {
+  //       visibility: [0.2, 0.7],
+  //       type: "seek",
+  //       frames: [0, 228],
+  //     },
+  //   ],
+  // });
 }
 
 // swiper check for desk and mobile
@@ -224,7 +226,8 @@ var platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
       loop: true,
       // slidesPerView: 2,
       slidesPerView: "auto",
-      slidesPerGroup: 1,
+      // slidesPerGroup: 1,
+      slidesPerGroup: 2,
       // spaceBetween: 30,
       autoplay: {
         delay: 4000
@@ -249,7 +252,7 @@ var platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
       loop: true,
       // slidesPerView: 3,
       slidesPerView: "auto",
-      slidesPerGroup: 1,
+      slidesPerGroup: 2,
       // spaceBetween: 30,
       autoplay: {
         delay: 4000

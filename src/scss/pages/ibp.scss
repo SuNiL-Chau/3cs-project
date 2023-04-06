@@ -15,6 +15,9 @@
       position: relative;
       margin-top: -25%;
       width: 90%;
+      @include media-bp(mdl) {
+        margin-top: 0;
+      }
     }
     &__figcaption {
       position: absolute;
