@@ -462,39 +462,40 @@
     position: relative;
     display: block;
     background-color: $black_1;
+    background-image: linear-gradient(to right, black 54%, rgb(185 70 9 / 50%));
     @include padding-top(142px);
     @include padding-bottom(142px);
     @include media-bp(mdl) {
       padding-left: $mobilePad;
       padding-right: $mobilePad;
     }
-    &__bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      &::before,
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        background: radial-gradient(circle at center, #b94609, transparent) 0% 0% no-repeat padding-box;
-        opacity: 0.5;
-      }
-      &::before {
-        left: 0;
-        transform: translateX(-50%);
-      }
-      &::after {
-        right: 0;
-        transform: translateX(50%);
-      }
-    }
+    // &__bg {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   overflow: hidden;
+    //   &::before,
+    //   &::after {
+    //     content: "";
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     width: 100%;
+    //     background: radial-gradient(circle at center, #b94609, transparent) 0% 0% no-repeat padding-box;
+    //     opacity: 0.5;
+    //   }
+    //   &::before {
+    //     left: 0;
+    //     transform: translateX(-50%);
+    //   }
+    //   &::after {
+    //     right: 0;
+    //     transform: translateX(50%);
+    //   }
+    // }
     &__title {
       text-align: center;
       @include rfs(35px);
