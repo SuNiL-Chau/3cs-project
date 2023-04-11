@@ -1,28 +1,53 @@
 .c-textContent {
+  position: relative;
+  @include padding-top(120px);
+  @include padding-bottom(120px);
+  &.-withBg {
+    background-color: $gray5;
+  }
+  &.-withGradient {
     position: relative;
-    @include padding-top(120px);
-    @include padding-bottom(120px);
-    &.-withBg {
-        background-color: $gray5;
+    overflow: hidden;
+    background-color: #000;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background: radial-gradient(circle at center, #b94609, transparent) 0% 0% no-repeat padding-box;
+      opacity: 0.5;
+      z-index: 1;
     }
-    &__canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    &::before {
+      left: 0;
+      transform: translateX(-50%);
     }
-    &__title {
-        @include rfs(60px);
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: normal;
+    &::after {
+      right: 0;
+      transform: translateX(50%);
     }
-    &__para {
-        @include rfs(35px);
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: normal;
-        @include margin-top(30px);
-    }
+  }
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__title {
+    @include rfs(60px);
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  &__para {
+    @include rfs(35px);
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    @include margin-top(30px);
+  }
 }

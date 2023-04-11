@@ -7,10 +7,17 @@
     max-width: 570px;
     margin-left: auto;
     margin-right: 40px;
+    &.-order2 {
+      margin-left: 40px;
+      margin-right: auto;
+    }
     @include media-bp(mdl) {
       width: 100%;
       max-width: 100%;
       padding: 28px;
+      &.-order2 {
+        margin-left: auto;
+      }
     }
   }
   &__pre {
