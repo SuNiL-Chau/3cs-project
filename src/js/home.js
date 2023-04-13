@@ -37,8 +37,10 @@ const swiper = new Swiper(".testimonials__swiper", {
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
 testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
 window.onload = () => {
-  var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
-  testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
+  setTimeout(() => {
+    var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
+    testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
+  }, 500);
 };
 
 // industries swiper
