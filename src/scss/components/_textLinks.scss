@@ -1,0 +1,28 @@
+.c-textLinks{
+    position: relative;
+    display: block;
+    @include padding-top(160px);
+    @include padding-bottom(160px);
+    &__listing {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    &__link {
+        display: flex;
+        flex-direction: column;
+        &Title {
+            @include rfs(50px);
+            font-weight: 700;
+            line-height: normal;
+        }
+        &Subtitle {
+            @include rfs(30px);
+            font-weight: normal;
+            @include margin-top(14px);
+        }
+    }
+}
+.scaiTabs + .c-textLinks {
+    padding-top: 0;
+}
