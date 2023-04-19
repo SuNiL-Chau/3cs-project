@@ -190,7 +190,7 @@ if (window.innerWidth < 1024) {
       // visibility: [0.15, 0.75],
       visibility: [0.2, 1],
       type: "seek",
-      frames: [0, 480]
+      frames: [90, 480]
     }]
   });
   // LottieInteractivity.create({

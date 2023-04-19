@@ -152,5 +152,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  // event for scaitabs
+  var scaiTabs = document.querySelector(".scaiTabs");
+  if (scaiTabs && window.innerWidth >= 1020) {
+    var tabButtons = Array.from(scaiTabs.querySelectorAll(".scaiTabs .d-md-flex .nav .nav-link"));
+    tabButtons.map(function (btn) {
+      btn.addEventListener("click", function () {
+        window.scrollTo({
+          top: scaiTabs.offsetTop,
+          left: 0,
+          behavior: "smooth"
+        });
+      });
+    });
+  }
 });
 //# sourceMappingURL=main.js.map

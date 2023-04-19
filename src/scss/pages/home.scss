@@ -631,7 +631,7 @@
     &__service {
       display: flex;
       flex-direction: column;
-      height: 52vh;
+      height: 48vh;
       justify-content: center;
       @include media-bp(mdl) {
         height: max-content;

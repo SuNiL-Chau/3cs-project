@@ -12,14 +12,14 @@
         display: flex;
         flex-direction: column;
         &Title {
-            @include rfs(50px);
+            @include rfs(36px);
             font-weight: 700;
             line-height: normal;
         }
         &Subtitle {
-            @include rfs(30px);
+            @include rfs(20px);
             font-weight: normal;
-            @include margin-top(14px);
+            @include margin-top(10px);
         }
     }
 }

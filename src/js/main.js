@@ -145,4 +145,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  // event for scaitabs
+  let scaiTabs = document.querySelector(".scaiTabs");
+  if (scaiTabs && window.innerWidth >= 1020) {
+    let tabButtons = Array.from(scaiTabs.querySelectorAll(".scaiTabs .d-md-flex .nav .nav-link"));
+    tabButtons.map((btn) => {
+      btn.addEventListener("click", () => {
+        window.scrollTo({
+          top: scaiTabs.offsetTop,
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+    });
+  }
 });

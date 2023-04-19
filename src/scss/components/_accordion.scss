@@ -13,16 +13,24 @@
     line-height: 1.25;
     letter-spacing: normal;
     font-weight: 700;
-    color: $orange1;
+    color: $black_1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &:hover {
+      color: $orange1;
+    }
     &:hover,
     &:focus {
       outline: none;
-      color: $orange1;
       border-color: transparent;
       box-shadow: none;
+    }
+    .c-accordion__icon path {
+      fill: $black_1;
+    }
+    &:hover .c-accordion__icon {
+      transform: rotate(90deg);
     }
     .c-accordion__icon {
       position: relative;
@@ -30,9 +38,16 @@
       transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       transform: rotate(0);
       transform-origin: center;
+      flex-shrink: 0;
     }
     &[aria-expanded="true"] .c-accordion__icon {
       transform: rotate(45deg);
+    }
+    &:hover .c-accordion__icon path {
+      fill: $orange1;
+    }
+    &[aria-expanded="true"] .c-accordion__icon path {
+      fill: $white;
     }
   }
   &__content {
