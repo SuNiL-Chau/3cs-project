@@ -225,3 +225,21 @@ btn-outline-dark:hover {
   height: 100%;
   z-index: -1;
 }
+
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  top: 94%;
+}
+.dropdown-submenu .dropdown-menu {
+  left: 100%;
+  top: 60%;
+}
+.dropdown-menu > .dropdown-submenu > ul {
+  display: none;
+}
+
+.dropdown-menu > .dropdown-submenu > .show {
+  display: block;
+}

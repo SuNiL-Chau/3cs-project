@@ -9,16 +9,46 @@ var year = date.getFullYear();
 // set nav click on hover for nav dropdown
 var nav = document.querySelector("nav");
 var dropdown = Array.from(nav.querySelectorAll(".nav-item.dropdown [data-toggle]"));
-dropdown.forEach(function (el) {
-  el.addEventListener("mouseover", function () {
-    el.click();
+if (window.innerWidth > 1000) {
+  dropdown.forEach(function (el) {
+    el.addEventListener("mouseover", function () {
+      el.click();
+    });
   });
-});
-document.addEventListener("mouseout", function (event) {
-  if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item")) {
-    document.body.click();
-  }
-});
+  document.addEventListener("mouseout", function (event) {
+    if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
+      document.body.click();
+    }
+  });
+}
+if (window.innerWidth < 1000) {
+  dropdown.forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (window.innerWidth < 992) {
+        var submenu = el.nextElementSibling;
+        if (submenu.classList.contains("show")) {
+          submenu.classList.remove("show");
+        } else {
+          var activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
+          activeSubmenus.forEach(function (submenu) {
+            submenu.classList.remove("show");
+          });
+          submenu.classList.add("show");
+        }
+      } else {
+        el.click();
+      }
+    });
+  });
+  document.addEventListener("click", function (event) {
+    if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
+      var activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
+      activeSubmenus.forEach(function (submenu) {
+        submenu.classList.remove("show");
+      });
+    }
+  });
+}
 
 // nav mobile toggle btn code
 var navbarToggler = document.querySelector(".navbar-toggler");

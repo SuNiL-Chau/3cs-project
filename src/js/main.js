@@ -5,17 +5,48 @@ let year = date.getFullYear();
 const nav = document.querySelector("nav");
 const dropdown = Array.from(nav.querySelectorAll(".nav-item.dropdown [data-toggle]"));
 
-dropdown.forEach((el) => {
-  el.addEventListener("mouseover", () => {
-    el.click();
+if (window.innerWidth > 1000) {
+  dropdown.forEach((el) => {
+    el.addEventListener("mouseover", () => {
+      el.click();
+    });
   });
-});
 
-document.addEventListener("mouseout", (event) => {
-  if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item")) {
-    document.body.click();
-  }
-});
+  document.addEventListener("mouseout", (event) => {
+    if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
+      document.body.click();
+    }
+  });
+}
+if (window.innerWidth < 1000) {
+  dropdown.forEach((el) => {
+    el.addEventListener("click", () => {
+      if (window.innerWidth < 992) {
+        const submenu = el.nextElementSibling;
+        if (submenu.classList.contains("show")) {
+          submenu.classList.remove("show");
+        } else {
+          const activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
+          activeSubmenus.forEach((submenu) => {
+            submenu.classList.remove("show");
+          });
+          submenu.classList.add("show");
+        }
+      } else {
+        el.click();
+      }
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
+      const activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
+      activeSubmenus.forEach((submenu) => {
+        submenu.classList.remove("show");
+      });
+    }
+  });
+}
 
 // nav mobile toggle btn code
 const navbarToggler = document.querySelector(".navbar-toggler");

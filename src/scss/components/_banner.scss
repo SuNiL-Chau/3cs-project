@@ -39,6 +39,12 @@
     color: $black_3;
     margin-top: 20px;
   }
+  &__para {
+    @include rfs(20px);
+    line-height: 1.2;
+    color: $black_3;
+    margin-top: 20px;
+  }
   &__cta {
     margin-top: 36px;
     border-color: $lines;
