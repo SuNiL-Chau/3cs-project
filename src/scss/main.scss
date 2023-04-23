@@ -243,3 +243,361 @@ btn-outline-dark:hover {
 .dropdown-menu > .dropdown-submenu > .show {
   display: block;
 }
+
+.aboutUs {
+  .missionVision {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: $orange1;
+
+      @include media-bp(mdl) {
+        display: none;
+      }
+    }
+
+    .mv-borderLine {
+      border-left: 2px solid #333;
+
+      @include media-bp(mdl) {
+        border: none;
+        margin-top: 30px;
+      }
+    }
+
+    .mv-wrapL {
+      // padding-right: 40px;
+      width: 80%;
+      margin: auto auto;
+
+      @include media-bp(mdl) {
+        width: 100%;
+        padding: 0 15px;
+      }
+    }
+
+    .mv-wrapR {
+      // padding-left: 40px;
+      width: 80%;
+      margin: auto auto;
+
+      @include media-bp(mdl) {
+        width: 100%;
+        padding: 0 15px;
+      }
+    }
+
+    .mv-banner {
+      margin-top: 60px;
+
+      @include media-bp(mdl) {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.threeSC__value {
+  &Wrap {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+    @include media-bp(mdl) {
+      display: block;
+    }
+
+    .threeSC__valueCard {
+      position: relative;
+      list-style: none;
+      flex: 1;
+      //flex: 0 0 16.25%;
+      padding: 40px;
+      //padding-top: 130px;
+      border: 2px solid #333;
+      cursor: pointer;
+      overflow: hidden;
+      animation: fadeC 0.8s linear;
+      -webkit-animation: fadeC 0.8s linear;
+      height: 550px;
+
+      @include media-bp(mdl) {
+        height: auto;
+        padding: 20px;
+
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+
+      @keyframes spinner {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      &.-cardBlur::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 1);
+        backdrop-filter: blur(15px);
+
+      }
+
+      &.-cardBlur::before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: -10px;
+        margin-left: -10px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: $orange1;
+        border-bottom-color: $orange1;
+        animation: spinner .8s ease infinite;
+        z-index: 2;
+        -webkit-animation: spinner .8s ease infinite;
+
+        @include media-bp(mdl) {
+          left: 48%;
+        }
+      }
+
+      &.-cardActive {
+        padding: 40px;
+        background-color: $orange1;
+        border-color: $orange1;
+        flex: 0 0 35%;
+        animation: fadeC 0.8s linear;
+        -webkit-animation: fadeC 0.8s linear;
+
+        @include media-bp(mdl) {
+          padding: 40px 20px;
+        }
+
+        .threeSC__valueCardPara {
+          display: block;
+          margin-top: 10px;
+        }
+
+        .threeSC__valueCardTitle {
+          position: relative;
+          transform: none;
+          white-space: normal;
+          writing-mode: unset;
+          color: #fff;
+          // font-size: 36px;
+          @include rfs(36px);
+          margin-top: 10px;
+        }
+
+        .threeSC__valueCardPara {
+          color: #fff;
+          @include rfs(20px);
+          // font-size: 20px;
+        }
+
+        .threeSC__valueCardBody {
+          position: relative;
+          display: flex;
+          gap: 0;
+          align-items: flex-start;
+          justify-content: center;
+
+          .threeSC__valueCardIcon {
+            order: 0;
+          }
+        }
+      }
+
+      .threeSC__valueCardBody {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        gap: 30px;
+
+        @include media-bp(mdl) {
+          gap: 10px;
+        }
+      }
+
+      .threeSC__valueCardIcon {
+        order: 1;
+      }
+
+      .threeSC__valueCardTitle {
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        margin: 0;
+        @include rfs(35px);
+        // font-size: 35px;
+        transition: opacity 1s linear;
+        -webkit-transition: opacity 1s linear;
+        -moz-transition: opacity 1s linear;
+        -ms-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+
+        @include media-bp(mdl) {
+          transform: none;
+          -webkit-transform: none;
+          -moz-transform: none;
+          -ms-transform: none;
+          -o-transform: none;
+          writing-mode: unset;
+          -webkit-writing-mode: unset;
+          -ms-writing-mode: unset;
+          white-space: normal;
+          font-size: 28px !important;
+        }
+      }
+
+      .threeSC__valueCardPara {
+        display: none;
+
+        @include media-bp(mdl) {
+          @include rfs(16px);
+          // font-size: 16px;
+        }
+      }
+
+      @keyframes fadeC {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+}
+
+// Current Modal Opening
+.currentOpeningModal {
+  padding: 0 !important;
+  z-index: 100000;
+
+  .modal-dialog {
+    width: 100vw;
+    max-width: unset;
+  }
+
+
+  .form-control-2 {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .form-control-2 {
+      transition: none;
+    }
+  }
+
+  .form-control-2::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  .form-control-2:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .form-control-2::-webkit-input-placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  .form-control-2::-moz-placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  .form-control-2:-ms-input-placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  .form-control-2::-ms-input-placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  .form-control-2::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  .custom-file-input:lang(en)~.custom-file-label::after {
+    content: "+";
+    background-color: $white;
+    border-left: 0;
+  }
+
+  .cOpen-banner {
+    height: 300px;
+
+    @include media-bp(mdl) {
+      height: auto;
+      margin-bottom: 15px;
+    }
+  }
+
+  .col-md-6.pl-0 {
+    @include media-bp(mdl) {
+      padding-left: 15px !important;
+    }
+  }
+
+  // .modal-body.pl-0 {
+  //   padding-left: 15px !important;
+  // }
+
+  .modal-dialog {
+    @include media-bp(mdl) {
+      margin: 10px auto;
+    }
+  }
+}
+
+.modal-backdrop {
+  z-index: 99999;
+}
