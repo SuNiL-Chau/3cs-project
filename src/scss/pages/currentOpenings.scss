@@ -4,10 +4,10 @@
 
 .currentOpenings {
   &__banner {
+    margin-top: 97px;
+    position: relative;
+    display: block;
     @include media-bp(lg) {
-      margin-top: 97px;
-      position: relative;
-      display: block;
       .row > :first-child {
         position: absolute;
         top: 0;

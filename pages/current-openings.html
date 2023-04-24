@@ -478,8 +478,7 @@
 
 
     <!-- Modal -->
-  <div class="modal fade currentOpeningModal" id="currentOpening" tabindex="-1" data-backdrop="static"
-    data-keyboard="false" aria-hidden="true">
+  <div class="modal fade currentOpeningModal show" id="currentOpening" tabindex="-1"  aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header border-0 pt-2 pb-2 pl-4 pr-4">
@@ -492,10 +491,10 @@
 
             <div class="row">
               <div class="col-md-6 pl-0">
-                <img src="assets/images/about-us/banner2.png" class="img-fluid cOpen-banner" alt="Banner image" />
+                <img src="assets/images/current-Openings/modal.png" class="img-fluid cOpen-banner" alt="Banner image" />
               </div>
-              <div class="col-md-6 text-center">
-                <form>
+              <div class="col-md-6 align-self-center">
+                <form id="roleLooking"enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-md-12 col-12">
                       <h3 class="mb-4">Don't see the role you are looking for ?</h3>
@@ -504,25 +503,25 @@
                   <div class="row">
                     <div class="col-md-6 col-12">
                       <div class="form-group">
-                        <input type="text" class="form-control-2" placeholder="First name" required>
+                        <input type="text" class="form-control-2" placeholder="First name" id="firstnameinput" required>
                       </div>
 
                     </div>
                     <div class="col-md-6 col-12">
                       <div class="form-group">
-                        <input type="text" class="form-control-2" placeholder="Last name" required>
+                        <input type="text" class="form-control-2" placeholder="Last name" id="lastnameinput" required>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 col-12">
                       <div class="form-group">
-                        <input type="text" class="form-control-2" placeholder="Contact" required>
+                        <input type="number" maxlength="10" class="form-control-2" id="contact" placeholder="Contact" required>
                       </div>
                     </div>
                     <div class="col-md-6 col-12">
                       <div class="form-group">
-                        <input type="text" class="form-control-2" placeholder="Email" required>
+                        <input type="email" class="form-control-2" placeholder="Email" id="emailinput" required>
                       </div>
                     </div>
                   </div>
@@ -531,14 +530,16 @@
                       <div class="form-group">
                         <div class="input-group is-invalid">
                           <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required>
+                            <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" accept=".doc,.docx,application/msword,officedocument.wordprocessingml.document,.pdf" required>
                             <label class="custom-file-label" for="validatedInputGroupCustomFile">Attach CV</label>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <button class="btn btn-lg btn-outline-dark" type="submit">Submit form</button>
+                  <div class="row justify-content-center">
+                    <button class="btn btn-lg btn-outline-dark" type="submit">Submit form</button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -581,6 +582,9 @@
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
       });
+    </script>
+    <script>
+      $('[data-target="#currentOpening"]').click();
     </script>
   </body>
 </html>

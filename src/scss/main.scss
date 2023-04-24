@@ -245,6 +245,10 @@ btn-outline-dark:hover {
 }
 
 .aboutUs {
+  & > .c-fullBanner:first-of-type {
+    margin-top: 97px;
+    margin-bottom: 0;
+  }
   .missionVision {
     position: relative;
 
@@ -319,6 +323,7 @@ btn-outline-dark:hover {
     .threeSC__valueCard {
       position: relative;
       list-style: none;
+      transition: all 0.6s ease;
       flex: 1;
       //flex: 0 0 16.25%;
       padding: 40px;
@@ -438,6 +443,7 @@ btn-outline-dark:hover {
 
         @include media-bp(mdl) {
           gap: 10px;
+          align-items: flex-start;
         }
       }
 
@@ -459,6 +465,7 @@ btn-outline-dark:hover {
         -o-transition: opacity 1s linear;
 
         @include media-bp(mdl) {
+          order: 2;
           transform: none;
           -webkit-transform: none;
           -moz-transform: none;
@@ -477,6 +484,7 @@ btn-outline-dark:hover {
 
         @include media-bp(mdl) {
           @include rfs(16px);
+          order: 3;
           // font-size: 16px;
         }
       }
@@ -573,7 +581,7 @@ btn-outline-dark:hover {
   }
 
   .cOpen-banner {
-    height: 300px;
+    // height: 300px;
 
     @include media-bp(mdl) {
       height: auto;

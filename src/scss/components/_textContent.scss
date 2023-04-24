@@ -50,4 +50,11 @@
     letter-spacing: normal;
     @include margin-top(30px);
   }
+  &__para2 {
+    @include rfs(28px);
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+    @include margin-top(30px);
+  }
 }
