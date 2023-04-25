@@ -38,9 +38,15 @@
             <button type="button" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Platforms</button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">SCAI</a></li>
-              <li><a class="dropdown-item" href="#">ITMS</a></li>
               <li class="dropdown-submenu">
-                <button type="button" class="dropdown-item dropdown-toggle">More Platforms</button>
+                <a class="dropdown-item dropdown-toggle" href="javascript:;">ITMS</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">itms 1</a></li>
+                  <li><a class="dropdown-item" href="#">itms 2</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a href="javascript:;" class="dropdown-item dropdown-toggle">More Platforms</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Platform 1</a></li>
                   <li><a class="dropdown-item" href="#">Platform 2</a></li>
@@ -91,7 +97,7 @@
           <div class="col-12">
             <h2 class="currentOpenings__openingsTitle" data-aos="fade-left">Current Openings</h2>
             <p class="currentOpenings__openingsSubtitle" data-aos="fade-left" data-aos-delay="400">Work with our vision-driven innovative teams to build ground-breaking supply chain solutions.</p>
-            <form class="currentOpenings__openingsForm"  data-aos="fade-left" data-aos-delay="400">
+            <form class="currentOpenings__openingsForm" data-aos="fade-left" data-aos-delay="400">
               <label for="category" class="currentOpenings__formLabel">
                 <select name="category" id="category" class="currentOpenings__formSelect">
                   <option value="Category" selected disabled>Category</option>
@@ -126,7 +132,7 @@
       </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 text-center">
             <div class="currentOpenings__jobGrid">
               <div class="currentOpenings__job" data-aos="fade-up">
                 <div class="currentOpenings__jobPreview">
@@ -145,7 +151,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="currentOpenings__jobDetails">
+                <div class="currentOpenings__jobDetails text-left">
                   <p class="currentOpenings__jobPre">Job Title</p>
                   <p class="currentOpenings__jobTitle">Lorem Ipsum</p>
                   <p class="currentOpenings__jobPre">Job Description</p>
@@ -180,7 +186,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="currentOpenings__jobDetails">
+                <div class="currentOpenings__jobDetails text-left">
                   <p class="currentOpenings__jobPre">Job Title</p>
                   <p class="currentOpenings__jobTitle">Lorem Ipsum</p>
                   <p class="currentOpenings__jobPre">Job Description</p>
@@ -215,7 +221,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="currentOpenings__jobDetails">
+                <div class="currentOpenings__jobDetails text-left">
                   <p class="currentOpenings__jobPre">Job Title</p>
                   <p class="currentOpenings__jobTitle">Lorem Ipsum</p>
                   <p class="currentOpenings__jobPre">Job Description</p>
@@ -250,7 +256,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="currentOpenings__jobDetails">
+                <div class="currentOpenings__jobDetails text-left">
                   <p class="currentOpenings__jobPre">Job Title</p>
                   <p class="currentOpenings__jobTitle">Lorem Ipsum</p>
                   <p class="currentOpenings__jobPre">Job Description</p>
@@ -285,7 +291,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="currentOpenings__jobDetails">
+                <div class="currentOpenings__jobDetails text-left">
                   <p class="currentOpenings__jobPre">Job Title</p>
                   <p class="currentOpenings__jobTitle">Lorem Ipsum</p>
                   <p class="currentOpenings__jobPre">Job Description</p>
@@ -320,7 +326,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="currentOpenings__jobDetails">
+                <div class="currentOpenings__jobDetails text-left">
                   <p class="currentOpenings__jobPre">Job Title</p>
                   <p class="currentOpenings__jobTitle">Lorem Ipsum</p>
                   <p class="currentOpenings__jobPre">Job Description</p>
@@ -339,6 +345,7 @@
                 </div>
               </div>
             </div>
+            <button href="javascript:;" class="btn btn-outline-dark btn-lg mt-5" data-aos="fade-up" data-aos-delay="200">Load More</button>
           </div>
         </div>
       </div>
@@ -360,7 +367,7 @@
         <div class="bgParticle"></div>
       </div>
       <div class="c-fullBanner__content text-center">
-        <h1 class="c-fullBanner__title" data-aos="fade-up" data-aos-delay="400">Don't See The Role <br>You Are Looking For?</h1>
+        <h1 class="c-fullBanner__title" data-aos="fade-up" data-aos-delay="400">Don't See The Role <br />You Are Looking For?</h1>
         <a href="javascript:;" class="btn btn-outline-dark btn-lg mt-3" data-aos="fade-up" data-aos-delay="600" data-toggle="modal" data-target="#currentOpening">Apply Now</a>
       </div>
     </div>
@@ -476,79 +483,75 @@
       </div>
     </footer>
 
-
     <!-- Modal -->
-  <div class="modal fade currentOpeningModal show" id="currentOpening" tabindex="-1"  aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header border-0 pt-2 pb-2 pl-4 pr-4">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body pl-0 pb-5">
-          <div class="container-fluid">
-
-            <div class="row">
-              <div class="col-md-6 pl-0">
-                <img src="assets/images/current-Openings/modal.png" class="img-fluid cOpen-banner" alt="Banner image" />
-              </div>
-              <div class="col-md-6 align-self-center">
-                <form id="roleLooking"enctype="multipart/form-data">
-                  <div class="row">
-                    <div class="col-md-12 col-12">
-                      <h3 class="mb-4">Don't see the role you are looking for ?</h3>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <input type="text" class="form-control-2" placeholder="First name" id="firstnameinput" required>
-                      </div>
-
-                    </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <input type="text" class="form-control-2" placeholder="Last name" id="lastnameinput" required>
+    <div class="modal fade currentOpeningModal" id="currentOpening" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header border-0 pt-2 pb-2 pl-4 pr-4">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body pl-0 pb-5">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 pl-0">
+                  <img src="assets/images/current-Openings/modal.png" class="img-fluid cOpen-banner" alt="Banner image" />
+                </div>
+                <div class="col-md-6 align-self-center">
+                  <form id="roleLooking" enctype="multipart/form-data">
+                    <div class="row">
+                      <div class="col-md-12 col-12">
+                        <h3 class="mb-4">Don't see the role you are looking for ?</h3>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <input type="number" maxlength="10" class="form-control-2" id="contact" placeholder="Contact" required>
+                    <div class="row">
+                      <div class="col-md-6 col-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control-2" placeholder="First name" id="firstnameinput" required />
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="form-group">
+                          <input type="text" class="form-control-2" placeholder="Last name" id="lastnameinput" required />
+                        </div>
                       </div>
                     </div>
-                    <div class="col-md-6 col-12">
-                      <div class="form-group">
-                        <input type="email" class="form-control-2" placeholder="Email" id="emailinput" required>
+                    <div class="row">
+                      <div class="col-md-6 col-12">
+                        <div class="form-group">
+                          <input type="number" maxlength="10" class="form-control-2" id="contact" placeholder="Contact" required />
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <div class="form-group">
+                          <input type="email" class="form-control-2" placeholder="Email" id="emailinput" required />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 col-12">
-                      <div class="form-group">
-                        <div class="input-group is-invalid">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" accept=".doc,.docx,application/msword,officedocument.wordprocessingml.document,.pdf" required>
-                            <label class="custom-file-label" for="validatedInputGroupCustomFile">Attach CV</label>
+                    <div class="row">
+                      <div class="col-md-12 col-12">
+                        <div class="form-group">
+                          <div class="input-group is-invalid">
+                            <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" accept=".doc,.docx,application/msword,officedocument.wordprocessingml.document,.pdf" required />
+                              <label class="custom-file-label" for="validatedInputGroupCustomFile">Attach CV</label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <button class="btn btn-lg btn-outline-dark" type="submit">Submit form</button>
-                  </div>
-                </form>
+                    <div class="row justify-content-center">
+                      <button class="btn btn-lg btn-outline-dark" type="submit">Submit form</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
 
     <!-- Jquery & Bootstrap Bundle js -->
     <script src="./dist/js/libs/jquery-3.5.1.slim.min.js"></script>
@@ -582,9 +585,6 @@
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
       });
-    </script>
-    <script>
-      $('[data-target="#currentOpening"]').click();
     </script>
   </body>
 </html>
