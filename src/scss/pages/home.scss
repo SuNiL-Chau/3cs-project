@@ -15,19 +15,19 @@
     }
     &__canvas {
       position: absolute;
-      width: 90%;
-      height: 90%;
+      width: 70%;
+      height: auto;
       top: 0;
-      right: 0;
+      right: -13%;
       z-index: -1;
       object-fit: cover;
       object-position: center;
       position: absolute;
-      transform: translate(32%, 10%) !important;
+      /* transform: translate(32%, 10%) !important; */
       @include media-bp(mdl) {
-        width: 120vw !important;
-        transform: translateX(-10%) !important;
-        height: 100% !important;
+        width: 100%;
+        transform: translateX(-11%);
+        /* height: 100% !important; */
         position: relative;
       }
     }
@@ -695,7 +695,7 @@
     &__lottie {
       position: sticky;
       top: 140px;
-      #servicesLottie {
+      #servicesLottie:not(.duplottie) {
         width: 100% !important;
         height: 100% !important;
       }

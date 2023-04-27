@@ -40,7 +40,7 @@ window.onload = () => {
   setTimeout(() => {
     var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
     testimonialsWrapperHeight ? (testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px") : null;
-  }, 500);
+  }, 800);
 };
 
 // industries swiper

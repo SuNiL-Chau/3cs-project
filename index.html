@@ -66,7 +66,12 @@
 
     <section class="homebanner">
       <div class="container">
-        <lottie-player id="homeLottie" class="homebanner__canvas" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.5" rendererSettings='{"quality":"low"}'></lottie-player>
+        <div class="homebanner__canvas">
+          <div class="embed-responsive embed-responsive-16by9">
+            <lottie-player id="homeLottie" class="duplottie" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.5" rendererSettings='{"quality":"low"}'></lottie-player>
+            <lottie-player id="homeLottie" class="embed-responsive-item" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.5" rendererSettings='{"quality":"low"}'></lottie-player>
+          </div>
+        </div>
         <div class="homebanner__content">
           <h1 class="homebanner__title" data-aos="fade-up">Re-define supply <br />chain future</h1>
           <p class="homebanner__subtitle" data-aos="fade-up">By Transforming</p>
@@ -119,7 +124,8 @@
             <p class="platform__para" data-aos="fade-up"><span class="text-primary">A smart all-in-one platform</span> which facilitates you to build and track strong ultra-modern platforms that drive <span class="text-primary">profitability, improve efficiency</span> and operate on <span class="text-primary">sustainability.</span></p>
             <div class="platform__content">
               <div class="platform__contentBrain" data-aos="fade-in">
-                <lottie-player id="scaiLottie" src="assets/lottie/scai.json" style="width: 100%; height: auto"></lottie-player>
+                <lottie-player id="scaiLottie" src="assets/lottie/scai.json" style="width: 100%; height: auto" rendererSettings='{"quality":"low"}'></lottie-player>
+                <lottie-player id="scaiLottie" class="duplottie" src="assets/lottie/scai.json" style="width: 100%;" rendererSettings='{"quality":"low"}'></lottie-player>
               </div>
               <div class="swiper platform__contentBtns__Swiper" id="scaiswiper">
                 <div class="platform__contentBtns swiper-wrapper">
@@ -151,7 +157,8 @@
             <p class="platform__para" data-aos="fade-up">An <span class="text-primary">intelligent transportation platform</span> that enables the management of the E2E shipment lifecycle of transportation and distribution.</p>
             <div class="platform__content">
               <div class="platform__contentGlobe">
-                <lottie-player id="itmsLottie" src="assets/lottie/itms-2.json" style="width: 90%; height: auto"></lottie-player>
+                <lottie-player id="itmsLottie" src="assets/lottie/itms-2.json" style="width: 90%; height: auto" rendererSettings='{"quality":"low"}'></lottie-player>
+                <lottie-player id="itmsLottie" class="duplottie" src="assets/lottie/itms-2.json" style="width: 90%;" rendererSettings='{"quality":"low"}'></lottie-player>
               </div>
               <div class="swiper platform__contentBtns__Swiper" id="itmsswiper">
                 <div class="platform__contentBtns swiper-wrapper">
@@ -301,7 +308,8 @@
             </div>
             <div class="col-12 col-md-5 ml-auto order-1 order-md-2">
               <div class="services__lottie">
-                <lottie-player id="servicesLottie" src="assets/lottie/service.json" speed="1.2" style="width: 400px; height: 400px"></lottie-player>
+                <lottie-player id="servicesLottie" src="assets/lottie/service.json" speed="1.2" rendererSettings='{"quality":"low"}' style="width: 400px; height: 400px"></lottie-player>
+                <lottie-player id="servicesLottie" class="duplottie" src="assets/lottie/service.json" rendererSettings='{"quality":"low"}' speed="1.2" style="width: 400px;"></lottie-player>
               </div>
             </div>
           </div>
