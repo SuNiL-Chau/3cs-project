@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./dist/css/bootstrap.css" />
     <link rel="stylesheet" href="./dist/css/main.css" />
-    <link rel="stylesheet" href="./dist/css/pages/scai.css" />
+    <link rel="stylesheet" href="./dist/css/pages/video.css" />
   </head>
 
   <body class="video">
@@ -56,16 +56,90 @@
       </div>
     </nav>
 
-    <section class="c-fullBanner -te">
+    <section class="c-fullBanner -leftContent -te">
       <div class="c-fullBanner__imgContainer">
         <img src="assets/images/about-us/aboutUs-banner.png" alt="Banner image" />
       </div>
-      <div class="c-fullBanner__content">
-        <h1 class="c-fullBanner__title text-white">About Us</h1>
+      <div class="c-fullBanner__content text-left">
+        <h1 class="c-fullBanner__title text-white text-left">Videos</h1>
+        <p class="c-fullBanner__paraSmall text-white">Unlocking the World Of Supply Chain Videos</p>
+        <p class="c-fullBanner__para text-white">View the latest 3SC Videos for Two-Minute Case Studies, Research, Client Success Stories and more.</p>
       </div>
     </section>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button> -->
+
+    <section class="video__list">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 video__listGrid">
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="card video__listCard">
+              <div class="card-header">
+                <img src="https://placehold.co/600x400" alt="" class="video__cardBanner img-fluid" />
+                <img src="assets/svgs/icons8-circled-play-100.svg" alt="" class="video__cardIcon" />
+              </div>
+              <div class="card-body">
+                <p class="video__cardTitle">Lorem Ipsum</p>
+                <p class="video__cardPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </button>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="card video__listCard">
+              <div class="card-header">
+                <img src="https://placehold.co/600x400" alt="" class="video__cardBanner img-fluid" />
+                <img src="assets/svgs/icons8-circled-play-100.svg" alt="" class="video__cardIcon" />
+              </div>
+              <div class="card-body">
+                <p class="video__cardTitle">Lorem Ipsum</p>
+                <p class="video__cardPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </button>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="card video__listCard">
+              <div class="card-header">
+                <img src="https://placehold.co/600x400" alt="" class="video__cardBanner img-fluid" />
+                <img src="assets/svgs/icons8-circled-play-100.svg" alt="" class="video__cardIcon" />
+              </div>
+              <div class="card-body">
+                <p class="video__cardTitle">Lorem Ipsum</p>
+                <p class="video__cardPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </button>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="card video__listCard">
+              <div class="card-header">
+                <img src="https://placehold.co/600x400" alt="" class="video__cardBanner img-fluid" />
+                <img src="assets/svgs/icons8-circled-play-100.svg" alt="" class="video__cardIcon" />
+              </div>
+              <div class="card-body">
+                <p class="video__cardTitle">Lorem Ipsum</p>
+                <p class="video__cardPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </button>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="card video__listCard">
+              <div class="card-header">
+                <img src="https://placehold.co/600x400" alt="" class="video__cardBanner img-fluid" />
+                <img src="assets/svgs/icons8-circled-play-100.svg" alt="" class="video__cardIcon" />
+              </div>
+              <div class="card-body">
+                <p class="video__cardTitle">Lorem Ipsum</p>
+                <p class="video__cardPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </button>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" class="card video__listCard">
+              <div class="card-header">
+                <img src="https://placehold.co/600x400" alt="" class="video__cardBanner img-fluid" />
+                <img src="assets/svgs/icons8-circled-play-100.svg" alt="" class="video__cardIcon" />
+              </div>
+              <div class="card-body">
+                <p class="video__cardTitle">Lorem Ipsum</p>
+                <p class="video__cardPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </button>
+          </div>
+          <div class="col-12 text-center">
+            <button type="button" class="btn btn-lg btn-outline-dark mt-5">View All</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="get-in-touch">
       <div class="container">
@@ -179,14 +253,16 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal fade videoModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
           <div class="modal-body p-0">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <video src="assets/videos/video/samples.mp4" muted controls autoplay></video>
+            <div class="embed-responsive embed-responsive-16by9">
+              <video class="embed-responsive-item" src="assets/videos/video/sample.mp4" controls controlsList="nodownload"></video>
+            </div>
           </div>
         </div>
       </div>

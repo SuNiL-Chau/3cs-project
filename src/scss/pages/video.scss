@@ -1,0 +1,85 @@
+@import "../variable";
+@import "../mixin";
+@import "../rfs";
+
+.video {
+  & > .c-fullBanner {
+    margin-top: 97px;
+    margin-bottom: 0;
+  }
+  &Modal {
+    .close {
+      padding: 0.5rem 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      opacity: 1;
+      font-size: 2rem;
+      font-family: inherit;
+      &:hover {
+        opacity: 0.75;
+      }
+      span {
+        color: #fff;
+      }
+    }
+  }
+  &__list {
+    position: relative;
+    @include margin-top(120px);
+    @include margin-bottom(120px);
+    &Grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 120px;
+      @include media-bp(mdl) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &Card {
+      border: 0;
+      display: flex;
+      background-color: #fff;
+      .card-header {
+        padding: 0;
+        position: relative;
+      }
+      .video__cardBanner {
+        z-index: 0;
+        position: relative;
+      }
+      .video__cardIcon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 80px;
+        height: 80px;
+      }
+      .card-body {
+        position: relative;
+        display: block;
+        z-index: 1;
+        max-width: calc(100% - 40px);
+        background-color: #fff;
+        margin-top: -20%;
+        border: 1px solid $lines;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .video__cardTitle {
+        @include rfs(30px);
+        font-weight: 500;
+      }
+      .video__cardPara {
+        @include rfs(22px);
+        font-weight: 400;
+        @include media-bp(mdl) {
+          @include rfs(18px);
+        }
+      }
+    }
+  }
+}
