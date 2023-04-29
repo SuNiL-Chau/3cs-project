@@ -1,0 +1,126 @@
+@import "../variable";
+@import "../mixin";
+@import "../rfs";
+
+.webinar {
+  & > .c-fullBanner {
+    margin-top: 97px;
+    margin-bottom: 0;
+  }
+  &__contain {
+    @include margin-top(80px);
+    @include margin-bottom(80px);
+  }
+  &__data {
+    display: flex;
+    flex-direction: column;
+    @include padding-right(60px);
+    @include media-bp(mdl) {
+      padding-right: 0;
+    }
+    & > ul {
+      margin-top: 1rem;
+      padding-left: 30px;
+    }
+    li {
+      @include rfs(20px);
+      font-weight: 400;
+      &:not(:first-child) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  &__date {
+    font-weight: 500;
+    @include rfs(22px);
+    margin-bottom: 0.5rem;
+  }
+  &__title {
+    @include rfs(38px);
+    font-weight: 700;
+  }
+  &__para {
+    @include rfs(20px);
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+  &__subtitle {
+    @include rfs(30px);
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  &__speakers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    @include margin-top(30px);
+    @include media-bp(mdl) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__speaker {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $lines;
+    padding: 0px 30px 30px;
+    margin-top: 30px;
+    &Img {
+      position: relative;
+      display: block;
+      width: 80px;
+      height: 80px;
+      margin-top: -40px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border: 0.5px solid $lines;
+    }
+    &Name {
+      @include rfs(20px);
+      font-weight: 700;
+      @include margin-top(10px);
+    }
+    &Desc {
+      @include rfs(14px);
+    }
+  }
+  &__formTitle {
+    @include rfs(40px);
+    font-weight: 700;
+    @include margin-bottom(60px);
+    @include media-bp(mdl) {
+      @include margin-top(120px);
+    }
+  }
+  &__form {
+    @include padding-left(60px);
+    border-left: 1px solid $lines;
+    display: flex;
+    flex-direction: column;
+    @include media-bp(mdl) {
+      border-left: 0;
+      padding-left: 0;
+    }
+    label {
+      color: $orange1;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .form-control {
+      background-color: $white;
+      border-bottom: 2px solid $orange1;
+      padding: 0;
+      min-height: 40px;
+      color: $black_1;
+      @include rfs(16px);
+    }
+    button[type="submit"] {
+      border-color: $black_1;
+      color: $orange1;
+      &:hover {
+        color: $white;
+        background-color: $orange1;
+        border-color: $orange1;
+      }
+    }
+  }
+}

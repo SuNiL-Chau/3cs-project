@@ -8,6 +8,12 @@
       padding-top: calc(50000%/475);
     }
   }
+  &.-tf &__imgContainer {
+    padding-top: calc(48000%/1366);
+    @include media-bp(mdl) {
+      padding-top: calc(50000%/475);
+    }
+  }
   &__imgContainer {
     width: 100%;
     padding-top: calc(54000%/1366);
@@ -40,9 +46,21 @@
   }
   &__para {
     @include rfs(18px);
+    margin-top: 5px;
   }
   &__paraSmall {
+    margin-top: 5px;
     @include rfs(14px); 
+  }
+  &__pre {
+    @include rfs(30px);
+    font-weight: 500;
+    border-left: 4px solid $orange1;
+    color: $white;
+    @include padding-left(16px);
+  }
+  &__pre + &__title {
+    margin-top: 20px;
   }
   // left content varient
   &.-leftContent &__content {
