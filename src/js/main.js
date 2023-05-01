@@ -24,14 +24,31 @@ if (window.innerWidth < 1000) {
       if (window.innerWidth < 992) {
         const submenu = el.nextElementSibling;
         if (submenu.classList.contains("show")) {
-          submenu.classList.remove("show");
+          setTimeout(() => {
+            submenu.classList.remove("show");
+            submenu.parentElement.classList.remove("show");
+          }, 100);
+          // submenu.classList.toggle("show");
         } else {
           const activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
-          activeSubmenus.forEach((submenu) => {
-            submenu.classList.remove("show");
+          activeSubmenus.forEach((subsubmenu) => {
+            subsubmenu.classList.remove("show");
           });
-          submenu.classList.add("show");
+          // submenu.classList.add("show");
+          submenu.classList.toggle("show");
         }
+        let submenus = submenu.querySelectorAll(".dropdown-item.dropdown-toggle");
+        submenus.forEach((m) => {
+          m.addEventListener("click", () => {
+            const element = m.nextElementSibling;
+            const displayStyle = window.getComputedStyle(element).display;
+            if (displayStyle === "block") {
+              element.style.display = "none";
+            } else {
+              element.style.display = "block";
+            }
+          });
+        });
       } else {
         el.click();
       }

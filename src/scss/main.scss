@@ -228,10 +228,12 @@ btn-outline-dark:hover {
 .dropdown-submenu {
   position: relative;
 }
-.dropdown-submenu:hover .dropdown-menu {
-  display: block;
-  visibility: visible;
-  opacity: 1;
+@media only screen and (min-width: 769px) {
+  .dropdown-submenu:hover .dropdown-menu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 .dropdown-menu {
   top: 94%;
