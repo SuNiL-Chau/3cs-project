@@ -198,4 +198,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+var videoBtns = document.querySelectorAll("button[data-video]");
+videoBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var videoEle = document.querySelector("".concat(btn.dataset.target, " video"));
+    videoEle.setAttribute("src", btn.dataset.video);
+  });
+});
 //# sourceMappingURL=main.js.map
