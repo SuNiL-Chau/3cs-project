@@ -68,7 +68,7 @@
       <div class="container">
         <div class="homebanner__canvas">
           <div class="embed-responsive embed-responsive-16by9">
-            <video src="assets/videos/home/banner.mp4" class="embed-responsive-item" autoplay="true" loop muted playsinline="true" style="object-fit: none;"></video>
+            <video src="assets/videos/home/banner.mp4" class="embed-responsive-item" autoplay="true" loop muted playsinline="true"></video>
             <!-- <lottie-player id="homeLottie" class="duplottie" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.5" rendererSettings='{"quality":"low"}'></lottie-player> -->
             <!-- <lottie-player id="homeLottie" class="embed-responsive-item" data-aos="fade-in" src="assets/lottie/cube.json" autoplay loop speed="0.5" rendererSettings='{"quality":"low"}'></lottie-player> -->
           </div>
@@ -107,6 +107,10 @@
             <p class="homestats__statCount" data-aos-anchor-placement="bottom-bottom" data-aos-offset="250" data-aos="fade-up" data-aos-delay="2200">5%</p>
             <p class="homestats__statTitle" data-aos-anchor-placement="bottom-bottom" data-aos-offset="220" data-aos="fade-up" data-aos-delay="2400">Improved <br />Inventory Optimization</p>
           </div>
+        </div>
+        <div class="homestats__pagination d-flex d-md-none">
+          <div class="homestats__bullets -active"></div>
+          <div class="homestats__bullets"></div>
         </div>
       </div>
     </section>
@@ -606,6 +610,30 @@
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
       });
+    </script>
+    <script>
+      // Get the viewport width
+      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+      // Check if the device is a mobile screen
+      if (viewportWidth <= 768) {
+        // Get the grid element
+        const gridElement = document.querySelector('.homestats__grid');
+
+        // Select the bullets
+        const bullets = document.querySelectorAll('.homestats__bullets');
+
+        // If the grid element's horizontal scroll is greater than 0, activate the second bullet. Otherwise, activate the first bullet.
+        gridElement.addEventListener("scroll", ()=> {
+          if (gridElement.scrollLeft > 0) {
+            bullets[0].classList.remove('-active');
+            bullets[1].classList.add('-active');
+          } else {
+            bullets[0].classList.add('-active');
+            bullets[1].classList.remove('-active');
+          }
+        })
+      }
     </script>
   </body>
 </html>

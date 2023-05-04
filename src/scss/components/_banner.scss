@@ -4,6 +4,7 @@
   padding: 0;
   overflow: hidden;
   &__left {
+    @include padding(30px 0);
     max-width: 570px;
     margin-left: auto;
     margin-right: 40px;
@@ -21,26 +22,26 @@
     }
   }
   &__pre {
-    @include rfs(76px);
+    @include rfs(58px);
     line-height: 1;
     color: $orange1;
     font-weight: 800;
   }
   &__title {
-    @include rfs(56px);
+    @include rfs(38px);
     line-height: 1.2;
     color: $black_3;
     font-weight: 700;
-    letter-spacing: -2.6px;
+    // letter-spacing: -2.6px;
   }
   &__subtitle {
-    @include rfs(28px);
+    @include rfs(22px);
     line-height: 1.2;
     color: $black_3;
     margin-top: 20px;
   }
   &__para {
-    @include rfs(20px);
+    @include rfs(16px);
     line-height: 1.2;
     color: $black_3;
     margin-top: 20px;
@@ -49,10 +50,17 @@
     margin-top: 36px;
     border-color: $lines;
     color: $black_3;
-    @include rfs(20px);
+    @include rfs(14px);
     font-weight: 700;
-    padding: 16px 30px;
+    padding: 10px 15px;
     border-width: 2px;
+    &:hover,
+    &:active,
+    &:focus,
+    &:not(:disabled):active,
+    &:not(.disabled):active {
+      background-color: $orange1;
+    }
   }
   &__image {
     width: 100%;

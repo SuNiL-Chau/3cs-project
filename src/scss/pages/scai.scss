@@ -17,7 +17,7 @@
     @include padding-top(140px);
     @include padding-bottom(140px);
     &__title {
-      @include rfs(96px);
+      @include rfs(38px);
       line-height: 1;
       color: $orange1;
       font-weight: 800;
@@ -33,7 +33,7 @@
       }
     }
     &__subtitle {
-      @include rfs(38px);
+      @include rfs(24px);
       line-height: 1.2;
       color: $black_3;
       margin-top: 20px;
@@ -57,7 +57,7 @@
         border: 0;
         width: 100%;
         max-width: 350px;
-        @include rfs(35px);
+        @include rfs(30px);
         font-weight: 700;
         letter-spacing: normal;
         line-height: 1.25;
@@ -83,7 +83,7 @@
       border-left: 1px solid $lines;
     }
     &__para {
-      @include rfs(32px);
+      @include rfs(22px);
       letter-spacing: normal;
       line-height: 1.25;
       color: $black_3;
@@ -93,9 +93,16 @@
       padding: 16px 24px;
       font-weight: 700;
       margin-top: 60px;
-      @include rfs(25px);
+      @include rfs(14px);
       line-height: 1.25;
       letter-spacing: normal;
+      &:hover,
+      &:active,
+      &:focus,
+      &:not(:disabled):active,
+      &:not(.disabled):active {
+        background-color: $orange1;
+      }
     }
   }
   .iframe-fluid {

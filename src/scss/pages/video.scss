@@ -81,5 +81,14 @@
         }
       }
     }
+    .btn-outline-dark {
+      &:hover,
+      &:active,
+      &:focus,
+      &:not(:disabled):active,
+      &:not(.disabled):active  {
+        background-color: $orange1;
+      }
+    }
   }
 }

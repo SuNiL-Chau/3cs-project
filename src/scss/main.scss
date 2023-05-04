@@ -198,7 +198,7 @@ btn-outline-dark:hover {
 
 .ibpBiz {
   &__title {
-    @include rfs(60px);
+    @include rfs(38px);
     line-height: 1.25;
     letter-spacing: normal;
     font-weight: 700;
@@ -646,8 +646,20 @@ btn-outline-dark:hover {
 }
 @media only screen and (max-width: 768px) {
   .dropdown-menu {
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
+    border: 0;
+    @include padding-left(10px);
+    // border-top: 0;
+    // border-right: 0;
+    // border-bottom: 0;
   }
+  .dropdown-menu > li:not(:first-child) {
+    border-top: 1px solid $lines;
+  }
+}
+.c-accordion .container {
+  border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+
+.ibpBiz .accordion {
+  gap: 0;
 }

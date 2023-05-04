@@ -150,3 +150,25 @@
     }
   }
 }
+
+// pagination
+.homestats{
+  &__pagination {
+    @include margin-top(40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  &__bullets {
+    width: 9px;
+    height: 9px;
+    border-radius: 0;
+    background-color: $white;
+    border: 1px solid $lines;
+    box-sizing: border-box;
+    &.-active {
+      background-color: $orange1;
+    }
+  }
+}

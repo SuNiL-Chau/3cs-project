@@ -23,24 +23,27 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      @include rfs(50px);
+      @include rfs(32px);
       line-height: 0.95;
       color: $white;
       text-align: center;
       padding: 20px;
     }
     &__title {
-      @include rfs(51px);
+      @include rfs(35px);
       line-height: 1.2;
       letter-spacing: normal;
       color: $white;
+      @include media-bp(lg) {
+        padding-top: 200px;
+      }
     }
     &__para {
-      @include rfs(28px);
+      @include rfs(24px);
       line-height: 1.2;
       color: $white;
       letter-spacing: normal;
-      @include margin-top(120px);
+      @include margin-top(35px);
     }
   }
 }

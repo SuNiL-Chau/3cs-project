@@ -3,7 +3,7 @@
   display: block;
   &,
   & > * {
-    transition: all 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
+    transition: all 1.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) !important;
   }
   &__container {
   }
@@ -35,7 +35,7 @@
     .c-accordion__icon {
       position: relative;
       display: block;
-      transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transition: transform 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       transform: rotate(0);
       transform-origin: center;
       flex-shrink: 0;
@@ -53,7 +53,7 @@
   &__content {
   }
   &__para {
-    @include rfs(28px);
+    @include rfs(22px);
     line-height: 1.25;
     letter-spacing: normal;
     padding-bottom: 40px;

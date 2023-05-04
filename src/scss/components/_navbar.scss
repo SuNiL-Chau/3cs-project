@@ -61,13 +61,69 @@
     &-toggler {
       border: 0;
       padding: 4px 3px;
+      &[aria-expanded="true"] {
+        svg path {
+          transition: all 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+        svg path:first-child {
+          width: 22px;
+          position: relative;
+          display: block;
+          transform-origin: center;
+          transform: rotate(45deg);
+          d: path("M9 48c-.8 1.4-.8 2.6 0 4 1 1.9 2.1 2 41 2s40-.1 41-2c.8-1.4.8-2.6 0-4-1-1.9-2.1-2-41-2s-40 .1-41 2z");
+        }
+        svg path:nth-child(2) {
+          opacity: 0;
+        }
+        svg path:last-child {
+          width: 22px;
+          position: relative;
+          display: block;
+          transform: rotate(-45deg);
+          transform-origin: center;
+          d: path("M9 48c-.8 1.4-.8 2.6 0 4 1 1.9 2.1 2 41 2s40-.1 41-2c.8-1.4.8-2.6 0-4-1-1.9-2.1-2-41-2s-40 .1-41 2z");
+        }
+      }
     }
     &-collapse {
       overflow: hidden;
       max-height: 0;
       transition: max-height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       &.show {
-        max-height: 100vh;
+        max-height: 100vh !important;
+        height: 100vh;
+        max-width: 83%;
+        box-shadow: 100px 1px 0px #00000036;
+        .requestBtn {
+          opacity: 1;
+        }
+      }
+    }
+    &-nav {
+      // @include margin-top(50px);
+      // @include margin-bottom(50px);
+      overflow-y: scroll;
+      gap: 0;
+      .nav-item {
+        @include padding-top(30px);
+        @include padding-bottom(30px);
+      }
+      & > .nav-item:not(:first-child) {
+        border-top: 1px solid $lines;
+      }
+    }
+    .requestBtn {
+      position: absolute;
+      bottom: 130px;
+      width: calc(70% - 20px);
+      background-color: $orange1;
+      opacity: 0;
+      transition: opacity 0.6s linear;
+      padding: 14px;
+      color: $white;
+      img {
+        display: none;
       }
     }
   }

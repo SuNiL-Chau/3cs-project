@@ -2,21 +2,27 @@
   position: relative;
   @include margin-top(100px);
   @include margin-bottom(100px);
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   &.-te &__imgContainer {
-    padding-top: calc(36000%/1366);
+    padding-top: calc(36000% / 1366);
     @include media-bp(mdl) {
-      padding-top: calc(50000%/475);
+      padding-top: calc(50000% / 475);
     }
   }
   &.-tf &__imgContainer {
-    padding-top: calc(48000%/1366);
+    padding-top: calc(48000% / 1366);
     @include media-bp(mdl) {
-      padding-top: calc(50000%/475);
+      padding-top: calc(50000% / 475);
     }
   }
   &__imgContainer {
     width: 100%;
-    padding-top: calc(54000%/1366);
+    padding-top: calc(54000% / 1366);
     position: relative;
     img {
       position: absolute;
@@ -50,7 +56,7 @@
   }
   &__paraSmall {
     margin-top: 5px;
-    @include rfs(14px); 
+    @include rfs(14px);
   }
   &__pre {
     @include rfs(30px);

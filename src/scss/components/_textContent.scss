@@ -38,20 +38,20 @@
     height: 100%;
   }
   &__title {
-    @include rfs(60px);
+    @include rfs(38px);
     font-weight: 700;
     line-height: normal;
     letter-spacing: normal;
   }
   &__para {
-    @include rfs(35px);
+    @include rfs(22px);
     font-weight: 500;
     line-height: normal;
     letter-spacing: normal;
     @include margin-top(30px);
   }
   &__para2 {
-    @include rfs(28px);
+    @include rfs(22px);
     font-weight: 400;
     line-height: normal;
     letter-spacing: normal;
