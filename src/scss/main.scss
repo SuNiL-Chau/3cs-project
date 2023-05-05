@@ -208,7 +208,8 @@ btn-outline-dark:hover {
   .accordion {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    // gap: 20px;
+    gap: 40px;
     @include margin-bottom(60px);
   }
 }
@@ -656,10 +657,10 @@ btn-outline-dark:hover {
     border-top: 1px solid $lines;
   }
 }
-.c-accordion .container {
-  border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
-}
+// .c-accordion .container {
+//   border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+// }
 
-.ibpBiz .accordion {
-  gap: 0;
-}
+// .ibpBiz .accordion {
+//   gap: 0;
+// }
