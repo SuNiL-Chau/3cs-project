@@ -23,8 +23,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //     },
 //   },
 // });
-
-var projectswiper = new _swiperBundleEsmBrowserMin.default(".project-swiper", {
+const projectswiper = new _swiperBundleEsmBrowserMin.default(".project-swiper", {
   direction: "horizontal",
   slidesPerView: 1,
   spaceBetween: 20,
