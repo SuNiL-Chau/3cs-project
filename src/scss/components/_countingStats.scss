@@ -109,6 +109,9 @@
     content: none;
   }
   &__stat {
+    @include media-bp(mdl) {
+      max-width: 210px;
+    }
     &Pre {
       color: $black_1;
       @include rfs(20px);

@@ -23,6 +23,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media-bp(mdl) {
+      @include rfs(20px);
+    }
     &:hover {
       color: $orange1;
     }

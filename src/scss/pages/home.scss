@@ -11,7 +11,7 @@
     overflow: hidden;
     margin-top: 97px;
     @include media-bp(mdl) {
-      min-height: 500px;
+      min-height: 480px;
     }
     video {
       object-fit: none;
@@ -47,7 +47,7 @@
         padding-right: $mobilePad;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 100px;
+        margin-bottom: 75px;
       }
     }
     &__title {
@@ -259,6 +259,7 @@
         }
         .platform__contentBtns__Swiper {
           width: calc(30% - 30px);
+          margin-right: 0;
           @include media-bp(mdl) {
             width: 100%;
             padding-bottom: 30px;
@@ -769,8 +770,8 @@
       border: 1px solid $white;
       height: 100%;
       &Para {
-        @include rfs(35px);
-        line-height: toRem(45);
+        @include rfs(26px);
+        line-height: 1.2;
         letter-spacing: normal;
         color: $white;
         font-weight: 600;
