@@ -416,7 +416,21 @@
     color: $orange1;
   }
 
+  .directorsList {
+    .slick-list {
+      // margin-bottom: 150px;
+      padding-bottom: 250px !important;
+    }
+  }
+
   @include media-bp(mdl) {
+    .directorsList {
+      .slick-list {
+        // margin-bottom: 150px;
+        padding-bottom: 0px !important;
+      }
+    }
+
     .directors {
       background-color: transparent;
     }
