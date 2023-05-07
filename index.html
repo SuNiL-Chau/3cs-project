@@ -128,8 +128,9 @@
             <p class="platform__para" data-aos="fade-up"><span class="text-primary">A smart all-in-one platform</span> which facilitates you to build and track strong ultra-modern platforms that drive <span class="text-primary">profitability, improve efficiency</span> and operate on <span class="text-primary">sustainability.</span></p>
             <div class="platform__content">
               <div class="platform__contentBrain" data-aos="fade-in">
-                <lottie-player id="scaiLottie" src="assets/lottie/scai.json" style="width: 100%; height: auto" rendererSettings='{"quality":"low"}'></lottie-player>
-                <lottie-player id="scaiLottie" class="duplottie" src="assets/lottie/scai.json" style="width: 100%;" rendererSettings='{"quality":"low"}'></lottie-player>
+                <lottie-player class="d-none d-md-block" id="scaiLottie" src="assets/lottie/scai.json" style="width: 100%; height: auto" rendererSettings='{"quality":"low"}'></lottie-player>
+                <video src="/assets/videos/home/scai.mp4" autoplay loop muted playsinline="true" class="d-block d-md-none w-100"></video>
+                <!-- <lottie-player id="scaiLottie" class="duplottie" src="assets/lottie/scai.json" style="width: 100%;" rendererSettings='{"quality":"low"}'></lottie-player> -->
               </div>
               <div class="swiper platform__contentBtns__Swiper" id="scaiswiper">
                 <div class="platform__contentBtns swiper-wrapper">
@@ -161,8 +162,9 @@
             <p class="platform__para" data-aos="fade-up">An <span class="text-primary">intelligent transportation platform</span> that enables the management of the E2E shipment lifecycle of transportation and distribution.</p>
             <div class="platform__content">
               <div class="platform__contentGlobe">
-                <lottie-player id="itmsLottie" src="assets/lottie/itms-2.json" style="width: 90%; height: auto" rendererSettings='{"quality":"low"}'></lottie-player>
-                <lottie-player id="itmsLottie" class="duplottie" src="assets/lottie/itms-2.json" style="width: 90%;" rendererSettings='{"quality":"low"}'></lottie-player>
+                <lottie-player id="itmsLottie" src="assets/lottie/itms-2.json" style="width: 90%; height: auto" rendererSettings='{"quality":"low"}' class="d-none d-md-block"></lottie-player>
+                <!-- <lottie-player id="itmsLottie" class="duplottie" src="assets/lottie/itms-2.json" style="width: 90%;" rendererSettings='{"quality":"low"}'></lottie-player> -->
+                <video src="/assets/videos/home/itms.mp4" autoplay loop muted playsinline="true" class="d-block d-md-none w-100"></video>
               </div>
               <div class="swiper platform__contentBtns__Swiper" id="itmsswiper">
                 <div class="platform__contentBtns swiper-wrapper">
@@ -313,7 +315,7 @@
             <div class="col-12 col-md-5 ml-auto order-1 order-md-2">
               <div class="services__lottie">
                 <lottie-player id="servicesLottie" src="assets/lottie/service.json" speed="1.2" rendererSettings='{"quality":"low"}' style="width: 400px; height: 400px"></lottie-player>
-                <lottie-player id="servicesLottie" class="duplottie" src="assets/lottie/service.json" rendererSettings='{"quality":"low"}' speed="1.2" style="width: 400px;"></lottie-player>
+                <lottie-player id="servicesLottie" class="duplottie" src="assets/lottie/service.json" rendererSettings='{"quality":"low"}' speed="1.2" style="width: 400px"></lottie-player>
               </div>
             </div>
           </div>
@@ -487,6 +489,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary get-in-touch__submit-btn mx-auto">Submit</button>
               </div>
+              <div class="c-formResponse">
+                <p class="c-formResponse__title">Thank you for submitting. <br />Our team will get in touch <br />with you shortly.</p>
+              </div>
             </form>
           </div>
         </div>
@@ -617,21 +622,21 @@
       // Check if the device is a mobile screen
       if (viewportWidth <= 768) {
         // Get the grid element
-        const gridElement = document.querySelector('.homestats__grid');
+        const gridElement = document.querySelector(".homestats__grid");
 
         // Select the bullets
-        const bullets = document.querySelectorAll('.homestats__bullets');
+        const bullets = document.querySelectorAll(".homestats__bullets");
 
         // If the grid element's horizontal scroll is greater than 0, activate the second bullet. Otherwise, activate the first bullet.
-        gridElement.addEventListener("scroll", ()=> {
+        gridElement.addEventListener("scroll", () => {
           if (gridElement.scrollLeft > 0) {
-            bullets[0].classList.remove('-active');
-            bullets[1].classList.add('-active');
+            bullets[0].classList.remove("-active");
+            bullets[1].classList.add("-active");
           } else {
-            bullets[0].classList.add('-active');
-            bullets[1].classList.remove('-active');
+            bullets[0].classList.add("-active");
+            bullets[1].classList.remove("-active");
           }
-        })
+        });
       }
     </script>
   </body>

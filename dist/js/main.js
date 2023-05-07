@@ -151,6 +151,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // check if the form is valid
     var valid = pristine.validate(); // returns true or false
+    if (valid) {
+      form.classList.add("-success");
+      setTimeout(function () {
+        form.reset();
+        form.classList.remove("-success");
+      }, 5000);
+      // var xhr = new XMLHttpRequest();
+      // xhr.open("GET", "https://api.example.com/data", true);
+      // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
+
+      // xhr.onload = function () {
+      //   if (xhr.status === 200) {
+      //     var responseData = JSON.parse(xhr.responseText);
+      // form.classList.add("-success");
+      // setTimeout(() => {
+      //   form.reset();
+      //   form.classList.remove("-success");
+      // }, 5000);
+      //     console.log(responseData);
+      //   } else {
+      //     console.log("Request failed. Status: " + xhr.status);
+      //   }
+      // };
+
+      // xhr.onerror = function () {
+      //   console.log("Request failed due to a network error.");
+      // };
+      // xhr.send();
+    }
   });
 
   // counter animation
@@ -273,7 +302,7 @@ videoBtns.forEach(function (btn) {
 
 // readmore js and html structure to follow
 /**
-* <p class="paragraph">
+* <p class="readmore-para">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum iaculis dolor, ac rutrum tellus luctus sit amet. Nullam convallis metus nec pulvinar hendrerit. Vivamus gravida enim a magna ultricies rutrum. Nulla facilisi. Curabitur eu odio eget tellus accumsan pellentesque. Nam sed consequat sapien. Mauris sed mi ac nunc varius ullamcorper. Duis sit amet dui in mi tristique aliquet.
   </p>
   <a href="javascript:;" class="read-more">Read more</a>

@@ -31,10 +31,13 @@
       position: absolute;
       /* transform: translate(32%, 10%) !important; */
       @include media-bp(mdl) {
-        width: 100%;
-        transform: translateX(-11%);
+        // width: 100%;
+        // transform: translateX(-11%);
         /* height: 100% !important; */
         position: relative;
+        right: 0;
+        width: 125%;
+        transform: translateX(-10%);
       }
     }
     &__content {
