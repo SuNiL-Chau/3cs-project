@@ -6,12 +6,14 @@ const nav = document.querySelector("nav");
 const dropdown = Array.from(nav.querySelectorAll(".nav-item.dropdown [data-toggle]"));
 
 if (window.innerWidth > 1000) {
+  // Open dropdown on mouseover
   dropdown.forEach((el) => {
     el.addEventListener("mouseover", () => {
       el.click();
     });
   });
 
+  // Close dropdowns on mouseout
   document.addEventListener("mouseout", (event) => {
     if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
       document.body.click();
@@ -19,36 +21,44 @@ if (window.innerWidth > 1000) {
   });
 }
 if (window.innerWidth < 1000) {
+  // Dropdown click event listener
   dropdown.forEach((el) => {
     el.addEventListener("click", () => {
       if (window.innerWidth < 992) {
         const submenu = el.nextElementSibling;
+        console.log(submenu);
         if (submenu.classList.contains("show")) {
+          // Close the submenu
           setTimeout(() => {
             submenu.classList.remove("show");
             submenu.parentElement.classList.remove("show");
           }, 100);
-          // submenu.classList.toggle("show");
         } else {
+          // Open the submenu
           const activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
           activeSubmenus.forEach((subsubmenu) => {
             subsubmenu.classList.remove("show");
           });
-          // submenu.classList.add("show");
           submenu.classList.toggle("show");
-        }
-        let submenus = submenu.querySelectorAll(".dropdown-item.dropdown-toggle");
-        submenus.forEach((m) => {
-          m.addEventListener("click", () => {
-            const element = m.nextElementSibling;
-            const displayStyle = window.getComputedStyle(element).display;
-            if (displayStyle === "block") {
-              element.style.display = "none";
-            } else {
-              element.style.display = "block";
+
+          // Add activeDropdown class to the parent element
+          const parentElement = el.parentElement;
+          const otherDropdownParents = Array.from(dropdown).map((dropdownEl) => dropdownEl.parentElement);
+          otherDropdownParents.forEach((dropdownParent) => {
+            dropdownParent.classList.remove("activeDropdown");
+          });
+          parentElement.classList.add("activeDropdown");
+
+          // Close other dropdowns
+          const otherDropdowns = Array.from(dropdown).filter((dropdownEl) => dropdownEl !== el);
+          otherDropdowns.forEach((dropdownEl) => {
+            const otherSubmenu = dropdownEl.nextElementSibling;
+            if (otherSubmenu.classList.contains("show")) {
+              otherSubmenu.classList.remove("show");
+              otherSubmenu.parentElement.classList.remove("show");
             }
           });
-        });
+        }
       } else {
         el.click();
       }
@@ -57,11 +67,42 @@ if (window.innerWidth < 1000) {
 
   document.addEventListener("click", (event) => {
     if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
+      // Close all active submenus
       const activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
       activeSubmenus.forEach((submenu) => {
         submenu.classList.remove("show");
       });
+
+      // Remove activeDropdown class from all parent elements
+      const dropdownParents = Array.from(dropdown).map((dropdownEl) => dropdownEl.parentElement);
+      dropdownParents.forEach((dropdownParent) => {
+        dropdownParent.classList.remove("activeDropdown");
+      });
     }
+  });
+
+  // Fix for submenus not working
+  const submenus = document.querySelectorAll(".dropdown-item.dropdown-toggle");
+  submenus.forEach((submenu) => {
+    submenu.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const element = submenu.nextElementSibling;
+      const isSubMenuShown = element.classList.contains("show");
+      if (isSubMenuShown) {
+        element.classList.remove("show");
+      } else {
+        element.classList.add("show");
+      }
+
+      // Close other sibling dropdown menus
+      const parentDropdown = submenu.closest("ul.dropdown-menu");
+      const siblingMenus = parentDropdown.querySelectorAll(".dropdown-submenu .dropdown-menu.show");
+      siblingMenus.forEach((siblingMenu) => {
+        if (siblingMenu !== element) {
+          siblingMenu.classList.remove("show");
+        }
+      });
+    });
   });
 }
 
@@ -216,4 +257,31 @@ videoBtns.forEach((btn) => {
     var videoEle = document.querySelector(`${btn.dataset.target} video`);
     videoEle.setAttribute("src", btn.dataset.video);
   });
+});
+
+
+// readmore js and html structure to follow
+/**
+* <p class="paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum iaculis dolor, ac rutrum tellus luctus sit amet. Nullam convallis metus nec pulvinar hendrerit. Vivamus gravida enim a magna ultricies rutrum. Nulla facilisi. Curabitur eu odio eget tellus accumsan pellentesque. Nam sed consequat sapien. Mauris sed mi ac nunc varius ullamcorper. Duis sit amet dui in mi tristique aliquet.
+  </p>
+  <a href="javascript:;" class="read-more">Read more</a>
+ */
+const paragraph = document.querySelector(".readmore-para");
+const readMoreBtn = document.querySelector(".read-more");
+
+const maxChars = 300;
+const fullText = paragraph.textContent;
+let truncatedText = fullText.slice(0, maxChars);
+
+paragraph.textContent = truncatedText;
+
+readMoreBtn.addEventListener("click", () => {
+  if (paragraph.textContent === truncatedText) {
+    paragraph.textContent = fullText;
+    readMoreBtn.textContent = "Read less";
+  } else {
+    paragraph.textContent = truncatedText;
+    readMoreBtn.textContent = "Read more";
+  }
 });

@@ -6,13 +6,13 @@
 // };
 
 if (window.innerWidth <= 768) {
-  document.querySelectorAll("button[data-aos='fade-left']").forEach(btn => {
+  document.querySelectorAll("button[data-aos='fade-left']").forEach(function (btn) {
     btn.setAttribute("data-aos", "fade-in");
   });
 }
 
 // testimonials swiper
-const swiper = new Swiper(".testimonials__swiper", {
+var swiper = new Swiper(".testimonials__swiper", {
   direction: "horizontal",
   slidesPerView: 2,
   spaceBetween: 60,
@@ -37,15 +37,15 @@ const swiper = new Swiper(".testimonials__swiper", {
 });
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
 testimonialsWrapperHeight ? testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px" : null;
-window.onload = () => {
-  setTimeout(() => {
+window.onload = function () {
+  setTimeout(function () {
     var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
     testimonialsWrapperHeight ? testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px" : null;
   }, 800);
 };
 
 // industries swiper
-const swiper2 = new Swiper(".industries__swiper", {
+var swiper2 = new Swiper(".industries__swiper", {
   direction: "horizontal",
   slidesPerView: 5,
   spaceBetween: 30,
@@ -69,7 +69,7 @@ const swiper2 = new Swiper(".industries__swiper", {
 });
 
 // news swiper
-const swiper3 = new Swiper(".news__swiper", {
+var swiper3 = new Swiper(".news__swiper", {
   direction: "horizontal",
   slidesPerView: 3,
   spaceBetween: 30,
@@ -91,7 +91,7 @@ const swiper3 = new Swiper(".news__swiper", {
     type: "bullets"
   }
 });
-const services__Swiper = new Swiper("#servicesSwiper", {
+var services__Swiper = new Swiper("#servicesSwiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -115,7 +115,7 @@ const services__Swiper = new Swiper("#servicesSwiper", {
     type: "bullets"
   }
 });
-const execution__Swiper = new Swiper("#executionSwiper", {
+var execution__Swiper = new Swiper("#executionSwiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -140,7 +140,7 @@ const execution__Swiper = new Swiper("#executionSwiper", {
     type: "bullets"
   }
 });
-const planning__Swiper = new Swiper("#planingSwiper", {
+var planning__Swiper = new Swiper("#planingSwiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -221,7 +221,7 @@ if (window.innerWidth < 1024) {
 }
 
 // swiper check for desk and mobile
-const platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
+var platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -247,7 +247,7 @@ const platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
     type: "bullets"
   }
 });
-const platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
+var platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -306,28 +306,36 @@ if (window.innerWidth < 1024) {
     // console.log("percentage: ", percentage);
     var btns = document.querySelectorAll("#scai .platform__contentBtn");
     if (percentage >= 20) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
       btns[0].classList.add("aos-init");
       btns[0].classList.add("aos-animate");
       btns[0].classList.add("swiper-slide-active");
     }
     if (percentage >= 40) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
       btns[1].classList.add("aos-init");
       btns[1].classList.add("aos-animate");
       btns[1].classList.add("swiper-slide-active");
     }
     if (percentage >= 60) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
       btns[2].classList.add("aos-init");
       btns[2].classList.add("aos-animate");
       btns[2].classList.add("swiper-slide-active");
     }
     if (percentage >= 80) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
       btns[3].classList.add("aos-init");
       btns[3].classList.add("aos-animate");
@@ -361,42 +369,54 @@ if (window.innerWidth < 1024) {
     var btns = document.querySelectorAll("#itms .platform__contentBtn");
     var btnsParent = document.querySelector("#itms .platform__contentBtns");
     if (percentage >= 20) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
       btns[0].classList.add("aos-init");
       btns[0].classList.add("aos-animate");
       btns[0].classList.add("swiper-slide-active");
     }
     if (percentage >= 30) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
       btns[1].classList.add("aos-init");
       btns[1].classList.add("aos-animate");
       btns[1].classList.add("swiper-slide-active");
     }
     if (percentage >= 40) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
       btns[2].classList.add("aos-init");
       btns[2].classList.add("aos-animate");
       btns[2].classList.add("swiper-slide-active");
     }
     if (percentage >= 50) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
       btns[3].classList.add("aos-init");
       btns[3].classList.add("aos-animate");
       btns[3].classList.add("swiper-slide-active");
     }
     if (percentage >= 60) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[4].setAttribute("data-aos", btns[4].dataset.aosAnim);
       btns[4].classList.add("aos-init");
       btns[4].classList.add("aos-animate");
       btns[4].classList.add("swiper-slide-active");
     }
     if (percentage >= 70) {
-      btns.forEach(btn => btn.classList.remove("swiper-slide-active"));
+      btns.forEach(function (btn) {
+        return btn.classList.remove("swiper-slide-active");
+      });
       btns[5].setAttribute("data-aos", btns[5].dataset.aosAnim);
       btns[5].classList.add("aos-init");
       btns[5].classList.add("aos-animate");
