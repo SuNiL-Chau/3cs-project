@@ -258,3 +258,30 @@ videoBtns.forEach((btn) => {
     videoEle.setAttribute("src", btn.dataset.video);
   });
 });
+
+
+// readmore js and html structure to follow
+/**
+* <p class="paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum iaculis dolor, ac rutrum tellus luctus sit amet. Nullam convallis metus nec pulvinar hendrerit. Vivamus gravida enim a magna ultricies rutrum. Nulla facilisi. Curabitur eu odio eget tellus accumsan pellentesque. Nam sed consequat sapien. Mauris sed mi ac nunc varius ullamcorper. Duis sit amet dui in mi tristique aliquet.
+  </p>
+  <a href="javascript:;" class="read-more">Read more</a>
+ */
+const paragraph = document.querySelector(".readmore-para");
+const readMoreBtn = document.querySelector(".read-more");
+
+const maxChars = 300;
+const fullText = paragraph.textContent;
+let truncatedText = fullText.slice(0, maxChars);
+
+paragraph.textContent = truncatedText;
+
+readMoreBtn.addEventListener("click", () => {
+  if (paragraph.textContent === truncatedText) {
+    paragraph.textContent = fullText;
+    readMoreBtn.textContent = "Read less";
+  } else {
+    paragraph.textContent = truncatedText;
+    readMoreBtn.textContent = "Read more";
+  }
+});
