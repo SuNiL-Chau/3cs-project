@@ -42,13 +42,17 @@
   }
   .requestBtn {
     position: relative;
+    background-color: $orange1;
+    padding: 14px;
+    color: $white;
     img {
-      position: absolute;
-      left: -13px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      z-index: -1;
+      // position: absolute;
+      // left: -13px;
+      // top: 0;
+      // bottom: 0;
+      // margin: auto;
+      // z-index: -1;
+      display: none;
     }
     &:focus {
       box-shadow: none;
@@ -125,6 +129,12 @@
       img {
         display: none;
       }
+    }
+    .nav-item.dropdown.activeDropdown > .dropdown-toggle {
+      background-color: $orange1;
+      color: #fff;
+      width: 100%;
+      text-align: left;
     }
   }
 }

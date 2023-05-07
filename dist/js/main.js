@@ -28,13 +28,11 @@ if (window.innerWidth < 1000) {
             submenu.classList.remove("show");
             submenu.parentElement.classList.remove("show");
           }, 100);
-          // submenu.classList.toggle("show");
         } else {
           const activeSubmenus = nav.querySelectorAll(".dropdown-submenu.show");
           activeSubmenus.forEach(subsubmenu => {
             subsubmenu.classList.remove("show");
           });
-          // submenu.classList.add("show");
           submenu.classList.toggle("show");
         }
         let submenus = submenu.querySelectorAll(".dropdown-item.dropdown-toggle");
@@ -48,7 +46,7 @@ if (window.innerWidth < 1000) {
               element.style.display = "block";
             }
           });
-        });
+        }
       } else {
         el.click();
       }
@@ -60,7 +58,39 @@ if (window.innerWidth < 1000) {
       activeSubmenus.forEach(submenu => {
         submenu.classList.remove("show");
       });
+
+      // Remove activeDropdown class from all parent elements
+      var dropdownParents = Array.from(dropdown).map(function (dropdownEl) {
+        return dropdownEl.parentElement;
+      });
+      dropdownParents.forEach(function (dropdownParent) {
+        dropdownParent.classList.remove("activeDropdown");
+      });
     }
+  });
+
+  // Fix for submenus not working
+  var submenus = document.querySelectorAll(".dropdown-item.dropdown-toggle");
+  submenus.forEach(function (submenu) {
+    submenu.addEventListener("click", function (event) {
+      event.stopPropagation();
+      var element = submenu.nextElementSibling;
+      var isSubMenuShown = element.classList.contains("show");
+      if (isSubMenuShown) {
+        element.classList.remove("show");
+      } else {
+        element.classList.add("show");
+      }
+
+      // Close other sibling dropdown menus
+      var parentDropdown = submenu.closest("ul.dropdown-menu");
+      var siblingMenus = parentDropdown.querySelectorAll(".dropdown-submenu .dropdown-menu.show");
+      siblingMenus.forEach(function (siblingMenu) {
+        if (siblingMenu !== element) {
+          siblingMenu.classList.remove("show");
+        }
+      });
+    });
   });
 }
 
