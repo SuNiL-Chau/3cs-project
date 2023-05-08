@@ -60,7 +60,7 @@
             <a class="nav-link" href="#">Contact Us</a>
           </li>
         </ul>
-        <button class="btn requestBtn" type="button"><img src="assets/svgs/square-ripple.svg" alt="" /> REQUEST A DEMO</button>
+        <button class="btn requestBtn" type="button" data-toggle="modal" data-target="#requestForm"><img src="assets/svgs/square-ripple.svg" alt="" /> REQUEST A DEMO</button>
       </div>
     </nav>
 
@@ -489,7 +489,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary get-in-touch__submit-btn mx-auto">Submit</button>
               </div>
-              <div class="c-formResponse">
+              <div class="c-formResponse -bgdark">
                 <p class="c-formResponse__title">Thank you for submitting. <br />Our team will get in touch <br />with you shortly.</p>
               </div>
             </form>
@@ -510,9 +510,71 @@
           <div class="col-12 col-md-2 text-right" data-aos="fade-up" data-aos-delay="200">
             <button type="submit" class="subscribe-btn">SUBMIT</button>
           </div>
+          <div class="c-formResponse">
+            <p class="c-formResponse__title">Thank you for submitting. <br />Our team will get in touch <br />with you shortly.</p>
+          </div>
         </div>
       </form>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade requestForm" id="requestForm" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header border-0 pt-2 pb-2 pl-4 pr-4">
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body pb-5">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 align-self-center">
+                  <form id="requestModalForm" class="requestForm__form">
+                    <div class="row">
+                      <div class="col-md-12 col-12">
+                        <p class="mb-3 text-white text-center requestForm__title ">Request Form</p>
+                        <p class="mb-5 text-white text-center requestForm__para">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                      </div>
+                      <div class="col-md-12 col-12">
+                        <div class="form-group">
+                          <label for="nameInput">Name</label>
+                          <input type="text" class="form-control"  id="nameInput" required />
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-12">
+                        <div class="form-group">
+                          <label for="organisationinput">Organisation</label>
+                          <input type="text" class="form-control"  id="organisationinput" required />
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-12">
+                        <div class="form-group">
+                          <label for="workEmailInput">Work Email</label>
+                          <input type="email" class="form-control" - id="workEmailInput" required />
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-12">
+                        <div class="form-group">
+                          <label for="requestNumber">Number</label>
+                          <input type="number" minlength="10" maxlength="10" class="form-control" id="requestNumber"  required />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <button class="ml-3 mt-4 btn btn-lg btn-outline-light" type="submit">Submit</button>
+                    </div>
+                    <div class="c-formResponse">
+                      <p class="c-formResponse__title">Thank you for submitting. <br />Our team will get in touch <br />with you shortly.</p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer" data-aos="fade-in">
       <div class="container">

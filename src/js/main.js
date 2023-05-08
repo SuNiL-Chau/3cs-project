@@ -176,6 +176,60 @@ document.addEventListener("DOMContentLoaded", function () {
       // xhr.send();
     }
   });
+  
+  let formConfig2 = {
+    // class of the parent element where the error/success class is added
+    classTo: "form-group",
+    errorClass: "has-danger",
+    successClass: "has-success",
+    // class of the parent element where error text element is appended
+    errorTextParent: "form-group",
+    // type of element to create for the error text
+    errorTextTag: "div",
+    // class of the error text element
+    errorTextClass: "text-danger mt-2",
+  };
+
+  var formReq = document.getElementById("requestModalForm");
+
+  // create the pristine instance
+  var pristineReq = new Pristine(formReq, formConfig2, true);
+
+  formReq.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // check if the form is valid
+    var valid = pristineReq.validate(); // returns true or false
+    if (valid) {
+      formReq.classList.add("-success");
+      setTimeout(() => {
+        formReq.reset();
+        formReq.classList.remove("-success");
+      }, 5000);
+      // var xhr = new XMLHttpRequest();
+      // xhr.open("GET", "https://api.example.com/data", true);
+      // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
+
+      // xhr.onload = function () {
+      //   if (xhr.status === 200) {
+      //     var responseData = JSON.parse(xhr.responseText);
+      // formReq.classList.add("-success");
+      // setTimeout(() => {
+      //   formReq.reset();
+      //   formReq.classList.remove("-success");
+      // }, 5000);
+      //     console.log(responseData);
+      //   } else {
+      //     console.log("Request failed. Status: " + xhr.status);
+      //   }
+      // };
+
+      // xhr.onerror = function () {
+      //   console.log("Request failed due to a network error.");
+      // };
+      // xhr.send();
+    }
+  });
 
   // counter animation
   // Get all the counter elements

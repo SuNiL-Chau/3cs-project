@@ -624,7 +624,7 @@ btn-outline-dark:hover {
 .modal-backdrop {
   z-index: 99999;
 }
-.modal {
+.modal.show {
   z-index: 100000;
 }
 .duplottie {
@@ -685,6 +685,9 @@ form {
   height: 100%;
   opacity: 0;
   z-index: -10;
+  &.-bgdark {
+    background-color: #000;
+  }
   &.-show {
     z-index: 9;
     opacity: 1;
@@ -699,4 +702,52 @@ form {
 form.-success .c-formResponse {
   z-index: 9;
   opacity: 1;
+}
+.currentOpeningModal .modal-content ,
+.requestForm .modal-content {
+  background: $gradient1;
+}
+.requestForm {
+  @include padding-left(60px);
+  border-left: 1px solid $lines;
+  display: flex;
+  flex-direction: column;
+  @include media-bp(mdl) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  &__title {
+    @include rfs(32px);
+    font-weight: bold;
+  }
+  &__para {
+    @include rfs(22px);
+    font-weight: 400; 
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    color: $white;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  .form-control {
+    background-color: transparent;
+    border-bottom: 2px solid $white;
+    padding: 0;
+    min-height: 40px;
+    color: $white;
+    @include rfs(16px);
+  }
+  // button[type="submit"] {
+  //   border-color: $black_1;
+  //   color: $orange1;
+  //   &:hover {
+  //     color: $white;
+  //     background-color: $orange1;
+  //     border-color: $orange1;
+  //   }
+  // }
 }
