@@ -6,37 +6,53 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var openingForm = document.querySelector(".currentOpenings__openingsForm");
 openingForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  var formData = new FormData(openingForm);
-  // Display the key/value pairs
-  var _iterator = _createForOfIteratorHelper(formData.entries()),
-    _step;
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var pair = _step.value;
-      console.log("".concat(pair[0], ", ").concat(pair[1]));
+  var input = document.querySelector("#location");
+  var cards = document.querySelectorAll(".currentOpenings__job");
+
+  // Add event listener to the input field
+  var searchValue = input.value.trim().toLowerCase();
+
+  // Iterate over the cards
+  cards.forEach(function (card) {
+    var location = card.getAttribute("data-location").toLowerCase();
+
+    // console.log("looped");
+    // console.log(`location: ${location}`);
+    // console.log(`value: ${searchValue}`);
+    // console.log(`chceck location.indexOf(searchValue) === 0: ${location.indexOf(searchValue) === 0}`);
+    // Check if the location starts with the search value
+    if (location.indexOf(searchValue) === 0) {
+      card.classList.add("show");
+      card.classList.remove("hide");
+    } else {
+      card.classList.add("hide");
+      card.classList.remove("show");
     }
-    // ajax reuqest
-    //   const xhr = new XMLHttpRequest();
-    //   xhr.open("POST", "https://example.com/api");
-    //   xhr.setRequestHeader("Content-Type", "application/json");
-    //   xhr.withCredentials = true;
-    //   xhr.onload = function () {
-    //     if (xhr.status === 200) {
-    //       // process the response data here
-    //     } else {
-    //       // handle errors here
-    //     }
-    //   };
-    //   xhr.onerror = function () {
-    //     // handle errors here
-    //   };
-    //   xhr.send(formData);
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
-  }
+  });
+
+  // const formData = new FormData(openingForm);
+  // Display the key/value pairs
+  // for (const pair of formData.entries()) {
+  //   console.log(`${pair[0]}, ${pair[1]}`);
+  // }
+  // ajax reuqest
+  //   const xhr = new XMLHttpRequest();
+  //   xhr.open("POST", "https://example.com/api");
+  //   xhr.setRequestHeader("Content-Type", "application/json");
+  //   xhr.withCredentials = true;
+  //   xhr.onload = function () {
+  //     if (xhr.status === 200) {
+  //       // process the response data here
+  //     } else {
+  //       // handle errors here
+  //     }
+  //   };
+  //   xhr.onerror = function () {
+  //     // handle errors here
+  //   };
+  //   xhr.send(formData);
 });
+
 var fileinput = document.querySelector("#validatedInputGroupCustomFile");
 fileinput.addEventListener("change", function () {
   var files = this.files;
@@ -44,18 +60,18 @@ fileinput.addEventListener("change", function () {
   if (files.length === 0) {
     label.textContent = "Attach CV";
   } else {
-    var _iterator2 = _createForOfIteratorHelper(files),
-      _step2;
+    var _iterator = _createForOfIteratorHelper(files),
+      _step;
     try {
-      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var file = _step2.value;
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var file = _step.value;
         console.log(file.name);
         label.textContent = file.name;
       }
     } catch (err) {
-      _iterator2.e(err);
+      _iterator.e(err);
     } finally {
-      _iterator2.f();
+      _iterator.f();
     }
   }
 });

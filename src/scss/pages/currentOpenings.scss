@@ -136,6 +136,12 @@
     display: block;
     border: 2px solid $gray7;
     min-height: 370px;
+    &.show {
+      display: block;
+    }
+    &.hide {
+      display: none;
+    }
     &Preview {
       display: flex;
       z-index: 1;

@@ -364,18 +364,22 @@ const readMoreBtn = document.querySelector(".read-more");
 
 if (paragraph && readMoreBtn) {
   const maxChars = 300;
-  const fullText = paragraph.textContent;
-  let truncatedText = fullText.slice(0, maxChars);
+  if (paragraph.textContent.length > maxChars) {
+    const fullText = paragraph.textContent;
+    let truncatedText = fullText.slice(0, maxChars);
 
-  paragraph.textContent = truncatedText;
+    paragraph.textContent = truncatedText;
 
-  readMoreBtn.addEventListener("click", () => {
-    if (paragraph.textContent === truncatedText) {
-      paragraph.textContent = fullText;
-      readMoreBtn.textContent = "Read less";
-    } else {
-      paragraph.textContent = truncatedText;
-      readMoreBtn.textContent = "Read more";
-    }
-  });
+    readMoreBtn.addEventListener("click", () => {
+      if (paragraph.textContent === truncatedText) {
+        paragraph.textContent = fullText;
+        readMoreBtn.textContent = "Read less";
+      } else {
+        paragraph.textContent = truncatedText;
+        readMoreBtn.textContent = "...Read more";
+      }
+    });
+  } else {
+    readMoreBtn.style.display = "none";
+  }
 }

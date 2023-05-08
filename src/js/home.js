@@ -284,18 +284,18 @@ const platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
 if (window.innerWidth < 1024) {
   var scaiContainer = document.querySelector("#scai");
   scaiContainer.style.minHeight = "max-content";
-  var scaiLottie = document.querySelector("#scaiLottie");
-  scaiLottie.setAttribute("autoplay", "");
-  scaiLottie.setAttribute("loop", "");
-  scaiLottie.play();
+  // var scaiLottie = document.querySelector("#scaiLottie");
+  // scaiLottie.setAttribute("autoplay", "");
+  // scaiLottie.setAttribute("loop", "");
+  // scaiLottie.play();
   platform__contentBtns__Swiper.autoplay.start();
 
   var itmsContainer = document.querySelector("#itms");
   itmsContainer.style.minHeight = "max-content";
-  var itmsLottie = document.querySelector("#itmsLottie");
-  itmsLottie.setAttribute("autoplay", "");
-  itmsLottie.setAttribute("loop", "");
-  itmsLottie.play();
+  // var itmsLottie = document.querySelector("#itmsLottie");
+  // itmsLottie.setAttribute("autoplay", "");
+  // itmsLottie.setAttribute("loop", "");
+  // itmsLottie.play();
   platform2__contentBtns__Swiper.autoplay.start();
 }
 // } else {

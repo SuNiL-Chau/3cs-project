@@ -372,17 +372,21 @@ var paragraph = document.querySelector(".readmore-para");
 var readMoreBtn = document.querySelector(".read-more");
 if (paragraph && readMoreBtn) {
   var maxChars = 300;
-  var fullText = paragraph.textContent;
-  var truncatedText = fullText.slice(0, maxChars);
-  paragraph.textContent = truncatedText;
-  readMoreBtn.addEventListener("click", function () {
-    if (paragraph.textContent === truncatedText) {
-      paragraph.textContent = fullText;
-      readMoreBtn.textContent = "Read less";
-    } else {
-      paragraph.textContent = truncatedText;
-      readMoreBtn.textContent = "Read more";
-    }
-  });
+  if (paragraph.textContent.length > maxChars) {
+    var fullText = paragraph.textContent;
+    var truncatedText = fullText.slice(0, maxChars);
+    paragraph.textContent = truncatedText;
+    readMoreBtn.addEventListener("click", function () {
+      if (paragraph.textContent === truncatedText) {
+        paragraph.textContent = fullText;
+        readMoreBtn.textContent = "Read less";
+      } else {
+        paragraph.textContent = truncatedText;
+        readMoreBtn.textContent = "...Read more";
+      }
+    });
+  } else {
+    readMoreBtn.style.display = "none";
+  }
 }
 //# sourceMappingURL=main.js.map
