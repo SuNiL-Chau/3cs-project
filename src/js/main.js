@@ -109,14 +109,22 @@ if (window.innerWidth < 1000) {
 // nav mobile toggle btn code
 const navbarToggler = document.querySelector(".navbar-toggler");
 const navbarCollapse = document.querySelector(".navbar-collapse");
+let firstPath = navbarToggler.querySelector("svg path:first-child");
+let lastPath = navbarToggler.querySelector("svg path:last-child");
+let firstPathVal = firstPath.getAttribute("d");
+let lastPathVal = lastPath.getAttribute("d");
 
 navbarToggler.addEventListener("click", () => {
   let isShown = navbarCollapse.classList.contains("show");
   setTimeout(() => {
     if (isShown) {
+      firstPath.setAttribute("d", firstPathVal);
+      lastPath.setAttribute("d", lastPathVal);
       navbarCollapse.style.maxHeight = "0";
     } else {
       navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + "px";
+      firstPath.setAttribute("d", "M9 48c-.8 1.4-.8 2.6 0 4 1 1.9 2.1 2 41 2s40-.1 41-2c.8-1.4.8-2.6 0-4-1-1.9-2.1-2-41-2s-40 .1-41 2z");
+      lastPath.setAttribute("d", "M9 48c-.8 1.4-.8 2.6 0 4 1 1.9 2.1 2 41 2s40-.1 41-2c.8-1.4.8-2.6 0-4-1-1.9-2.1-2-41-2s-40 .1-41 2z");
     }
     // navbarCollapse.classList.toggle("show");
   }, 10);

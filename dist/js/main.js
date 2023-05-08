@@ -118,13 +118,21 @@ if (window.innerWidth < 1000) {
 // nav mobile toggle btn code
 var navbarToggler = document.querySelector(".navbar-toggler");
 var navbarCollapse = document.querySelector(".navbar-collapse");
+var firstPath = navbarToggler.querySelector("svg path:first-child");
+var lastPath = navbarToggler.querySelector("svg path:last-child");
+var firstPathVal = firstPath.getAttribute("d");
+var lastPathVal = lastPath.getAttribute("d");
 navbarToggler.addEventListener("click", function () {
   var isShown = navbarCollapse.classList.contains("show");
   setTimeout(function () {
     if (isShown) {
+      firstPath.setAttribute("d", firstPathVal);
+      lastPath.setAttribute("d", lastPathVal);
       navbarCollapse.style.maxHeight = "0";
     } else {
       navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + "px";
+      firstPath.setAttribute("d", "M9 48c-.8 1.4-.8 2.6 0 4 1 1.9 2.1 2 41 2s40-.1 41-2c.8-1.4.8-2.6 0-4-1-1.9-2.1-2-41-2s-40 .1-41 2z");
+      lastPath.setAttribute("d", "M9 48c-.8 1.4-.8 2.6 0 4 1 1.9 2.1 2 41 2s40-.1 41-2c.8-1.4.8-2.6 0-4-1-1.9-2.1-2-41-2s-40 .1-41 2z");
     }
     // navbarCollapse.classList.toggle("show");
   }, 10);
