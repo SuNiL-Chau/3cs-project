@@ -291,149 +291,135 @@ if (window.innerWidth < 1024) {
   itmsLottie.setAttribute("loop", "");
   itmsLottie.play();
   platform2__contentBtns__Swiper.autoplay.start();
-} else {
-  // Get Lottie player instance
-  var scaiplayer = document.querySelector("#scaiLottie").getLottie();
-
-  // Attach Lottie event listener to player
-  scaiplayer.addEventListener("enterFrame", function (event) {
-    // Calculate percentage of animation that has played
-    var totalFrames = scaiplayer.getDuration(true);
-    var currentFrame = scaiplayer.currentFrame;
-    var percentage = currentFrame / totalFrames * 100;
-
-    // Call function if animation is at or past 50%
-    // console.log("percentage: ", percentage);
-    var btns = document.querySelectorAll("#scai .platform__contentBtn");
-    if (percentage >= 20) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
-      btns[0].classList.add("aos-init");
-      btns[0].classList.add("aos-animate");
-      btns[0].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 40) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
-      btns[1].classList.add("aos-init");
-      btns[1].classList.add("aos-animate");
-      btns[1].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 60) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
-      btns[2].classList.add("aos-init");
-      btns[2].classList.add("aos-animate");
-      btns[2].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 80) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
-      btns[3].classList.add("aos-init");
-      btns[3].classList.add("aos-animate");
-      btns[3].classList.add("swiper-slide-active");
-    }
-  });
-  // Add Lottie Interactivity to player
-  LottieInteractivity.create({
-    player: scaiplayer,
-    mode: "scroll",
-    container: "#scai",
-    actions: [{
-      visibility: [0, 0.8],
-      type: "seek",
-      frames: [0, 228]
-    }]
-  });
-
-  // Get Lottie player instance
-  var itmsplayer = document.querySelector("#itmsLottie").getLottie();
-
-  // Attach Lottie event listener to player
-  itmsplayer.addEventListener("enterFrame", function (event) {
-    // Calculate percentage of animation that has played
-    var totalFrames = itmsplayer.getDuration(true);
-    var currentFrame = itmsplayer.currentFrame;
-    var percentage = currentFrame / totalFrames * 100;
-
-    // Call function if animation is at or past 50%
-    // console.log("percentage: ", percentage);
-    var btns = document.querySelectorAll("#itms .platform__contentBtn");
-    var btnsParent = document.querySelector("#itms .platform__contentBtns");
-    if (percentage >= 20) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
-      btns[0].classList.add("aos-init");
-      btns[0].classList.add("aos-animate");
-      btns[0].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 30) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
-      btns[1].classList.add("aos-init");
-      btns[1].classList.add("aos-animate");
-      btns[1].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 40) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
-      btns[2].classList.add("aos-init");
-      btns[2].classList.add("aos-animate");
-      btns[2].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 50) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
-      btns[3].classList.add("aos-init");
-      btns[3].classList.add("aos-animate");
-      btns[3].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 60) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[4].setAttribute("data-aos", btns[4].dataset.aosAnim);
-      btns[4].classList.add("aos-init");
-      btns[4].classList.add("aos-animate");
-      btns[4].classList.add("swiper-slide-active");
-    }
-    if (percentage >= 70) {
-      btns.forEach(function (btn) {
-        return btn.classList.remove("swiper-slide-active");
-      });
-      btns[5].setAttribute("data-aos", btns[5].dataset.aosAnim);
-      btns[5].classList.add("aos-init");
-      btns[5].classList.add("aos-animate");
-      btns[5].classList.add("swiper-slide-active");
-    }
-  });
-  LottieInteractivity.create({
-    player: itmsplayer,
-    mode: "scroll",
-    container: "#itms",
-    actions: [{
-      visibility: [0.1, 0.9],
-      type: "seek",
-      frames: [0, 254]
-    }]
-  });
 }
+// } else {
+//   // Get Lottie player instance
+//   var scaiplayer = document.querySelector("#scaiLottie").getLottie();
+
+//   // Attach Lottie event listener to player
+//   scaiplayer.addEventListener("enterFrame", function (event) {
+//     // Calculate percentage of animation that has played
+//     var totalFrames = scaiplayer.getDuration(true);
+//     var currentFrame = scaiplayer.currentFrame;
+//     var percentage = (currentFrame / totalFrames) * 100;
+
+//     // Call function if animation is at or past 50%
+//     // console.log("percentage: ", percentage);
+//     var btns = document.querySelectorAll("#scai .platform__contentBtn");
+//     if (percentage >= 20) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
+//       btns[0].classList.add("aos-init");
+//       btns[0].classList.add("aos-animate");
+//       btns[0].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 40) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
+//       btns[1].classList.add("aos-init");
+//       btns[1].classList.add("aos-animate");
+//       btns[1].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 60) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
+//       btns[2].classList.add("aos-init");
+//       btns[2].classList.add("aos-animate");
+//       btns[2].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 80) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
+//       btns[3].classList.add("aos-init");
+//       btns[3].classList.add("aos-animate");
+//       btns[3].classList.add("swiper-slide-active");
+//     }
+//   });
+//   // Add Lottie Interactivity to player
+//   LottieInteractivity.create({
+//     player: scaiplayer,
+//     mode: "scroll",
+//     container: "#scai",
+//     actions: [
+//       {
+//         visibility: [0, 0.8],
+//         type: "seek",
+//         frames: [0, 228],
+//       },
+//     ],
+//   });
+
+//   // Get Lottie player instance
+//   var itmsplayer = document.querySelector("#itmsLottie").getLottie();
+
+//   // Attach Lottie event listener to player
+//   itmsplayer.addEventListener("enterFrame", function (event) {
+//     // Calculate percentage of animation that has played
+//     var totalFrames = itmsplayer.getDuration(true);
+//     var currentFrame = itmsplayer.currentFrame;
+//     var percentage = (currentFrame / totalFrames) * 100;
+
+//     // Call function if animation is at or past 50%
+//     // console.log("percentage: ", percentage);
+//     var btns = document.querySelectorAll("#itms .platform__contentBtn");
+//     var btnsParent = document.querySelector("#itms .platform__contentBtns");
+//     if (percentage >= 20) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[0].setAttribute("data-aos", btns[0].dataset.aosAnim);
+//       btns[0].classList.add("aos-init");
+//       btns[0].classList.add("aos-animate");
+//       btns[0].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 30) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[1].setAttribute("data-aos", btns[1].dataset.aosAnim);
+//       btns[1].classList.add("aos-init");
+//       btns[1].classList.add("aos-animate");
+//       btns[1].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 40) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[2].setAttribute("data-aos", btns[2].dataset.aosAnim);
+//       btns[2].classList.add("aos-init");
+//       btns[2].classList.add("aos-animate");
+//       btns[2].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 50) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[3].setAttribute("data-aos", btns[3].dataset.aosAnim);
+//       btns[3].classList.add("aos-init");
+//       btns[3].classList.add("aos-animate");
+//       btns[3].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 60) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[4].setAttribute("data-aos", btns[4].dataset.aosAnim);
+//       btns[4].classList.add("aos-init");
+//       btns[4].classList.add("aos-animate");
+//       btns[4].classList.add("swiper-slide-active");
+//     }
+//     if (percentage >= 70) {
+//       btns.forEach((btn) => btn.classList.remove("swiper-slide-active"));
+//       btns[5].setAttribute("data-aos", btns[5].dataset.aosAnim);
+//       btns[5].classList.add("aos-init");
+//       btns[5].classList.add("aos-animate");
+//       btns[5].classList.add("swiper-slide-active");
+//     }
+//   });
+
+//   LottieInteractivity.create({
+//     player: itmsplayer,
+//     mode: "scroll",
+//     container: "#itms",
+//     actions: [
+//       {
+//         visibility: [0.1, 0.9],
+//         type: "seek",
+//         frames: [0, 254],
+//       },
+//     ],
+//   });
+// }
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 if (window.innerWidth < 1024) {

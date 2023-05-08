@@ -624,6 +624,9 @@ btn-outline-dark:hover {
 .modal-backdrop {
   z-index: 99999;
 }
+.modal:not(.show) {
+  z-index: -9;
+}
 .modal.show {
   z-index: 100000;
 }
