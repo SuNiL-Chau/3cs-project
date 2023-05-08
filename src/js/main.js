@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // xhr.send();
     }
   });
-  
+
   let formConfig2 = {
     // class of the parent element where the error/success class is added
     classTo: "form-group",
@@ -200,44 +200,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var formReq = document.getElementById("requestModalForm");
 
-  // create the pristine instance
-  var pristineReq = new Pristine(formReq, formConfig2, true);
+  if (formReq) {
+    // create the pristine instance
+    var pristineReq = new Pristine(formReq, formConfig2, true);
 
-  formReq.addEventListener("submit", function (e) {
-    e.preventDefault();
+    formReq.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    // check if the form is valid
-    var valid = pristineReq.validate(); // returns true or false
-    if (valid) {
-      formReq.classList.add("-success");
-      setTimeout(() => {
-        formReq.reset();
-        formReq.classList.remove("-success");
-      }, 5000);
-      // var xhr = new XMLHttpRequest();
-      // xhr.open("GET", "https://api.example.com/data", true);
-      // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
+      // check if the form is valid
+      var valid = pristineReq.validate(); // returns true or false
+      if (valid) {
+        formReq.classList.add("-success");
+        setTimeout(() => {
+          formReq.reset();
+          formReq.classList.remove("-success");
+        }, 5000);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("GET", "https://api.example.com/data", true);
+        // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
 
-      // xhr.onload = function () {
-      //   if (xhr.status === 200) {
-      //     var responseData = JSON.parse(xhr.responseText);
-      // formReq.classList.add("-success");
-      // setTimeout(() => {
-      //   formReq.reset();
-      //   formReq.classList.remove("-success");
-      // }, 5000);
-      //     console.log(responseData);
-      //   } else {
-      //     console.log("Request failed. Status: " + xhr.status);
-      //   }
-      // };
+        // xhr.onload = function () {
+        //   if (xhr.status === 200) {
+        //     var responseData = JSON.parse(xhr.responseText);
+        // formReq.classList.add("-success");
+        // setTimeout(() => {
+        //   formReq.reset();
+        //   formReq.classList.remove("-success");
+        // }, 5000);
+        //     console.log(responseData);
+        //   } else {
+        //     console.log("Request failed. Status: " + xhr.status);
+        //   }
+        // };
 
-      // xhr.onerror = function () {
-      //   console.log("Request failed due to a network error.");
-      // };
-      // xhr.send();
-    }
-  });
+        // xhr.onerror = function () {
+        //   console.log("Request failed due to a network error.");
+        // };
+        // xhr.send();
+      }
+    });
+  }
 
   // counter animation
   // Get all the counter elements
@@ -360,18 +362,20 @@ videoBtns.forEach((btn) => {
 const paragraph = document.querySelector(".readmore-para");
 const readMoreBtn = document.querySelector(".read-more");
 
-const maxChars = 300;
-const fullText = paragraph.textContent;
-let truncatedText = fullText.slice(0, maxChars);
+if (paragraph && readMoreBtn) {
+  const maxChars = 300;
+  const fullText = paragraph.textContent;
+  let truncatedText = fullText.slice(0, maxChars);
 
-paragraph.textContent = truncatedText;
+  paragraph.textContent = truncatedText;
 
-readMoreBtn.addEventListener("click", () => {
-  if (paragraph.textContent === truncatedText) {
-    paragraph.textContent = fullText;
-    readMoreBtn.textContent = "Read less";
-  } else {
-    paragraph.textContent = truncatedText;
-    readMoreBtn.textContent = "Read more";
-  }
-});
+  readMoreBtn.addEventListener("click", () => {
+    if (paragraph.textContent === truncatedText) {
+      paragraph.textContent = fullText;
+      readMoreBtn.textContent = "Read less";
+    } else {
+      paragraph.textContent = truncatedText;
+      readMoreBtn.textContent = "Read more";
+    }
+  });
+}
