@@ -1,0 +1,236 @@
+@import "../variable";
+@import "../mixin";
+@import "../rfs";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
+.blog {
+  &__banner {
+    margin-top: 97px;
+    position: relative;
+    display: block;
+
+    .c-banner__pre {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .c-banner__subtitle {
+      color: #fff;
+    }
+
+
+    @include media-bp(lg) {
+      .row> :first-child {
+        position: absolute;
+        // top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        @include padding(50px);
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        border: 2px solid #fff;
+      }
+
+      .c-banner__left {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+      }
+    }
+
+    @include media-bp(mdl) {
+      .row> :first-child {
+        @include padding(10px);
+        background-color: $orange1;
+        z-index: 2;
+      }
+
+      .c-banner__title {
+        letter-spacing: normal;
+      }
+    }
+  }
+
+
+
+
+  .c-banner__pre {
+    @include rfs(80px);
+  }
+
+  .c-banner__pre2 {
+    @include rfs(22px);
+    line-height: 1.2;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 20px;
+
+  }
+
+  &__search {
+    position: relative;
+    display: block;
+    // @include padding-top(100px);
+    @include padding-bottom(100px);
+
+    fieldset {
+      padding: 10px 30px 30px 30px;
+      border: 1px solid #000;
+
+      legend {
+        text-align: center;
+        width: auto;
+      }
+
+      .form-control {
+        border: 1px solid #999 !important;
+        padding: 10px !important;
+        min-height: 50px;
+
+        &::placeholder {
+          color: #999;
+          font-size: 18px
+        }
+      }
+    }
+
+    &Head {
+      @include rfs(22px);
+      line-height: 1.2;
+      color: $black_3;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+
+    .ms-n5 {
+      position: absolute;
+      right: 0;
+      top: 1px;
+    }
+
+    .input-group {
+      // overflow: hidden;
+    }
+
+    .btn {
+      height: 95%;
+      padding: 0 20px;
+      border: none;
+    }
+
+    .form-control {
+      background: #fff;
+      color: #333;
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: block;
+    @include padding-top(100px);
+    @include padding-bottom(100px);
+
+    .card {
+      margin-bottom: 70px;
+      border: 0;
+
+      .c-banner__image {
+        width: 100%;
+        max-height: 500px;
+        min-height: 345px;
+        border: 1px solid #ccc;
+        border-bottom: 0;
+      }
+
+      .card-title {
+        @include rfs(24px);
+        line-height: 1.2;
+        color: $black_3;
+        font-weight: 700;
+      }
+
+      .card-text {
+        @include rfs(16px);
+        line-height: 1.2;
+        color: $black_3;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        min-height: 80px;
+      }
+
+      .cardWrap {
+        min-height: 190px;
+        position: relative;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .cardContain {
+        padding: 20px 20px;
+        position: absolute;
+        right: 0;
+        width: 92%;
+        top: 0;
+        height: max-content;
+        min-height: 215px;
+        background: #fff;
+        border: 1px solid #ccc;
+      }
+
+      .card-link {
+        border-bottom: 1px solid #000;
+        font-weight: 600;
+
+        &:hover {
+          border-color: $orange1;
+        }
+      }
+
+      .card-date {
+        font-weight: 600;
+      }
+    }
+
+    .card-viewAll {
+      padding: 10px 25px;
+      border: 1px solid #000;
+      margin-top: 30px;
+      display: inline-block;
+      font-weight: 600;
+
+      @include media-bp(mdl) {
+        margin-top: 10px;
+      }
+
+      &:hover {
+        border-color: $orange1;
+      }
+    }
+
+    .col-md-4 {
+      display: none;
+    }
+  }
+
+  @include media-bp(mdl) {
+    .order-1 {
+      order: 1;
+    }
+
+    .card {
+      margin-bottom: 50px;
+    }
+
+    .blog__search {
+      .col-md-3:not(:first-child) .input-group {
+        margin-top: 15px;
+      }
+    }
+  }
+
+}
