@@ -19,7 +19,7 @@ if (window.innerWidth > 1000) {
 
   // Close dropdowns on mouseout
   document.addEventListener("mouseout", function (event) {
-    if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu")) {
+    if (!dropdown.includes(event.target) && !event.target.classList.contains("dropdown-menu") && !event.target.classList.contains("dropdown-item") && !event.target.closest(".dropdown-submenu") && !event.target.closest(".navbar")) {
       document.body.click();
     }
   });

@@ -137,4 +137,58 @@
       text-align: left;
     }
   }
+  #navbarTogglerDemo02 {
+    display: none !important;
+  }
+  @include media-bp(mdl) {
+    #navbarTogglerDemo02 {
+      display: block !important;
+    }
+  }
+  // desktop
+  &__desktop {
+    margin-left: auto;
+    width: 100%;
+  }
+  @include media-bp(lg) {
+    &-expand-lg &-nav .dropdown-menu {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+      & [class^=col-] {
+        padding: 20px;
+      }
+    }
+    .navbar__desktopListing {
+      max-width: 240px;
+    }
+    .navbar__desktopRhsContainer {
+      border-left: 1px solid $lines;
+    }
+    .navbar__desktopRhs {
+      gap: 80px;
+    }
+    .navbar__desktopTitle {
+      @include rfs(32px);
+      font-weight: bold;
+    }
+    .navbar__desktopListingTitle {
+      font-weight: bold;
+      @include rfs(20px);
+    }
+    .navbar__desktopListingLinkT {
+      font-weight: bold;
+      @include rfs(18px);
+      margin-top: 8px;
+    }
+    .navbar__desktopListingLink {
+      @include rfs(16px);
+      margin-top: 5px;
+    }
+    .navbar__desktopListingImg {
+      margin-top: 5px;
+    }
+  }
 }
