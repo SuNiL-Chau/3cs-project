@@ -130,11 +130,16 @@
         display: none;
       }
     }
+    .nav-item.dropdown.activeDropdown > :nth-child(1)
+    .nav-item.dropdown.activeDropdown > :nth-child(2) ,
     .nav-item.dropdown.activeDropdown > .dropdown-toggle {
       background-color: $orange1;
       color: #fff;
       width: 100%;
-      text-align: left;
+      // text-align: left;
+      & path {
+        fill: #fff;
+      }
     }
   }
   #navbarTogglerDemo02 {
@@ -189,6 +194,21 @@
     }
     .navbar__desktopListingImg {
       margin-top: 5px;
+    }
+  }
+  @include media-bp(mdl) {
+    .nav-item.dropdown {
+      display: flex;
+      flex-flow: row wrap;
+      & :nth-child(1) {
+        width: 80%;
+      }
+      & :nth-child(2) {
+        width: 20%;
+      }
+      &.activeDropdown > .dropdown-toggle {
+        width: 20%;
+      }
     }
   }
 }

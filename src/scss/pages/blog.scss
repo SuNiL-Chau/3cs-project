@@ -1,7 +1,7 @@
 @import "../variable";
 @import "../mixin";
 @import "../rfs";
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
 .blog {
   &__banner {
@@ -18,9 +18,8 @@
       color: #fff;
     }
 
-
     @include media-bp(lg) {
-      .row> :first-child {
+      .row > :first-child {
         position: absolute;
         // top: 0;
         left: 50%;
@@ -39,7 +38,7 @@
     }
 
     @include media-bp(mdl) {
-      .row> :first-child {
+      .row > :first-child {
         @include padding(10px);
         background-color: $orange1;
         z-index: 2;
@@ -51,9 +50,6 @@
     }
   }
 
-
-
-
   .c-banner__pre {
     @include rfs(80px);
   }
@@ -64,7 +60,6 @@
     color: #fff;
     font-weight: 400;
     margin-top: 20px;
-
   }
 
   &__search {
@@ -86,12 +81,24 @@
         border: 1px solid #999 !important;
         padding: 10px !important;
         min-height: 50px;
+        @include rfs(14px);
+        text-overflow: ellipsis;
+        appearance: none;
+        position: relative;
 
         &::placeholder {
           color: #999;
-          font-size: 18px
+          font-size: 18px;
         }
       }
+    }
+
+    .form-select {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 8px;
+      z-index: 9;
     }
 
     &Head {
@@ -208,7 +215,7 @@
       }
 
       &:hover {
-        border-color: $orange1;
+        background-color: $orange1;
       }
     }
 
@@ -232,5 +239,4 @@
       }
     }
   }
-
 }
