@@ -6,6 +6,7 @@
   @include padding-top(25px);
   @include padding-bottom(25px);
   z-index: 99999;
+  align-items: center;
   &-nav {
     gap: 30px;
   }
@@ -43,6 +44,8 @@
   .requestBtn {
     position: relative;
     background-color: $orange1;
+    width: max-content;
+    height: max-content;
     padding: 14px;
     color: $white;
     img {
@@ -108,6 +111,7 @@
       // @include margin-top(50px);
       // @include margin-bottom(50px);
       overflow-y: scroll;
+      max-height: 77vh;
       gap: 0;
       .nav-item {
         @include padding-top(30px);
@@ -197,17 +201,26 @@
     }
   }
   @include media-bp(mdl) {
+    & .dropdown-menu {
+      width: 100%;
+      min-width: 100%;
+    }
+    .dropdown-submenu,
     .nav-item.dropdown {
       display: flex;
       flex-flow: row wrap;
-      & :nth-child(1) {
+      & > :nth-child(1) {
         width: 80%;
       }
-      & :nth-child(2) {
+      & > :not(.dropdown-submenu):nth-child(2) {
         width: 20%;
+        padding: 0 17px;
       }
       &.activeDropdown > .dropdown-toggle {
         width: 20%;
+      }
+      .dropdown-submenu .dropdown-item:hover path {
+        fill: #fff;
       }
     }
   }

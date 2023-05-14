@@ -9,6 +9,8 @@
   <title>Boilerplate Title</title>
   <!-- <link rel="shortcut icon" href="assets/faivcon.ico" type="image/x-icon" />-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
   <link rel="stylesheet" href="./dist/css/bootstrap.css" />
   <link rel="stylesheet" href="./dist/css/main.css" />
   <link rel="stylesheet" href="./dist/css/pages/scai.css" />
@@ -200,6 +202,42 @@
         </li>
 
       </ul>
+    </div>
+  </section>
+
+  <section class="awards container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="awards__title">Awards</h3>
+      </div>
+      <div class="col-12">
+        <div class="awards__carousel">
+          <div class="awards__card">
+            <img src="https://placehold.co/600x400" alt="alt" class="awards__cardImg">
+            <p class="awards__cardPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis tempora nisi itaque repellat ducimus!</p>
+          </div>
+          <div class="awards__card">
+            <img src="https://placehold.co/600x400" alt="alt" class="awards__cardImg">
+            <p class="awards__cardPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis tempora nisi itaque repellat ducimus!</p>
+          </div>
+          <div class="awards__card">
+            <img src="https://placehold.co/600x400" alt="alt" class="awards__cardImg">
+            <p class="awards__cardPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis tempora nisi itaque repellat ducimus!</p>
+          </div>
+          <div class="awards__card">
+            <img src="https://placehold.co/600x400" alt="alt" class="awards__cardImg">
+            <p class="awards__cardPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis tempora nisi itaque repellat ducimus!</p>
+          </div>
+          <div class="awards__card">
+            <img src="https://placehold.co/600x400" alt="alt" class="awards__cardImg">
+            <p class="awards__cardPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis tempora nisi itaque repellat ducimus!</p>
+          </div>
+          <div class="awards__card">
+            <img src="https://placehold.co/600x400" alt="alt" class="awards__cardImg">
+            <p class="awards__cardPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis tempora nisi itaque repellat ducimus!</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -397,7 +435,6 @@
   </div>
 
 
-
   <!-- Jquery & Bootstrap Bundle js -->
   <script src="./dist/js/libs/jquery-3.5.1.slim.min.js"></script>
   <script src="./dist/js/libs/bootstrap.bundle.min.js"></script>
@@ -439,7 +476,7 @@
       //   particlesJS.load("c-textContent__canvas2", "assets/particlesjs-config.json", function () {});
       // }
   </script>
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
     var cards = document.querySelectorAll('.threeSC__valueCard');
     cards.forEach(item => {
@@ -453,6 +490,44 @@
           item.classList.remove('-cardBlur');
         }, 300);
       });
+    });
+  </script>
+  <script>
+    $(".awards__carousel").slick({
+      dots: true,
+      infinite: false,
+      prevArrow: false,
+      nextArrow: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     });
   </script>
 
