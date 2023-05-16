@@ -199,7 +199,7 @@ btn-outline-dark:hover {
 
 .ibpBiz {
   &__title {
-    @include rfs(38px);
+    @include rfs(30px);
     line-height: 1.25;
     letter-spacing: normal;
     font-weight: 700;
@@ -280,6 +280,16 @@ btn-outline-dark:hover {
       bottom: 0;
       z-index: -1;
       background-color: $orange1;
+
+      @media only screen and (min-width: 1200px) {
+        width: 10%;
+      }
+      @media only screen and (min-width: 1500px) {
+        width: 14%;
+      }
+      @media only screen and (min-width: 1900px) {
+        width: 21.5%;
+      }
 
       @include media-bp(mdl) {
         display: none;

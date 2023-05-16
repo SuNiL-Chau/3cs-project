@@ -48,9 +48,9 @@
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
-    @include rfs(33px);
+    @include rfs(22px);
     line-height: 1.2;
-    letter-spacing: toRem(-0.99);
+    letter-spacing: normal;
     cursor: pointer;
     font-weight: 700;
     border-radius: 0;

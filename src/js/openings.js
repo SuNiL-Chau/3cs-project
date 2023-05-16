@@ -1,53 +1,53 @@
-var openingForm = document.querySelector(".currentOpenings__openingsForm");
+// var openingForm = document.querySelector(".currentOpenings__openingsForm");
 
-openingForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  let input = document.querySelector("#location");
-  let cards = document.querySelectorAll(".currentOpenings__job");
+// openingForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   let input = document.querySelector("#location");
+//   let cards = document.querySelectorAll(".currentOpenings__job");
 
-  // Add event listener to the input field
-  var searchValue = input.value.trim().toLowerCase();
+//   // Add event listener to the input field
+//   var searchValue = input.value.trim().toLowerCase();
 
-  // Iterate over the cards
-  cards.forEach(function (card) {
-    var location = card.getAttribute("data-location").toLowerCase();
+//   // Iterate over the cards
+//   cards.forEach(function (card) {
+//     var location = card.getAttribute("data-location").toLowerCase();
 
-    // console.log("looped");
-    // console.log(`location: ${location}`);
-    // console.log(`value: ${searchValue}`);
-    // console.log(`chceck location.indexOf(searchValue) === 0: ${location.indexOf(searchValue) === 0}`);
-    // Check if the location starts with the search value
-    if (location.indexOf(searchValue) === 0) {
-      card.classList.add("show");
-      card.classList.remove("hide");
-    } else {
-      card.classList.add("hide");
-      card.classList.remove("show");
-    }
-  });
+// console.log("looped");
+// console.log(`location: ${location}`);
+// console.log(`value: ${searchValue}`);
+// console.log(`chceck location.indexOf(searchValue) === 0: ${location.indexOf(searchValue) === 0}`);
+// Check if the location starts with the search value
+//   if (location.indexOf(searchValue) === 0) {
+//     card.classList.add("show");
+//     card.classList.remove("hide");
+//   } else {
+//     card.classList.add("hide");
+//     card.classList.remove("show");
+//   }
+// });
 
-  // const formData = new FormData(openingForm);
-  // Display the key/value pairs
-  // for (const pair of formData.entries()) {
-  //   console.log(`${pair[0]}, ${pair[1]}`);
-  // }
-  // ajax reuqest
-  //   const xhr = new XMLHttpRequest();
-  //   xhr.open("POST", "https://example.com/api");
-  //   xhr.setRequestHeader("Content-Type", "application/json");
-  //   xhr.withCredentials = true;
-  //   xhr.onload = function () {
-  //     if (xhr.status === 200) {
-  //       // process the response data here
-  //     } else {
-  //       // handle errors here
-  //     }
-  //   };
-  //   xhr.onerror = function () {
-  //     // handle errors here
-  //   };
-  //   xhr.send(formData);
-});
+// const formData = new FormData(openingForm);
+// Display the key/value pairs
+// for (const pair of formData.entries()) {
+//   console.log(`${pair[0]}, ${pair[1]}`);
+// }
+// ajax reuqest
+//   const xhr = new XMLHttpRequest();
+//   xhr.open("POST", "https://example.com/api");
+//   xhr.setRequestHeader("Content-Type", "application/json");
+//   xhr.withCredentials = true;
+//   xhr.onload = function () {
+//     if (xhr.status === 200) {
+//       // process the response data here
+//     } else {
+//       // handle errors here
+//     }
+//   };
+//   xhr.onerror = function () {
+//     // handle errors here
+//   };
+//   xhr.send(formData);
+// });
 
 var fileinput = document.querySelector("#validatedInputGroupCustomFile");
 fileinput.addEventListener("change", function () {
@@ -57,7 +57,7 @@ fileinput.addEventListener("change", function () {
     label.textContent = "Attach CV";
   } else {
     for (const file of files) {
-      console.log(file.name);
+      // console.log(file.name);
       label.textContent = file.name;
     }
   }
