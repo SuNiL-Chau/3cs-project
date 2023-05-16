@@ -29,6 +29,10 @@
       color: $white;
       text-align: center;
       padding: 20px;
+      // new overwrite css
+      position: relative;
+      bottom: unset;
+      padding-top: 0;
     }
     &__title {
       @include rfs(35px);
