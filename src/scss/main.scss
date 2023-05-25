@@ -806,15 +806,22 @@ form.-success .c-formResponse {
     text-align: center;
     flex-shrink: 0;
     max-width: 400px;
-    padding: 0 20px;
+    // padding: 0 20px;
+    margin: 0 20px;
+    padding: 10px;
+    border: 1px solid $gray;
     &Img {
       width: 100%;
       height: auto;
     }
+    &Img + &Para {
+      @include margin-top(18px);
+      font-weight: 700;
+    }
     &Para {
       @include rfs(18px);
       word-wrap: break-word;
-      @include margin-top(18px);
+      @include margin-top(6px);
     }
   }
   .slick-dots {

@@ -529,6 +529,15 @@
         },
       ],
     });
+
+    window.onload = () => {
+      const slider = document.querySelector('.awards__carousel');
+    const slides = slider.querySelectorAll('.awards__carousel .slick-slide');
+
+    slides.forEach(slide => {
+      slide.style.height = `${slider.clientHeight}px`; /* set the height of each slide to the height of the slider */
+    });
+    }
   </script>
 
 </body>
