@@ -26,20 +26,27 @@
     @include media-bp(mdl) {
       @include rfs(20px);
     }
-    &:hover {
-      color: $orange1;
-    }
-    &:hover,
     &:focus {
       outline: none;
       border-color: transparent;
       box-shadow: none;
     }
+    @media (hover: hover) {
+      &:hover {
+        color: $orange1;
+      }
+      &:hover,
+      &:focus {
+        outline: none;
+        border-color: transparent;
+        box-shadow: none;
+      }
+      &:hover .c-accordion__icon {
+        transform: rotate(180deg);
+      }
+    }
     .c-accordion__icon path {
       fill: $orange1;
-    }
-    &:hover .c-accordion__icon {
-      transform: rotate(180deg);
     }
     .c-accordion__icon {
       position: relative;

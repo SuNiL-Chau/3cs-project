@@ -578,6 +578,36 @@
         }
       }
     }
+    // .platform__contentBtns__Swiper {
+    //   @include media-bp(xl) {
+    //     padding-top: 10%;
+    //     width: calc(30% - 30px);
+    //     margin-right: 0;
+    //   }
+    // }
+    .platform__contentBtns__Swiper {
+      width: calc(30% - 30px);
+      margin-right: 0;
+      @include media-bp(mdl) {
+        width: 100%;
+        padding-bottom: 30px;
+        .swiper-pagination.swiper-pagination-bullets {
+          bottom: 0;
+          .swiper-pagination-bullet {
+            width: 9px;
+            height: 9px;
+            border-radius: 0;
+            background-color: $white;
+            border: 1px solid $gray;
+            box-sizing: border-box;
+            &-active {
+              background-color: $orange1;
+              border-color: $orange1;
+            }
+          }
+        }
+      }
+    }
   }
   .services {
     position: relative;
@@ -629,7 +659,7 @@
     &__listing {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      // gap: 30px;
       @include padding-top(100px);
       @include media-bp(mdl) {
         flex-direction: row;

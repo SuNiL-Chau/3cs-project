@@ -182,11 +182,12 @@
         position: absolute;
         right: 0;
         width: 92%;
-        top: 0;
+        // top: 0;
         height: max-content;
         min-height: 215px;
         background: #fff;
         border: 1px solid #ccc;
+        bottom: -50px;
       }
 
       .card-link {

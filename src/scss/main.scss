@@ -281,6 +281,9 @@ btn-outline-dark:hover {
       z-index: -1;
       background-color: $orange1;
 
+      @media only screen and (min-width: 1000px) {
+        width: 6.5%;
+      }
       @media only screen and (min-width: 1200px) {
         width: 10%;
       }
