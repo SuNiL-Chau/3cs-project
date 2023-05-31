@@ -1,7 +1,7 @@
 @import "../variable";
 @import "../mixin";
 @import "../rfs";
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
 .newsroom {
   &__banner {
@@ -19,12 +19,12 @@
     }
 
     @include media-bp(lg) {
-      .row> :first-child {
+      .row > :first-child {
         position: absolute;
         left: 50px;
         bottom: 0;
         padding: calc(1.4375rem + 1.40625vw);
-        background: rgba(0, 0, 0, .8);
+        background: rgba(0, 0, 0, 0.8);
         z-index: 2;
       }
 
@@ -34,7 +34,7 @@
     }
 
     @include media-bp(mdl) {
-      .row> :first-child {
+      .row > :first-child {
         @include padding(10px);
         background-color: $orange1;
         z-index: 2;
@@ -101,10 +101,16 @@
       position: relative;
       margin-bottom: 25px;
 
+      &:hover {
+        .card-body {
+          background-color: $orange1;
+        }
+      }
       .card-body {
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, .6);
+        // position: absolute;
+        position: relative;
+        // bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
       }
 
       .c-banner__image {
@@ -119,6 +125,12 @@
         line-height: 1.2;
         color: #fff;
         font-weight: 700;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        min-height: 87px;
       }
 
       .card-text {
@@ -180,7 +192,6 @@
       cursor: pointer;
     }
 
-
     .card-viewAll {
       padding: 10px 25px;
       border: 1px solid #000;
@@ -196,7 +207,6 @@
         border-color: $orange1;
       }
     }
-
   }
 
   @include media-bp(mdl) {
@@ -212,6 +222,4 @@
       padding: 0;
     }
   }
-
-
 }

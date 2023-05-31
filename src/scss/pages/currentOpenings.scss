@@ -10,15 +10,17 @@
     @include media-bp(lg) {
       .row > :first-child {
         position: absolute;
-        top: 0;
+        // top: 0;
         right: 0;
-        @include padding(100px);
+        bottom: 0;
+        @include padding(60px);
         background-color: $orange1;
         z-index: 2;
+        margin: auto;
       }
-      .col-md-12 {
-        @include margin-top(100px);
-      }
+      // .col-md-12 {
+      //   @include margin-top(100px);
+      // }
       .c-banner__left {
         max-width: 100%;
       }
