@@ -48,6 +48,7 @@
       .video__cardBanner {
         z-index: 0;
         position: relative;
+        width: 100%;
       }
       .video__cardIcon {
         position: absolute;
@@ -88,6 +89,18 @@
       &:not(:disabled):active,
       &:not(.disabled):active  {
         background-color: $orange1;
+      }
+    }
+    .nav-link[role="tab"] {
+      border: 0;
+      @include rfs(20px);
+      font-weight: 700;
+      color: $black_1;
+      border-bottom: 2px solid transparent;
+      margin-bottom: 0;
+      &.active {
+        color: $orange1;
+        border-bottom-color: $orange1;
       }
     }
   }

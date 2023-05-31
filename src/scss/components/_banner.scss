@@ -69,4 +69,7 @@
       max-height: max-content;
     }
   }
+  &.-grayBg {
+    background-color: $gray7;
+  }
 }

@@ -131,115 +131,115 @@ if (window.innerWidth < 1000) {
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-  let formConfig = {
-    // class of the parent element where the error/success class is added
-    classTo: "form-group",
-    errorClass: "has-danger",
-    successClass: "has-success",
-    // class of the parent element where error text element is appended
-    errorTextParent: "form-group",
-    // type of element to create for the error text
-    errorTextTag: "div",
-    // class of the error text element
-    errorTextClass: "text-danger mt-2",
-  };
+  // let formConfig = {
+  //   // class of the parent element where the error/success class is added
+  //   classTo: "form-group",
+  //   errorClass: "has-danger",
+  //   successClass: "has-success",
+  //   // class of the parent element where error text element is appended
+  //   errorTextParent: "form-group",
+  //   // type of element to create for the error text
+  //   errorTextTag: "div",
+  //   // class of the error text element
+  //   errorTextClass: "text-danger mt-2",
+  // };
 
-  var form = document.getElementById("contact-form");
+  // var form = document.getElementById("contact-form");
 
-  // create the pristine instance
-  var pristine = new Pristine(form, formConfig, true);
+  // // create the pristine instance
+  // var pristine = new Pristine(form, formConfig, true);
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  // form.addEventListener("submit", function (e) {
+  //   e.preventDefault();
 
-    // check if the form is valid
-    var valid = pristine.validate(); // returns true or false
-    if (valid) {
-      form.classList.add("-success");
-      setTimeout(() => {
-        form.reset();
-        form.classList.remove("-success");
-      }, 5000);
-      // var xhr = new XMLHttpRequest();
-      // xhr.open("GET", "https://api.example.com/data", true);
-      // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
+  //   // check if the form is valid
+  //   var valid = pristine.validate(); // returns true or false
+  //   if (valid) {
+  //     form.classList.add("-success");
+  //     setTimeout(() => {
+  //       form.reset();
+  //       form.classList.remove("-success");
+  //     }, 5000);
+  //     // var xhr = new XMLHttpRequest();
+  //     // xhr.open("GET", "https://api.example.com/data", true);
+  //     // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
 
-      // xhr.onload = function () {
-      //   if (xhr.status === 200) {
-      //     var responseData = JSON.parse(xhr.responseText);
-      // form.classList.add("-success");
-      // setTimeout(() => {
-      //   form.reset();
-      //   form.classList.remove("-success");
-      // }, 5000);
-      //     console.log(responseData);
-      //   } else {
-      //     console.log("Request failed. Status: " + xhr.status);
-      //   }
-      // };
+  //     // xhr.onload = function () {
+  //     //   if (xhr.status === 200) {
+  //     //     var responseData = JSON.parse(xhr.responseText);
+  //     // form.classList.add("-success");
+  //     // setTimeout(() => {
+  //     //   form.reset();
+  //     //   form.classList.remove("-success");
+  //     // }, 5000);
+  //     //     console.log(responseData);
+  //     //   } else {
+  //     //     console.log("Request failed. Status: " + xhr.status);
+  //     //   }
+  //     // };
 
-      // xhr.onerror = function () {
-      //   console.log("Request failed due to a network error.");
-      // };
-      // xhr.send();
-    }
-  });
+  //     // xhr.onerror = function () {
+  //     //   console.log("Request failed due to a network error.");
+  //     // };
+  //     // xhr.send();
+  //   }
+  // });
 
-  let formConfig2 = {
-    // class of the parent element where the error/success class is added
-    classTo: "form-group",
-    errorClass: "has-danger",
-    successClass: "has-success",
-    // class of the parent element where error text element is appended
-    errorTextParent: "form-group",
-    // type of element to create for the error text
-    errorTextTag: "div",
-    // class of the error text element
-    errorTextClass: "text-danger mt-2",
-  };
+  // let formConfig2 = {
+  //   // class of the parent element where the error/success class is added
+  //   classTo: "form-group",
+  //   errorClass: "has-danger",
+  //   successClass: "has-success",
+  //   // class of the parent element where error text element is appended
+  //   errorTextParent: "form-group",
+  //   // type of element to create for the error text
+  //   errorTextTag: "div",
+  //   // class of the error text element
+  //   errorTextClass: "text-danger mt-2",
+  // };
 
-  var formReq = document.getElementById("requestModalForm");
+  // var formReq = document.getElementById("requestModalForm");
 
-  if (formReq) {
-    // create the pristine instance
-    var pristineReq = new Pristine(formReq, formConfig2, true);
+  // if (formReq) {
+  //   // create the pristine instance
+  //   var pristineReq = new Pristine(formReq, formConfig2, true);
 
-    formReq.addEventListener("submit", function (e) {
-      e.preventDefault();
+  //   formReq.addEventListener("submit", function (e) {
+  //     e.preventDefault();
 
-      // check if the form is valid
-      var valid = pristineReq.validate(); // returns true or false
-      if (valid) {
-        formReq.classList.add("-success");
-        setTimeout(() => {
-          formReq.reset();
-          formReq.classList.remove("-success");
-        }, 5000);
-        // var xhr = new XMLHttpRequest();
-        // xhr.open("GET", "https://api.example.com/data", true);
-        // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
+  //     // check if the form is valid
+  //     var valid = pristineReq.validate(); // returns true or false
+  //     if (valid) {
+  //       formReq.classList.add("-success");
+  //       setTimeout(() => {
+  //         formReq.reset();
+  //         formReq.classList.remove("-success");
+  //       }, 5000);
+  //       // var xhr = new XMLHttpRequest();
+  //       // xhr.open("GET", "https://api.example.com/data", true);
+  //       // xhr.setRequestHeader("Authorization", "Bearer <your_security_token>");
 
-        // xhr.onload = function () {
-        //   if (xhr.status === 200) {
-        //     var responseData = JSON.parse(xhr.responseText);
-        // formReq.classList.add("-success");
-        // setTimeout(() => {
-        //   formReq.reset();
-        //   formReq.classList.remove("-success");
-        // }, 5000);
-        //     console.log(responseData);
-        //   } else {
-        //     console.log("Request failed. Status: " + xhr.status);
-        //   }
-        // };
+  //       // xhr.onload = function () {
+  //       //   if (xhr.status === 200) {
+  //       //     var responseData = JSON.parse(xhr.responseText);
+  //       // formReq.classList.add("-success");
+  //       // setTimeout(() => {
+  //       //   formReq.reset();
+  //       //   formReq.classList.remove("-success");
+  //       // }, 5000);
+  //       //     console.log(responseData);
+  //       //   } else {
+  //       //     console.log("Request failed. Status: " + xhr.status);
+  //       //   }
+  //       // };
 
-        // xhr.onerror = function () {
-        //   console.log("Request failed due to a network error.");
-        // };
-        // xhr.send();
-      }
-    });
-  }
+  //       // xhr.onerror = function () {
+  //       //   console.log("Request failed due to a network error.");
+  //       // };
+  //       // xhr.send();
+  //     }
+  //   });
+  // }
 
   // counter animation
   // Get all the counter elements
@@ -344,13 +344,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var videoBtns = document.querySelectorAll("button[data-video]");
-videoBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    var videoEle = document.querySelector(`${btn.dataset.target} video`);
-    videoEle.setAttribute("src", btn.dataset.video);
-  });
-});
+// var videoBtns = document.querySelectorAll("button[data-video]");
+// videoBtns.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     var videoEle = document.querySelector(`${btn.dataset.target} video`);
+//     videoEle.setAttribute("src", btn.dataset.video);
+//   });
+// });
 
 // readmore js and html structure to follow
 /**

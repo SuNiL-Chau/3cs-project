@@ -150,7 +150,10 @@
     @include padding-bottom(100px);
     .countings__statCount {
       line-height: 0.8;
-      @include rfs(140px);
+      @include rfs(94px);
+    }
+    .countings__statTitle {
+      @include rfs(22px);
     }
   }
 }
