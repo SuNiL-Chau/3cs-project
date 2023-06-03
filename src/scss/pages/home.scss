@@ -926,5 +926,71 @@
         }
       }
     }
+
+    .card {
+      margin-bottom: 70px;
+      border: 0;
+
+      .c-banner__image {
+        width: 100%;
+        max-height: 500px;
+        min-height: 345px;
+        border: 1px solid $gray;
+        // border-bottom: 0;
+      }
+
+      .card-title {
+        @include rfs(24px);
+        line-height: 1.2;
+        color: $black_3;
+        font-weight: 700;
+      }
+
+      .card-text {
+        @include rfs(16px);
+        line-height: 1.2;
+        color: $black_3;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        min-height: 80px;
+      }
+
+      .cardWrap {
+        min-height: 190px;
+        position: relative;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .cardContain {
+        padding: 20px 20px;
+        position: absolute;
+        right: 0;
+        width: 92%;
+        // top: 0;
+        height: max-content;
+        min-height: 215px;
+        background: #fff;
+        border: 1px solid #ccc;
+        bottom: -50px;
+      }
+
+      .card-link {
+        border-bottom: 1px solid #000;
+        font-weight: 600;
+
+        &:hover {
+          border-color: $orange1;
+        }
+      }
+
+      .card-date {
+        font-weight: 600;
+      }
+    }
   }
 }
