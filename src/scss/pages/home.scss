@@ -992,5 +992,23 @@
         font-weight: 600;
       }
     }
+    &__swiper {
+      padding-bottom: 30px;
+    }
+    .swiper-pagination.swiper-pagination-bullets {
+      bottom: 0;
+      .swiper-pagination-bullet {
+        width: 9px;
+        height: 9px;
+        border-radius: 0;
+        background-color: $white;
+        border: 1px solid $gray;
+        box-sizing: border-box;
+        &-active {
+          background-color: $orange1;
+          border-color: $orange1;
+        }
+      }
+    }
   }
 }
