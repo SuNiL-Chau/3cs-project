@@ -847,3 +847,88 @@ form.-success .c-formResponse {
     color: $orange1;
   }
 }
+.timeline {
+  padding-bottom: 60px;
+  &__title {
+    @include rfs(38px);
+    font-weight: 700;
+    position: sticky;
+    top: 60px;
+    text-align: center;
+    color: $orange1;
+    z-index: 99;
+    margin-top: -40px;
+    @include media-bp(mdl) {
+      margin-top: -30px;
+      top: 18px;
+    }
+  }
+  .container-fluid {
+    overflow-y: auto;
+    background-color: #efefef;
+    @media only screen and (min-width: 769px) {
+      max-height: 600px;
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    & {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+  }
+  .row {
+    @for $i from 1 through 12 {
+      [class^="col"]:nth-child(#{$i}) {
+        padding-bottom: 4rem;
+        padding-top: 4rem + 8rem * ($i - 1);
+      }
+    }
+    @include media-bp(mdl) {
+      & > [class^="col"] {
+        padding-bottom: 0 !important;
+      }
+      & > [class^="col"]:not(:first-child):nth-child(odd) {
+        border-left: 0;
+      }
+      & > [class^="col"]:nth-child(odd) {
+        padding-top: 4rem;
+      }
+      & > [class^="col"]:nth-child(even) {
+        padding-top: 12rem;
+      }
+      &:last-child {
+        padding-bottom: 2rem;
+      }
+    }
+    & > [class^="col"]:not(:first-child) {
+      border-left: 4px solid #d7d7d7;
+    }
+  }
+  &__card {
+    max-width: 90%;
+    opacity: 0;
+    transition: 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    &.show-card {
+      opacity: 1;
+    }
+    &Date {
+      font-weight: 700;
+      color: $black_1;
+      margin-top: 5px;
+      @include rfs(22px);
+    }
+    &Title {
+      font-weight: 700;
+      color: $orange1;
+      margin-top: 5px;
+      @include rfs(20px);
+    }
+    &Para {
+      font-weight: 400;
+      color: $black_1;
+      margin-top: 5px;
+      @include rfs(18px);
+    }
+  }
+}
