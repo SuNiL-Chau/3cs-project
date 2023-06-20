@@ -6,13 +6,13 @@
 // };
 
 if (window.innerWidth <= 768) {
-  document.querySelectorAll("button[data-aos='fade-left']").forEach(function (btn) {
+  document.querySelectorAll("button[data-aos='fade-left']").forEach(btn => {
     btn.setAttribute("data-aos", "fade-in");
   });
 }
 
 // testimonials swiper
-var swiper = new Swiper(".testimonials__swiper", {
+const swiper = new Swiper(".testimonials__swiper", {
   direction: "horizontal",
   slidesPerView: 2,
   spaceBetween: 60,
@@ -37,15 +37,15 @@ var swiper = new Swiper(".testimonials__swiper", {
 });
 var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
 testimonialsWrapperHeight ? testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px" : null;
-window.onload = function () {
-  setTimeout(function () {
+window.onload = () => {
+  setTimeout(() => {
     var testimonialsWrapperHeight = document.querySelector(".testimonials__swiper .swiper-wrapper");
     testimonialsWrapperHeight ? testimonialsWrapperHeight.style.height = testimonialsWrapperHeight.offsetHeight + "px" : null;
   }, 1200);
 };
 
 // industries swiper
-var swiper2 = new Swiper(".industries__swiper", {
+const swiper2 = new Swiper(".industries__swiper", {
   direction: "horizontal",
   slidesPerView: 5,
   spaceBetween: 30,
@@ -69,7 +69,7 @@ var swiper2 = new Swiper(".industries__swiper", {
 });
 
 // news swiper
-var swiper3 = new Swiper(".news__swiper", {
+const swiper3 = new Swiper(".news__swiper", {
   direction: "horizontal",
   slidesPerView: 3,
   spaceBetween: 30,
@@ -91,7 +91,7 @@ var swiper3 = new Swiper(".news__swiper", {
     type: "bullets"
   }
 });
-var services__Swiper = new Swiper("#servicesSwiper", {
+const services__Swiper = new Swiper("#servicesSwiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -115,7 +115,7 @@ var services__Swiper = new Swiper("#servicesSwiper", {
     type: "bullets"
   }
 });
-var execution__Swiper = new Swiper("#executionSwiper", {
+const execution__Swiper = new Swiper("#executionSwiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -140,7 +140,7 @@ var execution__Swiper = new Swiper("#executionSwiper", {
     type: "bullets"
   }
 });
-var planning__Swiper = new Swiper("#planingSwiper", {
+const planning__Swiper = new Swiper("#planingSwiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -223,7 +223,7 @@ if (window.innerWidth < 1024) {
 }
 
 // swiper check for desk and mobile
-var platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
+const platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -249,7 +249,7 @@ var platform__contentBtns__Swiper = new Swiper("#scaiswiper", {
     type: "bullets"
   }
 });
-var platform__contentBtns__Swiper2 = new Swiper("#scaiswiper2", {
+const platform__contentBtns__Swiper2 = new Swiper("#scaiswiper2", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -275,7 +275,7 @@ var platform__contentBtns__Swiper2 = new Swiper("#scaiswiper2", {
     type: "bullets"
   }
 });
-var platform__contentBtns__Swiper3 = new Swiper("#scaiswiper3", {
+const platform__contentBtns__Swiper3 = new Swiper("#scaiswiper3", {
   breakpoints: {
     320: {
       direction: "horizontal",
@@ -301,7 +301,7 @@ var platform__contentBtns__Swiper3 = new Swiper("#scaiswiper3", {
     type: "bullets"
   }
 });
-var platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
+const platform2__contentBtns__Swiper = new Swiper("#itmsswiper", {
   breakpoints: {
     320: {
       direction: "horizontal",
