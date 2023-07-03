@@ -77,7 +77,7 @@ const swiper3 = new Swiper(".news__swiper", {
   breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: "auto",
+      slidesPerView: 1,
       spaceBetween: 20,
     },
     1024: {

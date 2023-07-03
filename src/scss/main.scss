@@ -1243,3 +1243,15 @@ form.-success .c-formResponse {
 .gradientBottom {
   background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(2, 1, 1) 30%, rgb(106, 44, 27) 100%);
 }
+
+@media only screen and (max-width: 768px) {
+  .home .homestats__grid {
+    width: calc(100% + 50px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .js-sub-menu .sub-menu-item:not(:first-child) {
+    padding-top: 0;
+  }
+}

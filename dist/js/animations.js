@@ -4,19 +4,19 @@ document.body.style.opacity = 0;
 gsap.registerPlugin(ScrollTrigger);
 
 // gsap split-text-animation
-window.addEventListener("DOMContentLoaded", event => {
+window.addEventListener("DOMContentLoaded", function (event) {
   gsap.to(document.body, {
     autoAlpha: 1,
     duration: 3,
     delay: 1,
     ease: "sine.inOut"
   });
-  setTimeout(() => {
+  setTimeout(function () {
     // image span animation
     var spanImages = Array.from(document.querySelectorAll("[data-span-img]"));
-    spanImages.map(pic => {
-      let img = pic.querySelector("img");
-      let tl = gsap.timeline({
+    spanImages.map(function (pic) {
+      var img = pic.querySelector("img");
+      var tl = gsap.timeline({
         scrollTrigger: {
           trigger: pic
         }
@@ -29,10 +29,10 @@ window.addEventListener("DOMContentLoaded", event => {
       });
     });
     var spanImages2 = Array.from(document.querySelectorAll("[data-anim-height]"));
-    spanImages2.map(pic => {
+    spanImages2.map(function (pic) {
       // let img = pic.querySelector("img");
 
-      let tl = gsap.timeline({
+      var tl = gsap.timeline({
         scrollTrigger: {
           trigger: pic
         }
@@ -46,8 +46,8 @@ window.addEventListener("DOMContentLoaded", event => {
     });
 
     // image parallax animation
-    gsap.utils.toArray("[data-span-img] img").forEach((section, i) => {
-      const heightDiff = section.offsetHeight - section.parentElement.offsetHeight;
+    gsap.utils.toArray("[data-span-img] img").forEach(function (section, i) {
+      var heightDiff = section.offsetHeight - section.parentElement.offsetHeight;
       gsap.fromTo(section, {
         y: -(heightDiff + 10)
       }, {
@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", event => {
     scaleImages.map(function (img) {
       var cImg = img.querySelector("img");
       var cFigure = img.parentElement;
-      let hover;
+      var hover;
       cFigure.addEventListener("mouseover", function (event) {
         if (!hover) {
           gsap.to(cImg, {
