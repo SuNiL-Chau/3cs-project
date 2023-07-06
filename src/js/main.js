@@ -380,6 +380,6 @@ if (paragraph && readMoreBtn) {
       }
     });
   } else {
-    readMoreBtn.style.display = "none";
+    readMoreBtn.style.display = "none !important";
   }
 }
